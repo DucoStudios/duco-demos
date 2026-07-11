@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Österbergs Konditori — eget bageri i Tidan sedan 1955</title>
+<meta name="description" content="Österbergs Konditori i Tidan. Eget bageri sedan 1955, öppet året runt, bröd och bakverk bakat på plats.">
+<style>
+  :root {
+    --caramel:#a4713f; --caramel-2:#cd9a5c; --rose:#b45a54; --rose-2:#d68580;
+    --cream:#faf3e6; --flour:#efe2cb; --ink:#2c2118; --line:rgba(44,33,24,.14);
+  }
+  :root[data-theme="dark"]{ --cream:#1c1710; --flour:#241d14; --ink:#f3e9d8; --caramel-2:#e0ac72; --rose-2:#e08a84; --line:rgba(243,233,216,.14); }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --cream:#1c1710; --flour:#241d14; --ink:#f3e9d8; --caramel-2:#e0ac72; --rose-2:#e08a84; --line:rgba(243,233,216,.14); } }
+
+  * { box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--cream); color:var(--ink); overflow-x:hidden; }
+  body{ font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; line-height:1.5; }
+  h1,h2,h3{ text-wrap:balance; margin:0; font-family:Georgia,"Iowan Old Style","Times New Roman",serif; }
+  a{ color:inherit; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 clamp(20px,5vw,56px); }
+  .label{ text-transform:uppercase; letter-spacing:.16em; font-size:.7rem; font-weight:700; color:var(--rose); }
+
+  nav.top{ position:sticky; top:0; z-index:30; background:color-mix(in srgb, var(--cream) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  nav.top .wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px clamp(20px,5vw,56px); }
+  .wordmark{ font-size:1.25rem; } .wordmark em{ color:var(--caramel); font-style:italic; }
+  .navlinks{ display:flex; gap:26px; font-size:.9rem; list-style:none; margin:0; padding:0; }
+  .navlinks a{ text-decoration:none; opacity:.78; } .navlinks a:hover{ opacity:1; }
+  .navlinks a:focus-visible, .btn:focus-visible{ outline:2px solid var(--caramel-2); outline-offset:3px; }
+  .cta-small{ font-size:.84rem; font-weight:700; background:var(--rose); color:#fff; padding:10px 18px; border-radius:3px; text-decoration:none; white-space:nowrap; }
+
+  header.hero{ padding:clamp(56px,9vw,100px) 0 clamp(48px,7vw,72px); text-align:center; }
+  .badge-1955{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:100px; padding:8px 18px; font-size:.8rem; margin-bottom:22px; }
+  .badge-1955 b{ color:var(--caramel); }
+  h1{ font-size:clamp(2.2rem,5vw,3.6rem); line-height:1.1; max-width:16ch; margin:0 auto; }
+  h1 em{ color:var(--rose); font-style:italic; }
+  .hero-sub{ font-size:1.05rem; line-height:1.65; opacity:.84; margin:22px auto 0; max-width:46ch; }
+  .hero-actions{ display:flex; gap:14px; margin-top:30px; justify-content:center; flex-wrap:wrap; }
+  .btn{ font-weight:700; font-size:.92rem; padding:13px 26px; border-radius:3px; text-decoration:none; display:inline-block; font-family:-apple-system,sans-serif; }
+  .btn-primary{ background:var(--rose); color:#fff; }
+  .btn-ghost{ border:1px solid var(--line); color:var(--ink); }
+
+  section{ padding:clamp(48px,7vw,80px) 0; border-top:1px solid var(--line); }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:34px; }
+  @media (max-width:820px){ .grid3{ grid-template-columns:1fr; } }
+  .card{ background:var(--flour); border-radius:10px; padding:26px; }
+  .card .num{ font-family:Georgia,serif; font-style:italic; color:var(--caramel); font-size:1.6rem; margin-bottom:10px; display:block; }
+  .card h3{ font-size:1.1rem; margin-bottom:8px; }
+  .card p{ opacity:.82; font-size:.92rem; line-height:1.6; margin:0; }
+
+  .story{ display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(28px,5vw,64px); align-items:start; }
+  @media (max-width:820px){ .story{ grid-template-columns:1fr; } }
+  .story p{ line-height:1.75; opacity:.88; margin:0 0 16px; }
+  .story p:last-child{ margin-bottom:0; }
+  .story .years{ font-family:Georgia,serif; font-size:3.2rem; color:var(--caramel); line-height:1; }
+  .story .years span{ display:block; font-family:-apple-system,sans-serif; font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); opacity:.6; margin-top:8px; }
+
+  .visit{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:30px; }
+  @media (max-width:700px){ .visit{ grid-template-columns:1fr; } }
+  .visit .item{ border:1px solid var(--line); border-radius:10px; padding:22px; }
+  .visit .item .label{ display:block; margin-bottom:8px; }
+  .visit .item p{ margin:0; font-size:.95rem; opacity:.85; }
+
+  .cta-band{ background:var(--caramel); color:#fff; border-radius:14px; padding:clamp(36px,6vw,56px); text-align:center; }
+  .cta-band h2{ color:#fff; font-size:clamp(1.6rem,3.4vw,2.2rem); }
+  .cta-band p{ opacity:.92; max-width:50ch; margin:14px auto 0; }
+  .cta-band .btn-primary{ background:#fff; color:var(--caramel); margin-top:26px; }
+
+  footer{ border-top:1px solid var(--line); padding:36px 0; font-size:.85rem; opacity:.7; }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="wordmark">Österbergs <em>Konditori</em></div>
+    <ul class="navlinks">
+      <li><a href="#om">Om oss</a></li>
+      <li><a href="#erbjuder">I hyllan</a></li>
+      <li><a href="#besok">Besök oss</a></li>
+    </ul>
+    <a class="cta-small" href="#kontakt">Ring och beställ</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="badge-1955">Eget bageri i Tidan sedan <b>1955</b></div>
+    <h1>Nybakat, precis som det <em>alltid</em> har smakat.</h1>
+    <p class="hero-sub">Österbergs Konditori bakar sitt bröd och sina bakverk på plats i Tidan, och håller öppet året runt. Ingen storbageriprodukt — bakat här, av oss.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#kontakt">Hitta hit</a>
+      <a class="btn btn-ghost" href="#erbjuder">Vad vi bakar</a>
+    </div>
+  </div>
+</header>
+
+<section id="erbjuder">
+  <div class="wrap">
+    <span class="label">I hyllan</span>
+    <h2 style="font-size:clamp(1.5rem,3vw,2rem); margin-top:10px;">Bakat på plats, varje dag</h2>
+    <div class="grid3">
+      <div class="card"><span class="num">01</span><h3>Bröd</h3><p>Grovt och ljust bröd bakat i det egna bageriet — inget som kommit i en lastbil.</p></div>
+      <div class="card"><span class="num">02</span><h3>Bakverk & tårtor</h3><p>Klassiska bakverk och tårtor för fikat, kalaset eller den där dagen som förtjänar något extra.</p></div>
+      <div class="card"><span class="num">03</span><h3>Café</h3><p>Sätt dig ner med kaffe och något nybakat — öppet året runt, även när det snöar i Tidan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="om">
+  <div class="wrap story">
+    <div class="years">70<span>år i Tidan</span></div>
+    <div>
+      <span class="label">Om oss</span>
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); margin:10px 0 18px;">Ett eget bageri, inte bara en butik</h2>
+      <p>Österbergs Konditori har sitt eget bageri i Tidan sedan 1955 — det som säljs i disken är bakat här, inte levererat utifrån.</p>
+      <p>Vi håller öppet året runt, så oavsett om det är vardag eller helg finns det alltid något nybakat att ta med hem eller äta på plats.</p>
+    </div>
+  </div>
+</section>
+
+<section id="besok">
+  <div class="wrap">
+    <span class="label">Besök oss</span>
+    <h2 style="font-size:clamp(1.5rem,3vw,2rem); margin-top:10px;">Hitta till Tidan</h2>
+    <div class="visit">
+      <div class="item"><span class="label">Adress</span><p>Närlundavägen 6, Tidan</p></div>
+      <div class="item"><span class="label">Öppet</span><p>Året runt</p></div>
+      <div class="item"><span class="label">Ring</span><p>0500-47 00 47</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Vi bakar, ni kommer förbi</h2>
+      <p>Vill du beställa en tårta till kalaset eller bara veta vad som är nybakat idag — ring eller mejla oss.</p>
+      <a class="btn btn-primary" href="tel:+46500470047">Ring 0500-47 00 47</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Österbergs Konditori, Tidan</span>
+    <span>info@osterbergstidan.se · 0500-47 00 47</span>
+  </div>
+</footer>
+
+</body>
+</html>
