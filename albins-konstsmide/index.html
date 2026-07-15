@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Albins Konstsmide — konstsmed i Lindesberg</title>
+<meta name="description" content="Albins Konstsmide AB i Wadköping, Lindesberg. Albin Gustafsson smider dekorativt järn och bruksföremål på traditionellt vis.">
+<style>
+  :root{
+    --bronze:#8a5a2b; --bronze-2:#b9803f; --ink:#2a2117; --paper:#faf4e9; --card:#f0e3cc; --line:rgba(42,33,23,.16);
+  }
+  :root[data-theme="dark"]{ --paper:#1a140d; --card:#251c12; --ink:#f3e9d8; --bronze-2:#d69a55; --line:rgba(243,233,216,.14); }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --paper:#1a140d; --card:#251c12; --ink:#f3e9d8; --bronze-2:#d69a55; --line:rgba(243,233,216,.14); } }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--paper); color:var(--ink); overflow-x:hidden; }
+  body{ font-family:"Iowan Old Style", Palatino, Georgia, serif; line-height:1.68; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ margin:0; font-weight:400; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 clamp(20px,6vw,40px); }
+  .label{ text-transform:uppercase; letter-spacing:.22em; font-size:.66rem; font-weight:700; color:var(--bronze); font-family:-apple-system,sans-serif; }
+
+  .demo-banner{ background:var(--bronze); color:#fff; text-align:center; font-size:.82rem; padding:10px 16px; font-weight:600; font-family:-apple-system,sans-serif; }
+  .demo-banner span{ opacity:.92; font-weight:400; }
+
+  nav.top{ position:sticky; top:0; z-index:30; background:color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  nav.top .wrap{ max-width:900px; display:flex; align-items:center; justify-content:space-between; padding:20px clamp(20px,6vw,40px); flex-wrap:wrap; }
+  .wordmark{ font-size:1.2rem; letter-spacing:.02em; font-style:italic; }
+  .wordmark b{ color:var(--bronze); font-style:normal; }
+  .navlinks{ display:flex; gap:26px; font-size:.88rem; list-style:none; margin:0; padding:0; font-family:-apple-system,sans-serif; }
+  .navlinks a{ text-decoration:none; opacity:.78; } .navlinks a:hover{ opacity:1; }
+  .cta-small{ font-size:.82rem; font-weight:700; border:1.5px solid var(--bronze); color:var(--bronze); padding:9px 18px; border-radius:100px; text-decoration:none; white-space:nowrap; font-family:-apple-system,sans-serif; }
+  .hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+  .hamburger span{ width:22px; height:2px; background:var(--ink); display:block; }
+  .mobile-panel{ display:none; width:100%; flex-direction:column; gap:14px; padding:18px 0 8px; border-top:1px solid var(--line); margin-top:14px; font-family:-apple-system,sans-serif; }
+  .mobile-panel.open{ display:flex; }
+  .mobile-panel a{ text-decoration:none; opacity:.85; }
+  @media (max-width:760px){ .navlinks{ display:none; } .cta-small{ display:none; } .hamburger{ display:flex; } .mobile-panel .cta-small{ display:inline-block; width:fit-content; text-align:center; } }
+
+  header.hero{ padding:clamp(50px,8vw,84px) 0 20px; text-align:center; }
+  .badge{ display:inline-flex; border:1px solid var(--line); border-radius:100px; padding:7px 16px; font-size:.76rem; margin-bottom:24px; font-family:-apple-system,sans-serif; }
+  .badge b{ color:var(--bronze); font-weight:700; }
+  h1{ font-size:clamp(2rem,5.4vw,3rem); line-height:1.18; max-width:20ch; margin:0 auto; }
+  h1 em{ color:var(--bronze); font-style:italic; }
+  .hero-sub{ font-size:1.08rem; opacity:.85; margin:24px auto 0; max-width:46ch; }
+  .hero-frame{ overflow:hidden; border-radius:6px; margin-top:40px; aspect-ratio:16/9; }
+  .hero-frame img{ width:100%; height:100%; object-fit:cover; }
+  .hero-actions{ display:flex; gap:14px; margin-top:30px; justify-content:center; flex-wrap:wrap; }
+  .btn{ font-weight:700; font-size:.9rem; padding:13px 26px; border-radius:100px; text-decoration:none; display:inline-block; font-family:-apple-system,sans-serif; }
+  .btn-primary{ background:var(--bronze); color:#fff; }
+  .btn-ghost{ border:1px solid var(--line); color:var(--ink); }
+
+  section{ padding:clamp(44px,7vw,68px) 0; border-top:1px solid var(--line); }
+  section h2{ font-size:clamp(1.4rem,3.4vw,1.9rem); max-width:26ch; }
+  .section-sub{ opacity:.8; font-size:1.02rem; max-width:56ch; margin-top:14px; }
+
+  .flaw-box{ background:var(--card); border-radius:10px; padding:clamp(24px,4vw,36px); margin-top:28px; }
+  .flaw-box .icon{ font-size:1.7rem; margin-bottom:10px; }
+  .flaw-box p{ margin:0; opacity:.92; line-height:1.75; }
+  .flaw-box strong{ color:var(--bronze); }
+
+  .stacklist{ margin-top:30px; display:flex; flex-direction:column; gap:22px; font-family:-apple-system,sans-serif; }
+  .stackitem{ display:grid; grid-template-columns:44px 1fr; gap:16px; }
+  .stackitem .n{ width:44px; height:44px; border-radius:50%; background:var(--card); color:var(--bronze); display:flex; align-items:center; justify-content:center; font-weight:700; font-family:"Iowan Old Style",serif; font-style:italic; }
+  .stackitem h3{ font-size:1.02rem; margin-bottom:4px; font-family:"Iowan Old Style",serif; }
+  .stackitem p{ opacity:.82; font-size:.92rem; margin:0; }
+
+  .price-wrap{ display:flex; flex-direction:column; gap:16px; margin-top:30px; font-family:-apple-system,sans-serif; }
+  .price-card{ border:1px solid var(--line); border-radius:10px; padding:26px 30px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+  .price-card.featured{ border-color:var(--bronze); background:var(--card); }
+  .plabel{ font-size:.74rem; text-transform:uppercase; letter-spacing:.1em; opacity:.7; font-weight:700; }
+  .amount{ font-family:"Iowan Old Style",serif; font-size:1.9rem; margin-top:6px; }
+  .amount span{ font-size:.9rem; opacity:.6; font-family:-apple-system,sans-serif; }
+  .price-card ul{ list-style:none; padding:0; margin:0; text-align:right; }
+  .price-card li{ padding:3px 0; font-size:.86rem; opacity:.86; }
+  @media (max-width:560px){ .price-card{ flex-direction:column; align-items:flex-start; } .price-card ul{ text-align:left; } }
+
+  .cta-band{ background:var(--bronze); color:#fff; text-align:center; border-radius:12px; padding:clamp(34px,6vw,52px); }
+  .cta-band h2{ color:#fff; }
+  .cta-band p{ color:#fff; opacity:.92; max-width:44ch; margin:12px auto 0; font-family:-apple-system,sans-serif; }
+  .cta-band .btn-primary{ background:#fff; color:var(--bronze); margin-top:22px; }
+
+  footer{ padding:34px 0; text-align:center; font-size:.8rem; opacity:.6; font-family:-apple-system,sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  DEMO byggd av Duco Studios utifrån Albins Konstsmides riktiga verksamhet — inte er nuvarande sida.
+  <span>Vill ni ha den här sidan (eller er egen version)? Kontakta oss via mejl.</span>
+</div>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="wordmark"><b>Albins</b> Konstsmide</div>
+    <ul class="navlinks">
+      <li><a href="#om">Om oss</a></li>
+      <li><a href="#tjanster">Tjänster</a></li>
+      <li><a href="#pris">Pris</a></li>
+    </ul>
+    <a class="cta-small" href="#kontakt">Kontakt</a>
+    <button class="hamburger" aria-label="Meny" onclick="document.getElementById('mp').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-panel" id="mp">
+      <a href="#om">Om oss</a>
+      <a href="#tjanster">Tjänster</a>
+      <a href="#pris">Pris</a>
+      <a class="cta-small" href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="badge"><b>Wadköping</b>&nbsp;· Lindesberg, Örebro län</div>
+    <h1>Albin Gustafsson smider järn <em>för hand</em>, precis som hans föregångare</h1>
+    <p class="hero-sub">I smedjan i Wadköping tillverkas dekorativa och praktiska föremål i järn på traditionellt vis — men i dag finns ingen egen hemsida att skicka nyfikna besökare till.</p>
+    <div class="hero-frame"><img src="hero.jpg" alt="Smed formar ett föremål i glödgat järn" loading="lazy"></div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#pris">Se pris</a>
+      <a class="btn btn-ghost" href="#kontakt">Kontakta oss</a>
+    </div>
+  </div>
+</header>
+
+<section id="om">
+  <div class="wrap">
+    <span class="label">Vad vi hittade</span>
+    <h2>Albins Konstsmide finns bara i företagsregister — ingen egen sida</h2>
+    <p class="section-sub">Vi sökte efter er verksamhet på flera olika sätt. Ni finns med i Allabolag, Merinfo, Bolagsfakta, Eniro och hitta.se — men ingenstans finns en länk till en egen hemsida. Bara siffror, adress och organisationsnummer.</p>
+    <div class="flaw-box">
+      <div class="icon">🔥</div>
+      <p>Det betyder att en nyfiken kund som söker efter konstsmide i Lindesberg bara hittar torra registeruppgifter, inga bilder på ert arbete, ingen berättelse om hantverket — och ingen tydlig väg att höra av sig direkt till er.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tjanster">
+  <div class="wrap">
+    <span class="label">Det här är en riktig sida, inte bara en design</span>
+    <h2>Vad Albins Konstsmide skulle få</h2>
+    <div class="stacklist">
+      <div class="stackitem"><div class="n">01</div><div><h3>Bespoke design</h3><p>Byggd på er riktiga verksamhet, inte en mall. Samma nivå som en webbyrå, till en bråkdel av priset.</p></div></div>
+      <div class="stackitem"><div class="n">02</div><div><h3>Er första egna sida</h3><p>En plats dit kunder faktiskt kan hitta er, med bilder på hantverket och en tydlig väg att höra av sig.</p></div></div>
+      <div class="stackitem"><div class="n">03</div><div><h3>Redigerbar text &amp; bild</h3><p>Ni loggar in och ändrar text eller bilder själva, inget väntande på oss.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pris">
+  <div class="wrap">
+    <span class="label">Pris</span>
+    <h2>Enkelt, inget krångel</h2>
+    <p class="section-sub">Ingen bindningstid, ingen dold kostnad.</p>
+    <div class="price-wrap">
+      <div class="price-card featured">
+        <div>
+          <div class="plabel">Engångskostnad</div>
+          <div class="amount">5 900 kr<span> exkl. moms</span></div>
+        </div>
+        <ul>
+          <li>Bespoke design, byggd på er info</li>
+          <li>Mobilanpassad</li>
+          <li>Kontaktformulär</li>
+          <li>Klar inom en vecka</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div>
+          <div class="plabel">Löpande (valfritt)</div>
+          <div class="amount">295 kr<span>/mån</span></div>
+        </div>
+        <ul>
+          <li>Vi sköter text- och bildändringar</li>
+          <li>Drift och uppdateringar</li>
+          <li>Ingen bindningstid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="border-top:none;">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Vill ni ha den här sidan?</h2>
+      <p>Ingen bindningstid. Hör av er så börjar vi.</p>
+      <a class="btn btn-primary" href="mailto:jean-claude@mail.ducostudios.com">Mejla oss</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Demo byggd av Duco Studios · ej Albins Konstsmides officiella hemsida</div>
+</footer>
+
+<script>
+(function(){
+  var panel = document.getElementById('mp');
+  document.querySelectorAll('.mobile-panel a').forEach(function(a){
+    a.addEventListener('click', function(){ panel.classList.remove('open'); });
+  });
+})();
+</script>
+</body>
+</html>
