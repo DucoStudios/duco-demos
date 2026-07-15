@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pietsch Sadelmakeri &amp; Läderverkstad — Långås, Halland</title>
+<meta name="description" content="Pietsch Sadelmakeri & Läderverkstad utanför Långås i Halland. Sadelmakeri, läderreparationer och återbruk av skinn och läder.">
+<style>
+  :root{
+    --cognac:#7a4527; --cognac-2:#a86a3f; --ink:#241a12; --paper:#f3ead9; --card:#e9dabf; --line:rgba(36,26,18,.18);
+  }
+  :root[data-theme="dark"]{ --paper:#19120b; --card:#241a10; --ink:#f0e2cc; --cognac-2:#cb9159; --line:rgba(240,226,204,.14); }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --paper:#19120b; --card:#241a10; --ink:#f0e2cc; --cognac-2:#cb9159; --line:rgba(240,226,204,.14); } }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--paper); color:var(--ink); overflow-x:hidden; }
+  body{ font-family:"Iowan Old Style", "Book Antiqua", Georgia, serif; line-height:1.62; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ margin:0; font-weight:700; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 clamp(20px,5vw,56px); }
+  .label{ text-transform:uppercase; letter-spacing:.2em; font-size:.68rem; font-weight:700; color:var(--cognac); font-family:-apple-system,sans-serif; }
+
+  .demo-banner{ background:var(--cognac); color:#fff; text-align:center; font-size:.82rem; padding:10px 16px; font-weight:600; font-family:-apple-system,sans-serif; }
+  .demo-banner span{ opacity:.92; font-weight:400; }
+
+  nav.top{ position:sticky; top:0; z-index:30; background:color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter:blur(8px); border-bottom:2px double var(--cognac); }
+  nav.top .wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px clamp(20px,5vw,56px); flex-wrap:wrap; }
+  .wordmark{ font-size:1.2rem; letter-spacing:.02em; }
+  .wordmark b{ color:var(--cognac); font-weight:700; }
+  .navlinks{ display:flex; gap:26px; font-size:.9rem; list-style:none; margin:0; padding:0; font-family:-apple-system,sans-serif; }
+  .navlinks a{ text-decoration:none; opacity:.78; } .navlinks a:hover{ opacity:1; }
+  .cta-small{ font-size:.82rem; font-weight:700; background:var(--cognac); color:#fff; padding:10px 20px; text-decoration:none; white-space:nowrap; font-family:-apple-system,sans-serif; }
+  .hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+  .hamburger span{ width:22px; height:2px; background:var(--ink); display:block; }
+  .mobile-panel{ display:none; width:100%; flex-direction:column; gap:14px; padding:18px 0 8px; border-top:1px solid var(--line); margin-top:14px; font-family:-apple-system,sans-serif; }
+  .mobile-panel.open{ display:flex; }
+  .mobile-panel a{ text-decoration:none; opacity:.85; }
+  @media (max-width:760px){ .navlinks{ display:none; } .cta-small{ display:none; } .hamburger{ display:flex; } .mobile-panel .cta-small{ display:inline-block; width:fit-content; } }
+
+  header.hero{ padding:clamp(30px,6vw,56px) 0; }
+  .hero-grid{ display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(28px,5vw,60px); align-items:center; }
+  @media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+  .hero-frame{ overflow:hidden; border-radius:4px; aspect-ratio:5/4; order:2; }
+  .hero-frame img{ width:100%; height:100%; object-fit:cover; }
+  .hero-text{ order:1; }
+  @media (max-width:860px){ .hero-frame{ order:1; } .hero-text{ order:2; } }
+  .badge{ display:inline-flex; border:1px solid var(--cognac); border-radius:2px; padding:7px 16px; font-size:.78rem; margin-bottom:20px; font-family:-apple-system,sans-serif; }
+  .badge b{ color:var(--cognac); font-weight:700; }
+  h1{ font-size:clamp(2rem,4.6vw,3rem); line-height:1.18; }
+  h1 em{ color:var(--cognac); font-style:italic; }
+  .hero-sub{ font-size:1.04rem; opacity:.85; margin:20px 0 0; max-width:44ch; }
+  .hero-actions{ display:flex; gap:14px; margin-top:28px; flex-wrap:wrap; }
+  .btn{ font-weight:700; font-size:.9rem; padding:13px 26px; text-decoration:none; display:inline-block; font-family:-apple-system,sans-serif; }
+  .btn-primary{ background:var(--cognac); color:#fff; }
+  .btn-ghost{ border:1px solid var(--ink); color:var(--ink); }
+
+  section{ padding:clamp(44px,7vw,72px) 0; border-top:1px solid var(--line); }
+  section h2{ font-size:clamp(1.4rem,3.2vw,1.95rem); max-width:26ch; }
+  .section-sub{ opacity:.8; font-size:1rem; max-width:58ch; margin-top:12px; }
+
+  .flaw-box{ background:var(--card); border-radius:4px; padding:clamp(24px,4vw,38px); margin-top:30px; display:grid; grid-template-columns:auto 1fr; gap:20px; border:1px solid var(--cognac); }
+  @media (max-width:600px){ .flaw-box{ grid-template-columns:1fr; } }
+  .flaw-box .icon{ font-size:1.9rem; }
+  .flaw-box p{ margin:0; opacity:.92; font-family:-apple-system,sans-serif; line-height:1.7; }
+  .flaw-box strong{ color:var(--cognac); }
+  .flaw-box code{ background:rgba(0,0,0,.08); padding:2px 6px; border-radius:2px; font-size:.85em; }
+
+  .timeline{ margin-top:32px; display:flex; flex-direction:column; gap:0; }
+  .timeitem{ display:grid; grid-template-columns:110px 1fr; gap:20px; padding:18px 0; border-bottom:1px solid var(--line); font-family:-apple-system,sans-serif; }
+  .timeitem:last-child{ border-bottom:none; }
+  .timeitem .tag{ font-weight:700; color:var(--cognac); font-size:.82rem; text-transform:uppercase; letter-spacing:.05em; }
+  .timeitem h3{ font-size:1rem; margin-bottom:6px; font-family:"Iowan Old Style",serif; }
+  .timeitem p{ opacity:.82; font-size:.92rem; margin:0; }
+  @media (max-width:560px){ .timeitem{ grid-template-columns:1fr; gap:6px; } }
+
+  .price-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:32px; font-family:-apple-system,sans-serif; }
+  @media (max-width:760px){ .price-wrap{ grid-template-columns:1fr; } }
+  .price-card{ border:1px solid var(--line); border-radius:4px; padding:30px; }
+  .price-card.featured{ border-color:var(--cognac); background:var(--card); }
+  .plabel{ font-size:.76rem; text-transform:uppercase; letter-spacing:.1em; opacity:.7; font-weight:700; }
+  .amount{ font-family:"Iowan Old Style",serif; font-size:2.2rem; margin:10px 0; }
+  .amount span{ font-size:.95rem; opacity:.6; font-family:-apple-system,sans-serif; }
+  .price-card ul{ list-style:none; padding:0; margin:16px 0 0; }
+  .price-card li{ padding:6px 0; font-size:.9rem; opacity:.86; padding-left:20px; position:relative; }
+  .price-card li::before{ content:"·"; position:absolute; left:2px; color:var(--cognac); font-weight:900; font-size:1.4em; top:-4px; }
+
+  .cta-band{ background:var(--cognac); color:#fff; text-align:center; border-radius:4px; padding:clamp(34px,6vw,56px); margin:0 clamp(20px,5vw,56px); }
+  .cta-band h2{ color:#fff; }
+  .cta-band p{ color:#fff; opacity:.92; max-width:48ch; margin:12px auto 0; font-family:-apple-system,sans-serif; }
+  .cta-band .btn-primary{ background:#fff; color:var(--cognac); margin-top:24px; }
+
+  footer{ padding:36px 0; text-align:center; font-size:.82rem; opacity:.6; font-family:-apple-system,sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  DEMO byggd av Duco Studios utifrån Pietsch Sadelmakeri &amp; Läderverkstads riktiga verksamhet — inte er nuvarande sida.
+  <span>Vill ni ha den här sidan (eller er egen version)? Kontakta oss via mejl.</span>
+</div>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="wordmark"><b>Pietsch</b> Sadelmakeri</div>
+    <ul class="navlinks">
+      <li><a href="#om">Om oss</a></li>
+      <li><a href="#tjanster">Tjänster</a></li>
+      <li><a href="#pris">Pris</a></li>
+    </ul>
+    <a class="cta-small" href="#kontakt">Kontakt</a>
+    <button class="hamburger" aria-label="Meny" onclick="document.getElementById('mp').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-panel" id="mp">
+      <a href="#om">Om oss</a>
+      <a href="#tjanster">Tjänster</a>
+      <a href="#pris">Pris</a>
+      <a class="cta-small" href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="badge"><b>Långås</b>&nbsp;· mitt i Halland</div>
+      <h1>Sadelmakeri och läderarbete, <em>handgjort</em> utanför Långås</h1>
+      <p class="hero-sub">Pietsch Sadelmakeri &amp; Läderverkstad reparerar och nytillverkar i skinn och läder mellan Varberg, Falkenberg och Ullared — men er egen webbadress svarar inte längre.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#pris">Se pris</a>
+        <a class="btn btn-ghost" href="#kontakt">Kontakta oss</a>
+      </div>
+    </div>
+    <div class="hero-frame"><img src="hero.jpg" alt="Sadelmakare arbetar med läder" loading="lazy"></div>
+  </div>
+</header>
+
+<section id="om">
+  <div class="wrap">
+    <span class="label">Vad vi hittade</span>
+    <h2>laderverkstad.se svarar inte alls längre</h2>
+    <p class="section-sub">Er egen adress <code style="background:rgba(0,0,0,.08);padding:2px 6px;border-radius:2px;">laderverkstad.se</code> hittades i flera kataloger och er egen Facebooksida — men när vi försökte öppna den fick vi bara en tom sida som aldrig laddar klart, om och om igen.</p>
+    <div class="flaw-box">
+      <div class="icon">✂️</div>
+      <p>Vi kontrollerade även er mejladress separat, och den fungerar utmärkt — så beställningar och frågor via mejl kommer fortfarande fram. Men den som klickar på er hemsidelänk från Google eller en katalog möts bara av en sida som aldrig laddar, och lämnar troligen sidan innan de ens hunnit se vad ni gör.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tjanster">
+  <div class="wrap">
+    <span class="label">Det här är en riktig sida, inte bara en design</span>
+    <h2>Vad Pietsch Sadelmakeri skulle få</h2>
+    <div class="timeline">
+      <div class="timeitem"><div class="tag">01 · Design</div><div><h3>Bespoke, byggd på er verksamhet</h3><p>Inte en mall — en sida byggd kring era riktiga tjänster och ert eget hantverk. Samma nivå som en webbyrå, till en bråkdel av priset.</p></div></div>
+      <div class="timeitem"><div class="tag">02 · Drift</div><div><h3>En sida som faktiskt laddar</h3><p>Ingen mer oändlig laddning — besökare möts av en sida som fungerar direkt, på mobil och dator.</p></div></div>
+      <div class="timeitem"><div class="tag">03 · Underhåll</div><div><h3>Redigerbar text &amp; bild</h3><p>Ni loggar in och ändrar öppettider eller bilder själva, inget väntande på oss.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pris">
+  <div class="wrap">
+    <span class="label">Pris</span>
+    <h2>Enkelt, inget krångel</h2>
+    <p class="section-sub">Ingen bindningstid, ingen dold kostnad.</p>
+    <div class="price-wrap">
+      <div class="price-card featured">
+        <div class="plabel">Engångskostnad</div>
+        <div class="amount">5 900 kr<span> exkl. moms</span></div>
+        <ul>
+          <li>Bespoke design, byggd på er info</li>
+          <li>Mobilanpassad</li>
+          <li>Kontaktformulär</li>
+          <li>Klar inom en vecka</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="plabel">Löpande (valfritt)</div>
+        <div class="amount">295 kr<span>/mån</span></div>
+        <ul>
+          <li>Vi sköter text- och bildändringar åt er</li>
+          <li>Drift och uppdateringar</li>
+          <li>Ingen bindningstid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="border-top:none;">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Vill ni ha den här sidan?</h2>
+      <p>Ingen bindningstid. Hör av er så börjar vi.</p>
+      <a class="btn btn-primary" href="mailto:jean-claude@mail.ducostudios.com">Mejla oss</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Demo byggd av Duco Studios · ej Pietsch Sadelmakeri &amp; Läderverkstads officiella hemsida</div>
+</footer>
+
+<script>
+(function(){
+  var panel = document.getElementById('mp');
+  document.querySelectorAll('.mobile-panel a').forEach(function(a){
+    a.addEventListener('click', function(){ panel.classList.remove('open'); });
+  });
+})();
+</script>
+</body>
+</html>
