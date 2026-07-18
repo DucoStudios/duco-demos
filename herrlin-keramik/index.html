@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linda Herrlin Keramik, verkstad i Fjärlöv, Skåne</title>
+<meta name="description" content="Linda Herrlin Keramik, Fjärlöv utanför Vinslöv. Keramisk konst, utställningar och bruksgods.">
+<style>
+  :root{
+    --sage:#5c6b57; --stone:#8f8a7c; --ink:#242420; --paper:#f3f2ec; --card:#e6e4da; --line:rgba(36,36,32,.18);
+  }
+  :root[data-theme="dark"]{ --paper:#1a1a17; --card:#232320; --ink:#eeede6; --line:rgba(238,237,230,.14); }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --paper:#1a1a17; --card:#232320; --ink:#eeede6; --line:rgba(238,237,230,.14); } }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--paper); color:var(--ink); overflow-x:hidden; }
+  body{ font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; line-height:1.65; font-weight:300; }
+  h1,h2,h3{ margin:0; font-weight:500; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 clamp(20px,5vw,58px); }
+  .label{ text-transform:uppercase; letter-spacing:.3em; font-size:.66rem; font-weight:600; color:var(--sage); }
+
+  .demo-banner{ background:var(--sage); color:#fff; text-align:center; font-size:.8rem; padding:11px 16px; font-weight:500; }
+  .demo-banner span{ opacity:.9; font-weight:300; }
+
+  nav.top{ position:sticky; top:0; z-index:30; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  nav.top .wrap{ display:flex; align-items:center; justify-content:space-between; padding:22px clamp(20px,5vw,58px); flex-wrap:wrap; }
+  .wordmark{ font-size:1.1rem; letter-spacing:.08em; font-weight:500; text-transform:uppercase; }
+  .navlinks{ display:flex; gap:32px; font-size:.86rem; list-style:none; margin:0; padding:0; }
+  .navlinks a{ text-decoration:none; opacity:.7; } .navlinks a:hover{ opacity:1; }
+  .cta-small{ font-size:.78rem; font-weight:600; border:1px solid var(--ink); color:var(--ink); padding:10px 20px; text-decoration:none; white-space:nowrap; }
+  .hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+  .hamburger span{ width:22px; height:2px; background:var(--ink); display:block; }
+  .mobile-panel{ display:none; width:100%; flex-direction:column; gap:14px; padding:18px 0 8px; border-top:1px solid var(--line); margin-top:14px; }
+  .mobile-panel.open{ display:flex; }
+  .mobile-panel a{ text-decoration:none; opacity:.85; }
+  @media (max-width:760px){ .navlinks{ display:none; } .cta-small{ display:none; } .hamburger{ display:flex; } .mobile-panel .cta-small{ display:inline-block; width:fit-content; } }
+
+  header.hero{ padding:clamp(50px,8vw,90px) 0 0; }
+  .hero-inner{ text-align:center; max-width:640px; margin:0 auto; }
+  .badge{ display:inline-block; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; opacity:.6; margin-bottom:22px; }
+  h1{ font-size:clamp(2rem,5vw,3.2rem); line-height:1.2; font-weight:300; }
+  h1 b{ font-weight:600; color:var(--sage); }
+  .hero-sub{ font-size:1.05rem; opacity:.75; margin:24px auto 0; max-width:46ch; }
+  .hero-actions{ display:flex; gap:16px; margin-top:32px; flex-wrap:wrap; justify-content:center; }
+  .btn{ font-weight:600; font-size:.86rem; padding:15px 30px; text-decoration:none; display:inline-block; letter-spacing:.02em; }
+  .btn-primary{ background:var(--sage); color:#fff; }
+  .btn-ghost{ border:1px solid var(--ink); color:var(--ink); }
+  .hero-frame{ margin-top:56px; aspect-ratio:21/9; overflow:hidden; }
+  .hero-frame img{ width:100%; height:100%; object-fit:cover; filter:grayscale(.15) contrast(1.02); }
+
+  section{ padding:clamp(50px,8vw,80px) 0; border-top:1px solid var(--line); }
+  section h2{ font-size:clamp(1.5rem,3.2vw,2.1rem); max-width:26ch; font-weight:400; }
+  .section-sub{ opacity:.72; font-size:1rem; max-width:60ch; margin-top:14px; }
+
+  .flaw-box{ background:var(--card); padding:clamp(26px,4vw,40px); margin-top:30px; border-left:3px solid var(--sage); }
+  .flaw-box p{ margin:0; opacity:.9; line-height:1.8; }
+  .flaw-box strong{ color:var(--sage); }
+  .flaw-box code{ background:rgba(0,0,0,.1); padding:2px 6px; font-size:.85em; font-family:"SF Mono",monospace; }
+
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:44px; margin-top:36px; }
+  @media (max-width:820px){ .grid3{ grid-template-columns:1fr; gap:30px; } }
+  .card .num{ font-size:1.3rem; font-weight:600; color:var(--stone); display:block; margin-bottom:10px; }
+  .card h3{ font-size:1.02rem; margin-bottom:10px; font-weight:500; }
+  .card p{ opacity:.72; font-size:.92rem; margin:0; }
+
+  .price-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:36px; background:var(--line); }
+  @media (max-width:760px){ .price-wrap{ grid-template-columns:1fr; } }
+  .price-card{ background:var(--paper); padding:34px; }
+  .price-card.featured{ background:var(--sage); color:#fff; }
+  .price-card.featured .plabel{ color:#fff; opacity:.75; }
+  .plabel{ font-size:.72rem; letter-spacing:.14em; opacity:.6; font-weight:600; text-transform:uppercase; }
+  .amount{ font-size:2rem; margin:12px 0; font-weight:300; }
+  .amount span{ font-size:.86rem; opacity:.6; font-weight:300; }
+  .price-card ul{ list-style:none; padding:0; margin:18px 0 0; }
+  .price-card li{ padding:7px 0; font-size:.88rem; opacity:.9; padding-left:18px; position:relative; }
+  .price-card li::before{ content:"·"; position:absolute; left:0; font-size:1.1em; }
+
+  .cta-band{ text-align:center; padding:clamp(40px,7vw,60px) 0; }
+  .cta-band p{ opacity:.75; max-width:44ch; margin:14px auto 0; }
+  .cta-band .btn-primary{ margin-top:26px; }
+
+  footer{ padding:36px 0; text-align:center; font-size:.78rem; opacity:.5; }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  DEMO byggd av Duco Studios utifrån Linda Herrlin Keramiks riktiga verksamhet, inte er nuvarande sida.
+  <span>Vill ni ha den här sidan (eller er egen version)? Kontakta oss via mejl.</span>
+</div>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="wordmark">Linda Herrlin</div>
+    <ul class="navlinks">
+      <li><a href="#om">Om</a></li>
+      <li><a href="#tjanster">Tjänster</a></li>
+      <li><a href="#pris">Pris</a></li>
+    </ul>
+    <a class="cta-small" href="#kontakt">Kontakt</a>
+    <button class="hamburger" aria-label="Meny" onclick="document.getElementById('mp').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-panel" id="mp">
+      <a href="#om">Om</a>
+      <a href="#tjanster">Tjänster</a>
+      <a href="#pris">Pris</a>
+      <a class="cta-small" href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="badge">Fjärlöv · Vinslöv, Skåne</div>
+    <h1>Linda Herrlin <b>Keramik</b></h1>
+    <p class="hero-sub">Linda Herrlin har drivit sin keramikverkstad i Fjärlöv sedan hon utbildade sig på HDK i Göteborg. Men just nu visar hennes egen adress bara ett felmeddelande, till alla besökare, varje gång.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#pris">Se pris</a>
+      <a class="btn btn-ghost" href="#kontakt">Kontakta oss</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="hero-frame"><img src="hero.jpg" alt="En fylld brännugn med keramikföremål" loading="lazy"></div></div>
+</header>
+
+<section id="om">
+  <div class="wrap">
+    <span class="label">Vad vi hittade</span>
+    <h2>lindaherrlin.se visar ett felmeddelande i stället för konsten</h2>
+    <p class="section-sub">Vi öppnade lindaherrlin.se, både med och utan https. Varje gång möts besökaren av en sida med rubriken "Attention Required!", ett tekniskt felmeddelande från sidans egen serverleverantör, inte hennes galleri eller kontaktuppgifter.</p>
+    <div class="flaw-box">
+      <p><strong>Det en ny kund möter idag:</strong> en teknisk varningssida i stället för bilder på skålar och kärl, meriter och utställningar. Den som hittar namnet via Konsthantverkscentrum eller en konstrunda och söker sig vidare till hennes egen sida möts bara av ett fel, inte av verkstaden.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tjanster">
+  <div class="wrap">
+    <span class="label">Det här är en riktig sida, inte bara en design</span>
+    <h2>Vad Linda Herrlin Keramik skulle få</h2>
+    <div class="grid3">
+      <div class="card"><span class="num">01</span><h3>En sida som faktiskt laddar</h3><p>Ingen serverkonfiguration att felsöka, bara en fungerande adress att dela.</p></div>
+      <div class="card"><span class="num">02</span><h3>Bespoke design</h3><p>Byggd på hennes eget formspråk, inte en generisk konstnärsmall.</p></div>
+      <div class="card"><span class="num">03</span><h3>Redigerbar text &amp; bild</h3><p>Linda lägger själv upp nya verk och utställningsdatum.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pris">
+  <div class="wrap">
+    <span class="label">Pris</span>
+    <h2>Enkelt, inget krångel</h2>
+    <p class="section-sub">Ingen bindningstid, ingen dold kostnad.</p>
+    <div class="price-wrap">
+      <div class="price-card featured">
+        <div class="plabel">Engångskostnad</div>
+        <div class="amount">5 900 kr<span> exkl. moms</span></div>
+        <ul>
+          <li>Bespoke design, byggd på er info</li>
+          <li>Mobilanpassad</li>
+          <li>Kontaktformulär</li>
+          <li>Klar inom en vecka</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="plabel">Löpande (valfritt)</div>
+        <div class="amount">295 kr<span>/mån</span></div>
+        <ul>
+          <li>Vi sköter text- och bildändringar åt er</li>
+          <li>Drift och uppdateringar</li>
+          <li>Ingen bindningstid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="border-top:none;">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Vill ni ha den här sidan?</h2>
+      <p>Ingen bindningstid. Hör av er så börjar vi.</p>
+      <a class="btn btn-primary" href="mailto:jean-claude@mail.ducostudios.com">Mejla oss</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Demo byggd av Duco Studios &middot; ej Linda Herrlin Keramiks officiella hemsida</div>
+</footer>
+
+<script>
+(function(){
+  var panel = document.getElementById('mp');
+  document.querySelectorAll('.mobile-panel a').forEach(function(a){
+    a.addEventListener('click', function(){ panel.classList.remove('open'); });
+  });
+})();
+</script>
+</body>
+</html>

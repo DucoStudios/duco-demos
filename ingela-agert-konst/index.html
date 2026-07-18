@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingela Agert, konstnär i Eslöv</title>
+<meta name="description" content="Ingela Agert, konstnär i Eslöv, Skåne. Måleri, utställningar och konstrundan.">
+<style>
+  :root{
+    --ochre:#c17a2e; --plum:#6b3b52; --ink:#2b2018; --paper:#faf1e4; --card:#f0e0c8; --line:rgba(43,32,24,.18);
+  }
+  :root[data-theme="dark"]{ --paper:#20180f; --card:#2c2216; --ink:#f5e9d6; --line:rgba(245,233,214,.14); }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --paper:#20180f; --card:#2c2216; --ink:#f5e9d6; --line:rgba(245,233,214,.14); } }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--paper); color:var(--ink); overflow-x:hidden; }
+  body{ font-family:"Avenir Next","Segoe UI",Helvetica,sans-serif; line-height:1.65; }
+  h1,h2,h3{ margin:0; font-weight:800; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 clamp(20px,5vw,58px); }
+  .label{ text-transform:uppercase; letter-spacing:.22em; font-size:.68rem; font-weight:700; color:var(--plum); }
+
+  .demo-banner{ background:var(--plum); color:#fff; text-align:center; font-size:.82rem; padding:11px 16px; font-weight:600; }
+  .demo-banner span{ opacity:.9; font-weight:400; }
+
+  nav.top{ position:sticky; top:0; z-index:30; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  nav.top .wrap{ display:flex; align-items:center; justify-content:space-between; padding:18px clamp(20px,5vw,58px); flex-wrap:wrap; }
+  .wordmark{ font-size:1.2rem; font-weight:800; }
+  .wordmark b{ color:var(--ochre); }
+  .navlinks{ display:flex; gap:28px; font-size:.9rem; list-style:none; margin:0; padding:0; font-weight:600; }
+  .navlinks a{ text-decoration:none; opacity:.75; } .navlinks a:hover{ opacity:1; }
+  .cta-small{ font-size:.8rem; font-weight:700; background:var(--ochre); color:#fff; padding:11px 22px; text-decoration:none; white-space:nowrap; border-radius:30px 4px; }
+  .hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+  .hamburger span{ width:22px; height:3px; background:var(--ink); display:block; }
+  .mobile-panel{ display:none; width:100%; flex-direction:column; gap:14px; padding:18px 0 8px; border-top:1px solid var(--line); margin-top:14px; }
+  .mobile-panel.open{ display:flex; }
+  .mobile-panel a{ text-decoration:none; opacity:.85; }
+  @media (max-width:760px){ .navlinks{ display:none; } .cta-small{ display:none; } .hamburger{ display:flex; } .mobile-panel .cta-small{ display:inline-block; width:fit-content; } }
+
+  header.hero{ padding:clamp(30px,6vw,58px) 0; }
+  .hero-grid{ display:grid; grid-template-columns:1fr 1.15fr; gap:clamp(28px,5vw,60px); align-items:center; }
+  @media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+  .badge{ display:inline-block; background:var(--plum); color:#fff; padding:6px 16px; font-size:.74rem; margin-bottom:20px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; border-radius:30px 4px; }
+  h1{ font-size:clamp(2rem,4.6vw,3.1rem); line-height:1.08; }
+  h1 em{ color:var(--ochre); font-style:normal; }
+  .hero-sub{ font-size:1.06rem; opacity:.82; margin:22px 0 0; max-width:46ch; }
+  .hero-actions{ display:flex; gap:14px; margin-top:30px; flex-wrap:wrap; }
+  .btn{ font-weight:700; font-size:.9rem; padding:14px 28px; text-decoration:none; display:inline-block; border-radius:30px 4px; }
+  .btn-primary{ background:var(--ochre); color:#fff; }
+  .btn-ghost{ border:2px solid var(--ink); color:var(--ink); }
+  .hero-frame{ overflow:hidden; border-radius:30px 4px; aspect-ratio:4/3; transform:rotate(-1.2deg); box-shadow:0 18px 40px rgba(0,0,0,.25); }
+  .hero-frame img{ width:100%; height:100%; object-fit:cover; }
+
+  section{ padding:clamp(44px,7vw,70px) 0; border-top:1px solid var(--line); }
+  section h2{ font-size:clamp(1.4rem,3vw,1.9rem); max-width:26ch; }
+  .section-sub{ opacity:.78; font-size:1rem; max-width:58ch; margin-top:12px; }
+
+  .flaw-box{ background:var(--card); padding:clamp(24px,4vw,36px); margin-top:28px; border-radius:4px 30px 4px 30px; border-left:6px solid var(--ochre); }
+  .flaw-box p{ margin:0; opacity:.92; line-height:1.75; }
+  .flaw-box strong{ color:var(--plum); }
+  .flaw-box code{ background:rgba(0,0,0,.12); padding:2px 6px; font-size:.85em; font-family:"SF Mono",monospace; }
+
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:32px; }
+  @media (max-width:820px){ .grid3{ grid-template-columns:1fr; } }
+  .card{ background:var(--card); padding:26px; border-radius:4px 30px 4px 30px; }
+  .card .num{ font-size:1.6rem; font-weight:900; color:var(--ochre); display:block; margin-bottom:8px; }
+  .card h3{ font-size:1rem; margin-bottom:8px; }
+  .card p{ opacity:.8; font-size:.92rem; margin:0; }
+
+  .price-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:32px; }
+  @media (max-width:760px){ .price-wrap{ grid-template-columns:1fr; } }
+  .price-card{ background:var(--card); padding:30px; border-radius:4px 30px 4px 30px; }
+  .price-card.featured{ background:var(--ochre); color:#fff; }
+  .price-card.featured .plabel{ color:#fff; opacity:.8; }
+  .plabel{ font-size:.74rem; letter-spacing:.1em; opacity:.65; font-weight:700; text-transform:uppercase; }
+  .amount{ font-size:2.1rem; margin:10px 0; font-weight:900; }
+  .amount span{ font-size:.9rem; opacity:.6; font-weight:400; }
+  .price-card ul{ list-style:none; padding:0; margin:16px 0 0; }
+  .price-card li{ padding:6px 0; font-size:.9rem; opacity:.9; padding-left:20px; position:relative; }
+  .price-card li::before{ content:"•"; position:absolute; left:0; font-weight:900; }
+
+  .cta-band{ background:var(--plum); color:#fff; text-align:center; padding:clamp(34px,6vw,54px); border-radius:4px 40px 4px 40px; }
+  .cta-band h2{ color:#fff; }
+  .cta-band p{ color:#fff; opacity:.9; max-width:48ch; margin:12px auto 0; }
+  .cta-band .btn-primary{ background:var(--ochre); color:#fff; margin-top:22px; }
+
+  footer{ padding:34px 0; text-align:center; font-size:.8rem; opacity:.55; }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  DEMO byggd av Duco Studios utifrån Ingela Agerts riktiga verksamhet, inte er nuvarande sida.
+  <span>Vill ni ha den här sidan (eller er egen version)? Kontakta oss via mejl.</span>
+</div>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="wordmark">Ingela <b>Agert</b></div>
+    <ul class="navlinks">
+      <li><a href="#om">Om oss</a></li>
+      <li><a href="#tjanster">Tjänster</a></li>
+      <li><a href="#pris">Pris</a></li>
+    </ul>
+    <a class="cta-small" href="#kontakt">Kontakt</a>
+    <button class="hamburger" aria-label="Meny" onclick="document.getElementById('mp').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-panel" id="mp">
+      <a href="#om">Om oss</a>
+      <a href="#tjanster">Tjänster</a>
+      <a href="#pris">Pris</a>
+      <a class="cta-small" href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge">Eslöv · Skåne</div>
+      <h1>Konstnärskap som förtjänar mer än en <em>gratismall</em></h1>
+      <p class="hero-sub">Ingela Agert målar och ställer ut i Eslöv och deltar i konstrundan varje år. Hela hennes webbnärvaro ligger idag på en gratis Webnode-sida utan ett enda verk att se, med ett evenemang som redan har passerat kvar som senaste nyhet.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#pris">Se pris</a>
+        <a class="btn btn-ghost" href="#kontakt">Kontakta oss</a>
+      </div>
+    </div>
+    <div class="hero-frame"><img src="hero.jpg" alt="Konstnär som målar i sin ateljé" loading="lazy"></div>
+  </div>
+</header>
+
+<section id="om">
+  <div class="wrap">
+    <span class="label">Vad vi hittade</span>
+    <h2>galleri-kia.webnode.se: ingen ateljé, bara ett gammalt datum</h2>
+    <p class="section-sub">Sidan är byggd på Webnodes gratisverktyg, det syns tydligt i sidfoten. Innehållet är i praktiken bara ett enstaka evenemang, daterat 3-6 april 2026, ett datum som redan har passerat när besökaren läser det. Inga målningar, ingen presentation av tekniken, ingen väg till att faktiskt köpa ett verk.</p>
+    <div class="flaw-box">
+      <p><strong>Det en ny besökare möter idag:</strong> ett gammalt evenemangsdatum och en gratisplattforms egna annonser, i stället för Ingelas faktiska konstnärskap. Den som blir nyfiken under konstrundan har inget att gå tillbaka till för att se mer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tjanster">
+  <div class="wrap">
+    <span class="label">Det här är en riktig sida, inte bara en design</span>
+    <h2>Vad Ingela Agert skulle få</h2>
+    <div class="grid3">
+      <div class="card"><span class="num">01</span><h3>Ett riktigt galleri</h3><p>Aktuella verk och utställningsdatum, inte ett gammalt datum på en gratisplattform.</p></div>
+      <div class="card"><span class="num">02</span><h3>Bespoke design</h3><p>Byggd på hennes eget måleri, inte Webnodes standardmall.</p></div>
+      <div class="card"><span class="num">03</span><h3>Redigerbar text &amp; bild</h3><p>Ingela lägger själv upp nya verk inför varje konstrunda.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pris">
+  <div class="wrap">
+    <span class="label">Pris</span>
+    <h2>Enkelt, inget krångel</h2>
+    <p class="section-sub">Ingen bindningstid, ingen dold kostnad.</p>
+    <div class="price-wrap">
+      <div class="price-card featured">
+        <div class="plabel">Engångskostnad</div>
+        <div class="amount">5 900 kr<span> exkl. moms</span></div>
+        <ul>
+          <li>Bespoke design, byggd på er info</li>
+          <li>Mobilanpassad</li>
+          <li>Kontaktformulär</li>
+          <li>Klar inom en vecka</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="plabel">Löpande (valfritt)</div>
+        <div class="amount">295 kr<span>/mån</span></div>
+        <ul>
+          <li>Vi sköter text- och bildändringar åt er</li>
+          <li>Drift och uppdateringar</li>
+          <li>Ingen bindningstid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="border-top:none;">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Vill ni ha den här sidan?</h2>
+      <p>Ingen bindningstid. Hör av er så börjar vi.</p>
+      <a class="btn btn-primary" href="mailto:jean-claude@mail.ducostudios.com">Mejla oss</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Demo byggd av Duco Studios &middot; ej Ingela Agerts officiella hemsida</div>
+</footer>
+
+<script>
+(function(){
+  var panel = document.getElementById('mp');
+  document.querySelectorAll('.mobile-panel a').forEach(function(a){
+    a.addEventListener('click', function(){ panel.classList.remove('open'); });
+  });
+})();
+</script>
+</body>
+</html>
