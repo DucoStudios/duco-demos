@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gärd Elldér Keramik, stengods och trädgårdskrukor i Onsala</title>
+<meta name="description" content="Gärd Elldér Keramik. Handgjort stengods, skålar, kannor och trädgårdskrukor i Onsala, Halland.">
+<style>
+  :root{
+    --clay:#a8552f; --sage:#5c6b4f; --ink:#2b2318; --paper:#f4ede1; --card:#e6dcc8; --line:rgba(43,35,24,.18);
+  }
+  :root[data-theme="dark"]{ --paper:#1a150e; --card:#282017; --ink:#efe7d6; --line:rgba(239,231,214,.16); }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --paper:#1a150e; --card:#282017; --ink:#efe7d6; --line:rgba(239,231,214,.16); } }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--paper); color:var(--ink); overflow-x:hidden; }
+  body{ font-family:Georgia,"Times New Roman",serif; line-height:1.7; }
+  h1,h2,h3{ margin:0; font-weight:400; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 clamp(20px,6vw,40px); }
+  .label{ text-transform:uppercase; letter-spacing:.22em; font-size:.68rem; font-weight:700; color:var(--clay); font-family:Helvetica,Arial,sans-serif; }
+
+  .demo-banner{ background:var(--sage); color:#fff; text-align:center; font-size:.82rem; padding:11px 16px; font-family:Helvetica,Arial,sans-serif; font-weight:600; }
+  .demo-banner span{ opacity:.88; font-weight:400; }
+
+  nav.top{ position:sticky; top:0; z-index:30; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  nav.top .wrap{ max-width:900px; display:flex; align-items:center; justify-content:space-between; padding:20px clamp(20px,5vw,40px); flex-wrap:wrap; }
+  .wordmark{ font-size:1.1rem; letter-spacing:.02em; font-style:italic; }
+  .wordmark b{ color:var(--clay); font-style:normal; }
+  .navlinks{ display:flex; gap:26px; font-size:.86rem; list-style:none; margin:0; padding:0; font-family:Helvetica,Arial,sans-serif; }
+  .navlinks a{ text-decoration:none; opacity:.75; } .navlinks a:hover{ opacity:1; }
+  .cta-small{ font-size:.76rem; font-weight:700; background:var(--clay); color:#fff; padding:10px 20px; text-decoration:none; white-space:nowrap; font-family:Helvetica,Arial,sans-serif; }
+  .hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+  .hamburger span{ width:22px; height:3px; background:var(--ink); display:block; }
+  .mobile-panel{ display:none; width:100%; flex-direction:column; gap:14px; padding:18px 0 8px; border-top:1px solid var(--line); margin-top:14px; font-family:Helvetica,Arial,sans-serif; }
+  .mobile-panel.open{ display:flex; }
+  .mobile-panel a{ text-decoration:none; opacity:.85; }
+  @media (max-width:760px){ .navlinks{ display:none; } .cta-small{ display:none; } .hamburger{ display:flex; } .mobile-panel .cta-small{ display:inline-block; width:fit-content; } }
+
+  header.hero{ padding:clamp(36px,7vw,64px) 0 0; text-align:center; }
+  .badge{ display:inline-block; background:var(--card); color:var(--clay); padding:6px 16px; font-size:.72rem; margin-bottom:22px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; font-family:Helvetica,Arial,sans-serif; }
+  h1{ font-size:clamp(1.9rem,4.6vw,2.7rem); line-height:1.2; }
+  h1 em{ color:var(--clay); }
+  .hero-sub{ font-size:1.08rem; opacity:.82; margin:22px auto 0; max-width:52ch; }
+  .hero-actions{ display:flex; gap:14px; margin-top:30px; justify-content:center; flex-wrap:wrap; font-family:Helvetica,Arial,sans-serif; }
+  .btn{ font-weight:700; font-size:.88rem; padding:13px 26px; text-decoration:none; display:inline-block; }
+  .btn-primary{ background:var(--clay); color:#fff; }
+  .btn-ghost{ border:2px solid var(--ink); color:var(--ink); }
+  .hero-frame{ overflow:hidden; margin-top:40px; aspect-ratio:16/9; }
+  .hero-frame img{ width:100%; height:100%; object-fit:cover; }
+
+  section{ padding:clamp(44px,7vw,68px) 0; border-top:1px solid var(--line); }
+  section h2{ font-size:clamp(1.35rem,3vw,1.7rem); }
+  .section-sub{ opacity:.78; font-size:1.02rem; margin-top:14px; }
+
+  .flaw-box{ background:var(--card); padding:clamp(22px,4vw,32px); margin-top:26px; border-left:5px solid var(--clay); }
+  .flaw-box p{ margin:0; opacity:.92; }
+
+  .stack{ display:flex; flex-direction:column; gap:22px; margin-top:30px; }
+  .stack .item{ display:flex; gap:18px; align-items:baseline; }
+  .stack .num{ font-family:Helvetica,Arial,sans-serif; font-size:1rem; font-weight:700; color:var(--clay); flex-shrink:0; width:28px; }
+  .stack h3{ font-size:1.05rem; margin-bottom:6px; }
+  .stack p{ opacity:.8; font-size:.95rem; margin:0; }
+
+  .price-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:30px; font-family:Helvetica,Arial,sans-serif; }
+  @media (max-width:600px){ .price-wrap{ grid-template-columns:1fr; } }
+  .price-card{ background:var(--card); padding:28px; }
+  .price-card.featured{ background:var(--clay); color:#fff; }
+  .price-card.featured .plabel{ opacity:.8; color:#fff; }
+  .plabel{ font-size:.72rem; letter-spacing:.1em; opacity:.65; font-weight:700; text-transform:uppercase; }
+  .amount{ font-size:1.9rem; margin:10px 0; font-weight:900; font-family:Georgia,serif; }
+  .amount span{ font-size:.85rem; opacity:.6; font-weight:400; }
+  .price-card ul{ list-style:none; padding:0; margin:14px 0 0; }
+  .price-card li{ padding:5px 0; font-size:.88rem; opacity:.9; padding-left:18px; position:relative; }
+  .price-card li::before{ content:"•"; position:absolute; left:0; }
+
+  .cta-band{ background:var(--card); text-align:center; padding:clamp(32px,6vw,48px); }
+  .cta-band p{ opacity:.85; max-width:44ch; margin:12px auto 0; }
+  .cta-band .btn-primary{ margin-top:20px; font-family:Helvetica,Arial,sans-serif; }
+
+  footer{ padding:32px 0; text-align:center; font-size:.78rem; opacity:.55; font-family:Helvetica,Arial,sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  DEMO byggd av Duco Studios utifrån Gärd Elldérs riktiga verksamhet, inte en befintlig sida.
+  <span>Vill ni ha den här sidan (eller er egen version)? Kontakta oss via mejl.</span>
+</div>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="wordmark">Gärd <b>Elldér</b> Keramik</div>
+    <ul class="navlinks">
+      <li><a href="#om">Om</a></li>
+      <li><a href="#tjanster">Verkstaden</a></li>
+      <li><a href="#pris">Pris</a></li>
+    </ul>
+    <a class="cta-small" href="#kontakt">Kontakt</a>
+    <button class="hamburger" aria-label="Meny" onclick="document.getElementById('mp').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-panel" id="mp">
+      <a href="#om">Om</a>
+      <a href="#tjanster">Verkstaden</a>
+      <a href="#pris">Pris</a>
+      <a class="cta-small" href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="badge">Onsala · Halland</div>
+    <h1>Handgjort stengods som <em>ingen</em> hittar hem till</h1>
+    <p class="hero-sub">Gärd Elldér drejar bruksgods i högbränt lergods i sin verkstad på Panderosa i Onsala, från golvkrukor till skålar, tallrikar och kannor. Namnet dyker upp i konstrundornas kataloger och i Region Hallands konstnärsregister, men aldrig med en egen sida att landa på.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#pris">Se pris</a>
+      <a class="btn btn-ghost" href="#kontakt">Kontakta oss</a>
+    </div>
+    <div class="hero-frame"><img src="hero.jpg" alt="Grönglaserat stengods, vas i hantverksmässig form" loading="lazy"></div>
+  </div>
+</header>
+
+<section id="om">
+  <div class="wrap">
+    <span class="label">Vad vi hittade</span>
+    <h2>Ett namn i andras register, aldrig ett eget hem</h2>
+    <p class="section-sub">Söker man på "Gärd Elldér keramik" hittar man samma telefonnummer och mejladress upprepat i Konst i Hallands konstnärsregister, i Norra Hallands lokaltidning och i konstrundans egna sidor. Ett ställe att själv visa upp vilka krukor, skålar och kannor som finns att köpa just nu finns däremot ingenstans.</p>
+    <div class="flaw-box">
+      <p><strong>Det en nyfiken besökare möter idag:</strong> en rad i en förteckning, utan bilder på det aktuella sortimentet, utan öppettider för verkstaden inför nästa konstrunda. Den som blir intresserad har inget att gå tillbaka till efteråt, bara ett nummer att ringa på lycka till.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tjanster">
+  <div class="wrap">
+    <span class="label">Det här är en riktig sida, inte bara en design</span>
+    <h2>Vad Gärd Elldér Keramik skulle få</h2>
+    <div class="stack">
+      <div class="item"><span class="num">01</span><div><h3>Ett eget hem på nätet</h3><p>En sida att länka till från konstrundans program, i stället för att bara vara en rad i någon annans lista.</p></div></div>
+      <div class="item"><span class="num">02</span><div><h3>Bespoke design</h3><p>Byggd på verkstadens egen känsla av lera, glasyr och trädgård, inte en generisk konstnärsmall.</p></div></div>
+      <div class="item"><span class="num">03</span><div><h3>Redigerbar text &amp; bild</h3><p>Gärd lägger själv upp nya bilder på aktuellt sortiment inför varje konstrunda.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pris">
+  <div class="wrap">
+    <span class="label">Pris</span>
+    <h2>Enkelt, inget krångel</h2>
+    <p class="section-sub">Ingen bindningstid, ingen dold kostnad.</p>
+    <div class="price-wrap">
+      <div class="price-card featured">
+        <div class="plabel">Engångskostnad</div>
+        <div class="amount">5 900 kr<span> exkl. moms</span></div>
+        <ul>
+          <li>Bespoke design, byggd på er info</li>
+          <li>Mobilanpassad</li>
+          <li>Kontaktformulär</li>
+          <li>Klar inom en vecka</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="plabel">Löpande (valfritt)</div>
+        <div class="amount">295 kr<span>/mån</span></div>
+        <ul>
+          <li>Vi sköter text- och bildändringar åt er</li>
+          <li>Drift och uppdateringar</li>
+          <li>Ingen bindningstid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="border-top:none;">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Vill ni ha den här sidan?</h2>
+      <p>Ingen bindningstid. Hör av er så börjar vi.</p>
+      <a class="btn btn-primary" href="mailto:jean-claude@mail.ducostudios.com">Mejla oss</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Demo byggd av Duco Studios &middot; ej Gärd Elldérs officiella hemsida</div>
+</footer>
+
+<script>
+(function(){
+  var panel = document.getElementById('mp');
+  document.querySelectorAll('.mobile-panel a').forEach(function(a){
+    a.addEventListener('click', function(){ panel.classList.remove('open'); });
+  });
+})();
+</script>
+</body>
+</html>
