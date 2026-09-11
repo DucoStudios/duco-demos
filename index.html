@@ -2,99 +2,305 @@
 <html lang="sv">
 <head>
 <meta charset="utf-8">
-<title>Duco Studios — kunddemos</title>
+<title>Duco Studios — hemsidor för hantverkare</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Vi bygger hemsidor för hantverkare och småföretagare. Se över 80 exempel vi redan byggt, eller be om ett gratis förslag för ert eget företag.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  body{font-family:-apple-system,sans-serif;max-width:640px;margin:60px auto;padding:0 20px;color:#222;}
-  h1{font-size:1.4rem;}
-  ul{line-height:2;}
-  a{color:#33505c;}
+  :root{
+    --cream:#f6f1e7;
+    --cream-deep:#efe6d3;
+    --ink:#2b2420;
+    --ink-soft:#5c5248;
+    --rust:#b5502f;
+    --rust-deep:#8f3d22;
+    --line:#ddd1ba;
+    --card:#fffdf8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Karla",-apple-system,sans-serif;
+    line-height:1.5;
+  }
+  h1,h2,h3{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:600;
+    line-height:1.1;
+    text-wrap:balance;
+    margin:0 0 .4em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  header{
+    position:sticky;top:0;z-index:10;
+    background:rgba(246,241,231,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:"Fraunces",serif;font-weight:700;font-size:1.15rem;letter-spacing:.01em;}
+  .brand span{color:var(--rust);}
+  .nav-links{display:flex;gap:28px;font-size:.95rem;}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--rust-deep);}
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    border-radius:3px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:.95rem;
+    letter-spacing:.01em;
+  }
+  .btn-primary{background:var(--rust);color:#fff;}
+  .btn-primary:hover{background:var(--rust-deep);}
+  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--cream);}
+
+  .hero{padding:80px 0 70px;}
+  .hero .eyebrow{
+    display:inline-block;color:var(--rust-deep);font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);max-width:15ch;}
+  .hero p{font-size:1.15rem;color:var(--ink-soft);max-width:52ch;margin:18px 0 30px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+
+  section{padding:64px 0;}
+  section.alt{background:var(--cream-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .section-head{max-width:60ch;margin-bottom:40px;}
+  .section-head .eyebrow{color:var(--rust-deep);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-top:.3em;}
+  .section-head p{color:var(--ink-soft);font-size:1.05rem;}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:22px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    text-decoration:none;
+    color:var(--ink);
+    display:flex;flex-direction:column;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(43,36,32,.1);}
+  .card img{width:100%;aspect-ratio:14/9;object-fit:cover;object-position:top;display:block;border-bottom:1px solid var(--line);}
+  .card-body{padding:16px 18px 18px;}
+  .card-body .kind{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--rust-deep);font-weight:700;}
+  .card-body h3{font-size:1.05rem;margin:.35em 0 0;font-family:"Karla",sans-serif;font-weight:700;}
+  .more-note{margin-top:28px;color:var(--ink-soft);font-size:.98rem;}
+  .more-note a{color:var(--rust-deep);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rust);}
+
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:32px;counter-reset:step;}
+  .step{position:relative;padding-left:52px;}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:0;
+    width:38px;height:38px;border-radius:50%;
+    background:var(--rust);color:#fff;font-family:"Fraunces",serif;font-weight:700;
+    display:flex;align-items:center;justify-content:center;font-size:1.05rem;
+  }
+  .step h3{font-size:1.1rem;margin-bottom:.3em;}
+  .step p{color:var(--ink-soft);margin:0;font-size:.98rem;}
+
+  .price-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start;}
+  .price-card{
+    background:var(--card);border:1px solid var(--line);border-radius:8px;padding:32px;
+  }
+  .price-card + .price-card{margin-top:20px;}
+  .price-card .amt{font-family:"Fraunces",serif;font-size:2.2rem;font-weight:700;color:var(--rust-deep);}
+  .price-card .amt small{font-family:"Karla",sans-serif;font-size:.95rem;font-weight:600;color:var(--ink-soft);}
+  .price-card ul{margin:14px 0 0;padding-left:1.1em;color:var(--ink-soft);font-size:.96rem;}
+  .price-card li{margin-bottom:6px;}
+  .price-note{color:var(--ink-soft);font-size:.95rem;}
+
+  footer{padding:60px 0 70px;}
+  .cta-box{
+    background:var(--ink);color:var(--cream);
+    border-radius:10px;padding:48px;
+    display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;
+  }
+  .cta-box h2{color:#fff;font-size:clamp(1.5rem,3vw,2rem);max-width:20ch;}
+  .cta-box p{color:#d8cfc2;margin:.5em 0 0;max-width:40ch;}
+  .cta-box .btn-primary{background:var(--rust);}
+  .foot-meta{margin-top:40px;color:var(--ink-soft);font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .foot-meta a{color:var(--ink-soft);}
+
+  @media (max-width:760px){
+    .nav-links{display:none;}
+    .price-wrap{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
-<h1>Duco Studios — demosidor</h1>
-<ul>
-  <li><a href="sannas/">Sannas Massage och Träning</a></li>
-  <li><a href="slofallets/">Slofallets Islandshästar</a></li>
-  <li><a href="antik-loppis/">Antik & Loppis i Larv</a></li>
-  <li><a href="hans-urmakare/">Hans Urmakare</a></li>
-  <li><a href="sjogrens-bil/">Sjögrens Bil</a></li>
-  <li><a href="naprapathalsan/">Naprapathälsan Köping</a></li>
-  <li><a href="ekengrens/">Ekengrens Glasmästeri</a></li>
-  <li><a href="heatlandia/">Heatlandia</a></li>
-  <li><a href="balanz-arvika/">Balanz Arvika</a></li>
-  <li><a href="sunefalks/">Sunefalks Städtjänst</a></li>
-  <li><a href="hogvalta/">Högvalta Handelsträdgård</a></li>
-  <li><a href="osterbergs-konditori/">Österbergs Konditori</a></li>
-  <li><a href="zettermans-hovslageri/">Zettermans Hovslageri</a></li>
-  <li><a href="sunne-cykel/">Sunne Cykel & Motor</a></li>
-  <li><a href="malerifinahem/">Måleri Fina Hem</a></li>
-  <li><a href="allas-sko/">Allas Sko- & Nyckelservice</a></li>
-  <li><a href="taserudsmobler/">Taserudsmöbler / Klarströms Möbelverkstad</a></li>
-  <li><a href="stjarnmossen/">Stjärnmossens Hundpensionat</a></li>
-  <li><a href="albo-ridklubb/">Albo Ridklubb</a></li>
-  <li><a href="filipstads-blomsterhandel/">Filipstads Blomsterhandel</a></li>
-  <li><a href="forsells-maleri/">Forsells Måleri</a></li>
-  <li><a href="idre-fordonsservice/">Idre Fordonsservice</a></li>
-  <li><a href="christinas-salong/">Christina's Salong</a></li>
-  <li><a href="lalles-massage/">Lalles Massage</a></li>
-  <li><a href="stens-herrfrisering/">Stens Herrfrisering</a></li>
-  <li><a href="massage-skattungbyn/">Massage Skattungbyn</a></li>
-  <li><a href="djusgardens-hundfrisering/">Djusgårdens Hundfrisering</a></li>
-  <li><a href="mor-linas-getgard/">Mor Linas Getgård</a></li>
-  <li><a href="bjursas-cykelverkstad/">Bjursås Cykelverkstad</a></li>
-  <li><a href="krakspark/">Kråkspark</a></li>
-  <li><a href="henriks-hovslageri-hantverk/">Henriks Hovslageri & Hantverk</a></li>
-  <li><a href="norrland-hovslageri/">Norrland Hovslageri</a></li>
-  <li><a href="omtag-tapetserarverkstad/">Omtag Tapetserarverkstad</a></li>
-  <li><a href="bjorksta-tomtas-kanin-biodling/">Björksta-Tomtas Kaninproduktion & Biodling</a></li>
-  <li><a href="furubergs-biodling/">Furubergs Biodling</a></li>
-  <li><a href="hogasens-lantbruk-biodling/">Högåsens Lantbruk o Biodling</a></li>
-  <li><a href="oxbackens-biodling/">Öxbäckens Biodling</a></li>
-  <li><a href="torpa-biodling/">Torpa Biodling</a></li>
-  <li><a href="vittskovle-biprodukter/">Vittskövle Biprodukter</a></li>
-  <li><a href="wizpings-biodling/">Wizpings Biodling</a></li>
-  <li><a href="carlberg-guld/">Guldsmeden Sonny Carlberg</a></li>
-  <li><a href="darkart-ink/">Dark Art Ink Karlshamn</a></li>
-  <li><a href="thc-arborist/">THC Arborist</a></li>
-  <li><a href="hundkojan-karlskrona/">Hundkojan Karlskrona</a></li>
-  <li><a href="karin-meijer-keramik/">Karin Meijer Keramik</a></li>
-  <li><a href="andrens-bageri-sturko/">Andréns Bageri Sturkö</a></li>
-  <li><a href="blekinge-hemslojd/">Blekinge Hemslöjd & Vävstuga</a></li>
-  <li><a href="salong-unik-ronneby/">Salong Unik</a></li>
-  <li><a href="marcus-hundsalong/">Marcus Hundsalong</a></li>
-  <li><a href="wachtmeister-sko/">Wachtmeister Sko & Nyckelservice</a></li>
-  <li><a href="jn-hovslageri/">JN Hovslageri & Smide</a></li>
-  <li><a href="albins-konstsmide/">Albins Konstsmide</a></li>
-  <li><a href="pietsch-sadelmakeri/">Pietsch Sadelmakeri & Läderverkstad</a></li>
-  <li><a href="farnlof-keramik/">Grethe Färnlöf Keramik</a></li>
-  <li><a href="larsfunke-konservator/">Konservator Lars Funke</a></li>
-  <li><a href="isasmedjan/">Isasmedjan</a></li>
-  <li><a href="rexstugan-timmerhus/">Rexstugan Timmerhus</a></li>
-  <li><a href="skinn-skorep/">Skinn &amp; Skorep i Luleå</a></li>
-  <li><a href="niklas-cykelverkstad/">Niklas Cykelverkstad</a></li>
-  <li><a href="hambons-hundtrim/">Hambons Hundtrim</a></li>
-  <li><a href="jessica-sanderheim/">Jessica Sanderheim, hästmassör &amp; hovvårdare</a></li>
-  <li><a href="victoria-hov-vast/">Bättre Hov &amp; Häst i Väst</a></li>
-  <li><a href="kent-wiberg-hovvard/">KW's Massage &amp; Hovvård</a></li>
-  <li><a href="fiskeguide-norrland/">Ronny Öberg, fiskeguidning i Norrland</a></li>
-  <li><a href="bredaviks-ortagard/">Bredaviks Örtagård</a></li>
-  <li><a href="hastharmoni-uppland/">Hästharmoni, Josefin Livsey</a></li>
-  <li><a href="galleri-saak/">Galleri SAAK, Kay Sjöstrand</a></li>
-  <li><a href="tellberg-taxidermy/">Tellberg Taxidermy</a></li>
-  <li><a href="shimas-bokbinderi/">Shimas Bokbinderi</a></li>
-  <li><a href="herrlin-keramik/">Linda Herrlin Keramik</a></li>
-  <li><a href="ingela-agert-konst/">Ingela Agert, konstnär</a></li>
-  <li><a href="soderbergs-hovslageri/">Söderbergs Hovslageri</a></li>
-  <li><a href="distler-batbyggeri/">Thomas Distler, båtbyggare</a></li>
-  <li><a href="lyrestads-hundcenter/">Lyrestads Hundcenter</a></li>
-  <li><a href="gard-ellder-keramik/">Gärd Elldér Keramik</a></li>
-  <li><a href="hallqvist-keramik-skulptur/">Kristina Hallqvist, keramik &amp; skulptur</a></li>
-  <li><a href="lisas-skinnverkstad/">Lisas Skinnverkstad</a></li>
-  <li><a href="susanne-hiller-glaskonst/">Susanne Hiller, glaskonst</a></li>
-  <li><a href="barbro-augustin-glas/">Barbro Augustin, glaspärlor</a></li>
-  <li><a href="byviola-smycken/">byViola, Jonna Tegner</a></li>
-  <li><a href="brunstrom-textilkonst/">Per-Eric Brunström, textilkonst</a></li>
-</ul>
+
+<header>
+  <div class="nav">
+    <div class="brand">Duco <span>Studios</span></div>
+    <nav class="nav-links">
+      <a href="#exempel">Exempel</a>
+      <a href="#sa-funkar-det">Så funkar det</a>
+      <a href="#pris">Pris</a>
+    </nav>
+    <a class="btn btn-primary" href="mailto:david@ducostudios.com?subject=Hemsida%20till%20mitt%20f%C3%B6retag">Kom igång</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Hemsidor för hantverkare &amp; småföretagare</span>
+    <h1>Ditt hantverk förtjänar en hemsida lika genomtänkt som arbetet du gör.</h1>
+    <p>Vi har redan byggt över 80 exempel åt svenska hantverkare, från hovslagare till glaskonstnärer, för att visa vad som är möjligt. Ingen mall, ingen bindningstid — bara en sida som faktiskt visar vad ni kan.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:david@ducostudios.com?subject=Gratis%20f%C3%B6rslag%20till%20min%20hemsida">Få ett gratis förslag</a>
+      <a class="btn btn-ghost" href="#exempel">Se exempel</a>
+    </div>
+  </div>
+</section>
+
+<section id="exempel" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Riktigt arbete, riktiga företag</span>
+      <h2>Ett litet urval av det vi byggt</h2>
+      <p>Alla exempel nedan är byggda utifrån verkliga svenska hantverksföretag, för att visa hur deras verksamhet skulle kunna presenteras — inte generiska mallar.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="soderbergs-hovslageri/" target="_blank" rel="noopener">
+        <img src="previews/soderbergs-hovslageri.jpg" alt="Söderbergs Hovslageri" loading="lazy">
+        <div class="card-body"><div class="kind">Hovslageri</div><h3>Söderbergs Hovslageri</h3></div>
+      </a>
+      <a class="card" href="susanne-hiller-glaskonst/" target="_blank" rel="noopener">
+        <img src="previews/susanne-hiller-glaskonst.jpg" alt="Susanne Hiller Glaskonst" loading="lazy">
+        <div class="card-body"><div class="kind">Glaskonst</div><h3>Susanne Hiller</h3></div>
+      </a>
+      <a class="card" href="osterbergs-konditori/" target="_blank" rel="noopener">
+        <img src="previews/osterbergs-konditori.jpg" alt="Österbergs Konditori" loading="lazy">
+        <div class="card-body"><div class="kind">Konditori</div><h3>Österbergs Konditori</h3></div>
+      </a>
+      <a class="card" href="hallqvist-keramik-skulptur/" target="_blank" rel="noopener">
+        <img src="previews/hallqvist-keramik-skulptur.jpg" alt="Kristina Hallqvist Keramik" loading="lazy">
+        <div class="card-body"><div class="kind">Keramik &amp; skulptur</div><h3>Kristina Hallqvist</h3></div>
+      </a>
+      <a class="card" href="distler-batbyggeri/" target="_blank" rel="noopener">
+        <img src="previews/distler-batbyggeri.jpg" alt="Thomas Distler Båtbyggeri" loading="lazy">
+        <div class="card-body"><div class="kind">Båtbyggeri</div><h3>Thomas Distler</h3></div>
+      </a>
+      <a class="card" href="furubergs-biodling/" target="_blank" rel="noopener">
+        <img src="previews/furubergs-biodling.jpg" alt="Furubergs Biodling" loading="lazy">
+        <div class="card-body"><div class="kind">Biodling</div><h3>Furubergs Biodling</h3></div>
+      </a>
+      <a class="card" href="hans-urmakare/" target="_blank" rel="noopener">
+        <img src="previews/hans-urmakare.jpg" alt="Hans Urmakare" loading="lazy">
+        <div class="card-body"><div class="kind">Urmakeri</div><h3>Hans Urmakare</h3></div>
+      </a>
+      <a class="card" href="taserudsmobler/" target="_blank" rel="noopener">
+        <img src="previews/taserudsmobler.jpg" alt="Taserudsmöbler" loading="lazy">
+        <div class="card-body"><div class="kind">Möbelsnickeri</div><h3>Taserudsmöbler</h3></div>
+      </a>
+      <a class="card" href="galleri-saak/" target="_blank" rel="noopener">
+        <img src="previews/galleri-saak.jpg" alt="Galleri SAAK" loading="lazy">
+        <div class="card-body"><div class="kind">Konstgalleri</div><h3>Galleri SAAK</h3></div>
+      </a>
+      <a class="card" href="niklas-cykelverkstad/" target="_blank" rel="noopener">
+        <img src="previews/niklas-cykelverkstad.jpg" alt="Niklas Cykelverkstad" loading="lazy">
+        <div class="card-body"><div class="kind">Cykelverkstad</div><h3>Niklas Cykelverkstad</h3></div>
+      </a>
+      <a class="card" href="carlberg-guld/" target="_blank" rel="noopener">
+        <img src="previews/carlberg-guld.jpg" alt="Guldsmeden Sonny Carlberg" loading="lazy">
+        <div class="card-body"><div class="kind">Guldsmed</div><h3>Sonny Carlberg</h3></div>
+      </a>
+      <a class="card" href="massage-skattungbyn/" target="_blank" rel="noopener">
+        <img src="previews/massage-skattungbyn.jpg" alt="Massage Skattungbyn" loading="lazy">
+        <div class="card-body"><div class="kind">Massage &amp; friskvård</div><h3>Massage Skattungbyn</h3></div>
+      </a>
+    </div>
+    <p class="more-note">Det här är 12 av över 80 exempel vi byggt. <a href="alla-exempel.html">Se hela listan →</a></p>
+  </div>
+</section>
+
+<section id="sa-funkar-det">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Så funkar det</span>
+      <h2>Tre steg, inget krångel</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Berätta om ert företag</h3>
+        <p>Ett par rader om vad ni gör räcker — mejla oss eller skicka en länk till er nuvarande sida eller Facebook.</p>
+      </div>
+      <div class="step">
+        <h3>Vi bygger ett förslag</h3>
+        <p>Ni får se en färdig, riktig sida byggd utifrån er verksamhet, helt kostnadsfritt och utan förpliktelser.</p>
+      </div>
+      <div class="step">
+        <h3>Gillar ni den, sätter vi upp den</h3>
+        <p>Vi kopplar er egen domän, sätter upp sidan på riktigt, och sköter drift och uppdateringar löpande.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pris" class="alt">
+  <div class="wrap">
+    <div class="price-wrap">
+      <div>
+        <div class="section-head">
+          <span class="eyebrow">Pris</span>
+          <h2>Enkelt och förutsägbart</h2>
+          <p>Inget offertkrångel. Ett engångspris för sidan, en låg månadskostnad för drift — ingen bindningstid.</p>
+        </div>
+      </div>
+      <div>
+        <div class="price-card">
+          <div class="amt">6 900 kr <small>engångskostnad</small></div>
+          <ul>
+            <li>Skräddarsydd design utifrån er verksamhet</li>
+            <li>Upp till fem sidor (start, om oss, tjänster, pris, kontakt)</li>
+            <li>Fungerar lika bra på mobil som dator</li>
+            <li>Er egen domän kopplad</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="amt">149 kr <small>/månad</small></div>
+          <ul>
+            <li>Drift, säkerhet och uppdateringar</li>
+            <li>Mindre textändringar ingår</li>
+            <li>Ingen bindningstid, avsluta när ni vill</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <h2>Vill ni se hur er hemsida skulle kunna se ut?</h2>
+        <p>Skicka ett par rader om företaget, så bygger vi ett förslag ni kan titta på — helt kostnadsfritt.</p>
+      </div>
+      <a class="btn btn-primary" href="mailto:david@ducostudios.com?subject=Gratis%20f%C3%B6rslag%20till%20min%20hemsida">Skicka en rad</a>
+    </div>
+    <div class="foot-meta">
+      <span>Duco Studios AB</span>
+      <a href="mailto:david@ducostudios.com">david@ducostudios.com</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
