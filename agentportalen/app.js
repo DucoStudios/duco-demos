@@ -19,22 +19,22 @@
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     var email = form.email.value.trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { visa("Skriv en giltig e-postadress.", "fel"); return; }
-    if (!form.samtycke.checked) { visa("Kryssa i rutan så att vi får mejla dig när vi öppnar.", "fel"); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { visa("Please enter a valid email address.", "fel"); return; }
+    if (!form.samtycke.checked) { visa("Tick the box so we are allowed to email you when we open.", "fel"); return; }
     var knapp = form.querySelector("button");
-    knapp.disabled = true; visa("Skickar...");
-    var data = { konto: "agentportal", magnet: "agentportal-vantelista", email: email, samtycke: true, kalla: "agentportalen-sida" };
+    knapp.disabled = true; visa("Sending...");
+    var data = { konto: "agentportal", magnet: "agentportal-vantelista", email: email, samtycke: true, kalla: "agentportalen-sida-en" };
     var namn = form.namn.value.trim();
     if (namn) data.namn = namn;
     if (form.webbplats.value) data.webbplats = form.webbplats.value;
     fetch(API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
       .then(function (r) {
-        if (r.status === 429) throw new Error("För många försök. Vänta en stund och prova igen.");
-        if (!r.ok) throw new Error("Något gick fel. Prova igen om en stund.");
+        if (r.status === 429) throw new Error("Too many attempts. Wait a moment and try again.");
+        if (!r.ok) throw new Error("Something went wrong. Please try again in a moment.");
         form.reset();
-        visa("Klart! Du står i kön. Vi hör av oss när det är din tur.", "ok");
+        visa("Done! You are in line. We will be in touch when it is your turn.", "ok");
       })
-      .catch(function (err) { visa(err.message || "Något gick fel. Prova igen om en stund.", "fel"); })
+      .catch(function (err) { visa(err.message || "Something went wrong. Please try again in a moment.", "fel"); })
       .finally(function () { knapp.disabled = false; });
   });
 })();

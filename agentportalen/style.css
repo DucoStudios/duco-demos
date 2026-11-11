@@ -57,17 +57,20 @@ a { color: inherit; }
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
     linear-gradient(90deg, #0f0c17f2 0%, #0f0c17c0 38%, #0f0c1720 70%, #0f0c1700 100%),
-    linear-gradient(0deg, #0f0c17 0%, #0f0c1700 22%);
+    linear-gradient(0deg, #0f0c17 0%, #0f0c1700 22%),
+    linear-gradient(180deg, #0f0c17 0%, #0f0c1700 16%);
 }
 .scen.hoger { justify-content: flex-end; }
 .scen.hoger::before {
   background:
     linear-gradient(270deg, #0f0c17f2 0%, #0f0c17c0 38%, #0f0c1720 70%, #0f0c1700 100%),
-    linear-gradient(0deg, #0f0c17 0%, #0f0c1700 22%);
+    linear-gradient(0deg, #0f0c17 0%, #0f0c1700 22%),
+    linear-gradient(180deg, #0f0c17 0%, #0f0c1700 16%);
 }
 .scen-text { max-width: 560px; }
 .scen-text > p:not(.etikett) { color: #c9c2dc; font-size: 18px; text-shadow: 0 1px 14px #0f0c17, 0 0 4px #0f0c17; }
 .hero { min-height: 100vh; }
+.hero::before { background: linear-gradient(90deg, #0f0c17f2 0%, #0f0c17c0 38%, #0f0c1720 70%, #0f0c1700 100%), linear-gradient(0deg, #0f0c17 0%, #0f0c1700 22%); }
 .hero h1 { font-size: clamp(46px, 7.5vw, 96px); font-weight: 900; }
 .ingress { font-size: 20px !important; color: #ddd7ec !important; }
 .slagord { font-size: clamp(40px, 6vw, 76px); font-weight: 900; text-transform: none; }
