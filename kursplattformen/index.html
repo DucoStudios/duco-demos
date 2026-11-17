@@ -1,323 +1,295 @@
 <!doctype html>
 <html lang="sv">
-<script>document.documentElement.className="js";setTimeout(function(){document.querySelectorAll(".reveal").forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add("syns")})},50)</script>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kursplattformen · Din kurs, din publik, ditt varumärke</title>
-<meta name="description" content="En kursplattform på din egen adress, med din logga och dina färger. Kurser, medlemmar, utskick, företagsförsäljning och community på ett ställe, så enkelt att du klarar det själv.">
-<meta property="og:title" content="Kursplattformen · Din kurs, din publik, ditt varumärke">
-<meta property="og:description" content="Kurser, medlemmar, utskick och försäljning på din egen adress. Svensk, enkel och byggd för förändring.">
-<meta property="og:image" content="bilder/admin-oversikt.webp">
+<title>Kursplattformen · Kunskap som stannar</title>
+<meta name="description" content="Kursplattformen samlar kurser, medlemmar, utskick och försäljning på din egen adress. För kursskapare som vill att deltagarna faktiskt förändras.">
+<meta property="og:title" content="Kursplattformen · Kunskap som stannar">
+<meta property="og:description" content="Kurser, medlemmar, utskick och försäljning på din egen adress.">
+<meta property="og:image" content="ui/hero-kurs.webp">
+<meta name="theme-color" content="#f3f1ec">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="logo" href="#"><span class="mark"><span class="fa-solid fa-seedling"></span></span>Kursplattformen</a>
-    <nav class="links">
-      <a href="#funktioner">Funktioner</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 18 18"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 18 18"><path d="M9 3v11M4.5 10 9 14.5 13.5 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 18 18"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 18 18"><path d="M2 6h14M2 12h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 18 18"><path d="M4 4l10 10M14 4 4 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="wordmark" href="#top" aria-label="Kursplattformen, till toppen"><span class="mark" aria-hidden="true"></span>Kursplattformen</a>
+    <nav class="top-nav" aria-label="Huvudmeny">
+      <a href="#metod">Så fungerar det</a>
+      <a href="#plattform">Funktioner</a>
       <a href="#foretag">Företag</a>
-      <a href="#flytta">Flytta hit</a>
       <a href="#pris">Pris</a>
-      <a href="#fragor">Frågor</a>
     </nav>
-    <a class="btn small" href="#ko">Bli först in</a>
+    <a class="btn btn-ink top-cta" href="#ko">Väntelista</a>
+    <button class="menu-btn" type="button" aria-label="Öppna meny" aria-controls="meny"><svg width="18" height="18"><use href="#i-menu"/></svg></button>
   </div>
 </header>
 
+<dialog id="meny" class="sheet" aria-label="Meny">
+  <div class="sheet-top"><span class="wordmark"><span class="mark"></span>Kursplattformen</span><button type="button" class="menu-close" aria-label="Stäng meny"><svg width="18" height="18"><use href="#i-close"/></svg></button></div>
+  <nav class="sheet-nav">
+    <a href="#metod">Så fungerar det</a>
+    <a href="#plattform">Funktioner</a>
+    <a href="#foretag">Företag</a>
+    <a href="#pris">Pris</a>
+    <a href="#ko">Väntelista</a>
+  </nav>
+</dialog>
+
 <main>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="hero">
-  <div class="wrap hero-in">
-    <div class="hero-text reveal">
-      <p class="eyebrow"><span class="dot"></span> Svensk kursplattform för kursskapare, coacher och utbildare</p>
-      <h1>Din kurs. Din publik. <em>Ditt varumärke.</em></h1>
-      <p class="lead">Kurser, medlemmar, utskick, företagsförsäljning och community på din egen adress, med din logga och dina färger. Så enkelt att du klarar allt själv, och byggt för att dina deltagare faktiskt ska förändras.</p>
-      <div class="cta-row">
-        <a class="btn big" href="#ko">Ställ dig i kön <span class="fa-solid fa-arrow-right"></span></a>
-        <a class="btn ghost big" href="#funktioner">Se hur det fungerar</a>
-      </div>
-      <ul class="trust">
-        <li><span class="fa-solid fa-location-dot"></span> Data lagras i EU</li>
-        <li><span class="fa-solid fa-comments"></span> Support på svenska</li>
-        <li><span class="fa-solid fa-unlock"></span> Ingen bindningstid</li>
-      </ul>
-    </div>
-    <div class="hero-shot reveal">
-      <div class="browser">
-        <div class="bar"><i></i><i></i><i></i><span>kurs.dittforetag.se/admin</span></div>
-        <img src="bilder/admin-oversikt.webp" alt="Översikten i adminläget med bocklista för att komma igång och nyckeltal" width="1440" height="900">
-      </div>
-      <div class="phone">
-        <img src="bilder/mobil-lektion.webp" alt="En lektion i mobilen" width="390" height="844">
-      </div>
-      <div class="float-card c1"><span class="fa-solid fa-circle-check"></span> Ny köpare: välkomstmejl skickat</div>
-      <div class="float-card c2"><span class="fa-solid fa-building"></span> Acme AB köpte 25 platser</div>
+  <div class="wrap grid">
+    <p class="rail meta in">Kursplattform för kursskapare, coacher och utbildare</p>
+    <h1 class="display in">Kunskap som <span class="serif">stannar.</span></h1>
+    <p class="hero-lead in">Kurser, medlemmar, utskick och försäljning på din egen adress. För dig som vill att deltagarna förändras på riktigt, och som inte vill lära dig ännu ett system.</p>
+    <div class="hero-act in">
+      <a class="btn btn-accent" href="#ko">Ställ dig på väntelistan <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
+      <a class="text-link" href="#metod">Så fungerar det <svg width="18" height="18"><use href="#i-down"/></svg></a>
     </div>
   </div>
-</section>
 
-<!-- PROBLEM -->
-<section class="problem">
   <div class="wrap">
-    <h2 class="center reveal">Känner du igen dig?</h2>
-    <div class="grid3">
-      <div class="pcard reveal"><span class="fa-solid fa-diagram-project"></span><h3>Allt-i-ett, men ingen förstår hur</h3><p>Hundra menyer, inställningar överallt och en automation som ingen vågar röra. Du betalar för ett system du bara använder en bråkdel av.</p></div>
-      <div class="pcard reveal"><span class="fa-solid fa-store"></span><h3>Marknadsplatsen äger dina kunder</h3><p>Köparna är plattformens kunder, inte dina. Du får sällan deras mejl, priserna pressas och du kan inte nå dem igen.</p></div>
-      <div class="pcard reveal"><span class="fa-solid fa-puzzle-piece"></span><h3>Fem verktyg som inte pratar med varandra</h3><p>Ett för kursen, ett för mejlen, ett för betalningen, ett för communityn och ett kalkylark som håller ihop allt. Varje månad, i dollar.</p></div>
-    </div>
-    <p class="center big-line reveal">Kursplattformen samlar allt du behöver. <strong>Och inget du inte behöver.</strong></p>
+    <figure class="hero-fig in">
+      <div class="hero-frame">
+        <picture>
+          <source media="(max-width: 700px)" srcset="ui/hero-kurs-mobil.webp">
+          <img src="ui/hero-kurs.webp" width="2880" height="1800" alt="Kursbyggaren: moduler och lektioner till vänster, kursens resultat och utskicksinställningar till höger">
+        </picture>
+        <img class="hero-phone" src="ui/ui-mobil.webp" width="1170" height="2532" alt="Samma kurs i mobilen hos en deltagare">
+      </div>
+      <figcaption><span>Kursbyggaren och deltagarens vy av samma lektion.</span><span>Demoakademi med påhittat innehåll.</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap integrations">
+    <span>Fungerar med</span>
+    <ul><li>Stripe</li><li>Fortnox</li><li>Google Kalender</li><li>Outlook</li><li>Bunny Stream</li><li>46elks</li></ul>
   </div>
 </section>
 
-<!-- FUNKTIONER -->
-<section id="funktioner" class="features">
-  <div class="wrap">
-    <p class="eyebrow center reveal">Allt på ett ställe</p>
-    <h2 class="center reveal">Från första lektion till hundrade företagskund</h2>
-
-    <div class="feature reveal">
-      <div class="ftext">
-        <span class="ficon"><span class="fa-solid fa-graduation-cap"></span></span>
-        <h3>Bygg kursen på en kväll</h3>
-        <p>Du börjar med resultatet deltagaren ska få, sedan modulerna. Sju sorters lektioner: video, text, quiz, reflektion, uppdrag, fil och livesändning. Se allt som deltagare med ett klick innan du publicerar.</p>
-        <ul class="checks"><li>Släpp modulerna i takt med gruppen</li><li>Smakprov som kan ses utan köp</li><li>Videor skyddade mot delning och nedladdning</li></ul>
-      </div>
-      <div class="fshot"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="bilder/admin-kurs.webp" alt="Kursredigeraren med moduler och lektioner"></div></div>
-    </div>
-
-    <div class="feature flip reveal">
-      <div class="ftext">
-        <span class="ficon"><span class="fa-solid fa-seedling"></span></span>
-        <h3>Byggd för förändring, inte bara för att titta klart</h3>
-        <p>Folk förändras när de använder det de lärt sig. Därför finns reflektioner i en privat dagbok, uppdrag mellan modulerna och quiz direkt efter videon. Quizfrågorna kommer tillbaka efter några dagar och sedan efter två veckor, så att det fastnar.</p>
-        <ul class="checks"><li>Privat dagbok som bara deltagaren läser</li><li>Repetition med mellanrum, helt automatiskt</li><li>Frågor per lektion och intyg när kursen är klar</li></ul>
-      </div>
-      <div class="fshot stack">
-        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="bilder/medlem-reflektion.webp" alt="En reflektionslektion där svaren bara syns för deltagaren"></div>
-      </div>
-    </div>
-
-    <div class="feature reveal">
-      <div class="ftext">
-        <span class="ficon"><span class="fa-solid fa-inbox"></span></span>
-        <h3>En inkorg för allt</h3>
-        <p>Mejl från leads, medlemmar och företag hamnar på samma ställe, sorterade åt dig. Svara direkt, skriv en intern anteckning eller använd ett snabbsvar. Svarar någon på ett utskick stoppas uppvärmningen automatiskt.</p>
-        <ul class="checks"><li>Smart sortering: lead, medlem, support, betalning, företag</li><li>Hela historiken per kontakt</li><li>Pipeline där du drar korten mellan stegen</li></ul>
-      </div>
-      <div class="fshot"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="bilder/admin-inkorg.webp" alt="Inkorgen med sorterade konversationer"></div></div>
-    </div>
-
-    <div class="feature flip reveal">
-      <div class="ftext">
-        <span class="ficon"><span class="fa-solid fa-paper-plane"></span></span>
-        <h3>Utskick och automationer som går av sig själva</h3>
-        <p>Välkomstmejl efter köp, uppvärmning av nya leads, påminnelse till den som tappat farten och grattis när kursen är klar. Färdiga mallar, du byter bara texten. Massutskick når bara dem som sagt ja.</p>
-        <ul class="checks"><li>Mejl och sms i samma flöde</li><li>Gratisguider som bygger din lista</li><li>Avregistrering och spärrlista sköts åt dig</li></ul>
-      </div>
-      <div class="fshot"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="bilder/admin-automation.webp" alt="En automation med mejl och väntetid"></div></div>
-    </div>
-
-    <div class="feature reveal">
-      <div class="ftext">
-        <span class="ficon"><span class="fa-solid fa-comments"></span></span>
-        <h3>Community där deltagarna stöttar varandra</h3>
-        <p>Trådar, kommentarer och gilla, i grupper för alla medlemmar eller per kurs. Anonymt läge för känsliga ämnen, och du fäster eller döljer inlägg med ett klick.</p>
-      </div>
-      <div class="fshot"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="bilder/medlem-community.webp" alt="Communityn med trådar"></div></div>
-    </div>
+<!-- Varför -->
+<section class="why">
+  <div class="wrap grid">
+    <p class="rail label in">01 · Varför</p>
+    <p class="statement in">De flesta kursplattformar är byggda för att sälja kurser. Den här är byggd för att deltagarna ska förändras av dem. Lyckas de, säljer kursen sig själv.</p>
+    <dl class="why-facts in">
+      <div><dt>Ägarskap</dt><dd>Kontakterna och pengarna är dina, inte plattformens.</dd></div>
+      <div><dt>Enkelhet</dt><dd>Varje del förklarar sig själv och har tips där du behöver dem.</dd></div>
+      <div><dt>Status</dt><dd>Byggd och testad. Öppnar för de första kursskaparna snart.</dd></div>
+    </dl>
   </div>
 </section>
 
-<!-- ENKELT -->
-<section class="simple">
-  <div class="wrap simple-in">
-    <div class="reveal">
-      <p class="eyebrow">Enkelt på riktigt</p>
-      <h2>Du ska aldrig behöva googla hur något fungerar</h2>
-      <p class="lead">Varje del börjar med en mening om vad den är till för. Klicka på tipsknappen så får du konkreta råd just där. En bocklista tar dig från tomt konto till första försäljningen.</p>
-      <ul class="numbered">
-        <li><b>1</b><div><strong>Tips i varje del</strong><span>Korta, konkreta råd om kurser, pris, utskick och företagsförsäljning.</span></div></li>
-        <li><b>2</b><div><strong>En inbyggd kurs för dig</strong><span>Så använder du plattformen, skapar förändring, når fler och var pengarna finns.</span></div></li>
-        <li><b>3</b><div><strong>De tekniska inställningarna för sig</strong><span>Domän, avsändare och betalning ligger i en egen meny som du oftast bara rör en gång.</span></div></li>
-      </ul>
+<!-- Metoden -->
+<section class="method" id="metod">
+  <div class="wrap grid">
+    <div class="rail method-rail">
+      <p class="label">02 · Så fungerar det</p>
+      <ol class="steps" aria-label="Steg">
+        <li class="on"><a href="#k1"><span class="n">1</span>Bygg</a></li>
+        <li><a href="#k2"><span class="n">2</span>Lär</a></li>
+        <li><a href="#k3"><span class="n">3</span>Sälj</a></li>
+        <li><a href="#k4"><span class="n">4</span>Väx</a></li>
+      </ol>
+      <div class="progress" aria-hidden="true"><i></i></div>
     </div>
-    <div class="reveal"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="bilder/admin-tips.webp" alt="Tipsrutan i adminläget"></div></div>
-  </div>
-</section>
-
-<!-- VARUMÄRKE -->
-<section class="brand">
-  <div class="wrap">
-    <div class="brand-in">
-      <div class="reveal">
-        <p class="eyebrow">Ditt varumärke, inte vårt</p>
-        <h2>Ser ut som en del av din sida</h2>
-        <p class="lead">Klistra in adressen till din hemsida så hämtar vi logga och färger. Koppla din egen adress, till exempel <strong>kurs.dittforetag.se</strong>. Plattformen ser vilken domänleverantör du har, visar exakt vad du ska göra och ordnar säkerhetscertifikatet själv.</p>
-        <ul class="checks"><li>Egen logga, färger och typsnitt</li><li>Egen adress och egen avsändare för mejlen</li><li>Varning om texten blir svårläst mot färgen</li></ul>
-      </div>
-      <div class="domain-demo reveal" aria-hidden="true">
-        <div class="dd-row"><span class="fa-solid fa-globe"></span><input value="kurs.dittforetag.se" readonly><span class="btn small">Koppla</span></div>
-        <div class="dd-steps">
-          <div class="dd-step done"><span class="fa-solid fa-circle-check"></span> Hittade din leverantör</div>
-          <div class="dd-step done"><span class="fa-solid fa-circle-check"></span> En rad att klistra in, med kopieringsknapp</div>
-          <div class="dd-step live"><span class="fa-solid fa-rotate fa-spin"></span> Kontrollerar automatiskt varje minut</div>
-          <div class="dd-step"><span class="fa-solid fa-lock"></span> Säkerhetscertifikat ordnas</div>
+    <div class="chapters">
+      <article class="chapter" id="k1">
+        <div class="ch-text">
+          <h2 class="h2">Bygg baklänges från deltagarens mål</h2>
+          <p>Du börjar med vad deltagaren ska kunna efter kursen och lägger sedan modulerna som leder dit. Sju lektionstyper finns: video, text, quiz, reflektion, uppdrag, fil och livesändning. Modulerna kan släppas en i taget, i takt med gruppen.</p>
         </div>
-        <div class="dd-ok"><span class="fa-solid fa-circle-check"></span> kurs.dittforetag.se fungerar</div>
-      </div>
+        <figure class="media"><img src="ui/ui-moduler.webp" width="1585" height="1570" alt="Moduler och lektioner i kursbyggaren"></figure>
+      </article>
+      <article class="chapter" id="k2">
+        <div class="ch-text">
+          <h2 class="h2">Övningar som gör att det fastnar</h2>
+          <p>Reflektioner i en privat dagbok som bara deltagaren läser. Uppdrag att pröva i vardagen. Quiz direkt efter videon, och samma frågor igen efter tre dagar och efter två veckor, utan att du gör något.</p>
+        </div>
+        <figure class="media"><img src="ui/ui-reflektion.webp" width="1696" height="976" alt="En reflektionslektion där svaren bara syns för deltagaren"></figure>
+      </article>
+      <article class="chapter" id="k3">
+        <div class="ch-text">
+          <h2 class="h2">Betalningar direkt till ditt Stripe-konto</h2>
+          <p>Kort, prenumeration eller faktura. Varje köpare blir din kontakt. Rabattkoder, affiliates och verifikationer i Fortnox ingår, och en bocklista tar dig från tomt konto till första försäljningen.</p>
+        </div>
+        <figure class="media"><img src="ui/ui-checklista.webp" width="2310" height="1190" alt="Bocklistan på översikten"></figure>
+      </article>
+      <article class="chapter" id="k4">
+        <div class="ch-text">
+          <h2 class="h2">Automationer du faktiskt förstår</h2>
+          <p>Välkomstmejl, uppvärmning av nya leads och påminnelser till den som tappat farten. Varje flöde läses uppifrån och ned som en vanlig lista, och uppvärmningen stoppas när någon svarar dig.</p>
+        </div>
+        <figure class="media"><img src="ui/ui-automation.webp" width="1260" height="1280" alt="En automation efter köp med mejl och väntetid"></figure>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- FÖRETAG -->
-<section id="foretag" class="b2b">
-  <div class="wrap b2b-in">
-    <div class="reveal">
-      <p class="eyebrow light">Den största möjligheten</p>
-      <h2>Sälj till företag, utan krångel</h2>
-      <p class="lead">Ett företag som köper 25 platser ger lika mycket som 25 enskilda köp, men med ett enda beslut. Skapa platspaket med volymrabatt på ett par klick, låt företaget betala med faktura och låt kontaktpersonen sköta resten.</p>
-      <ul class="checks light"><li>Paket med 5, 10, 25 och 50 platser</li><li>Faktura med 30 dagars betalning</li><li>Kontaktpersonen bjuder in och ser framsteg</li><li>Reflektioner är alltid privata, även för chefen</li><li>Företagets logga syns för deras deltagare</li></ul>
-    </div>
-    <div class="co-mock reveal" aria-hidden="true">
-      <div class="co-head"><strong>Acme AB</strong><span>Licens till 2027-11-30</span></div>
-      <div class="co-stats"><div><b>18 / 25</b><span>platser</span></div><div><b>15</b><span>har börjat</span></div><div><b>6</b><span>är klara</span></div></div>
-      <div class="co-row"><span>Anna Lind</span><div class="pbar"><i style="width:100%"></i></div><em>100 %</em></div>
-      <div class="co-row"><span>Erik Holm</span><div class="pbar"><i style="width:64%"></i></div><em>64 %</em></div>
-      <div class="co-row"><span>Sara Ek</span><div class="pbar"><i style="width:38%"></i></div><em>38 %</em></div>
-      <div class="co-row"><span>Johan Berg</span><div class="pbar"><i style="width:12%"></i></div><em>12 %</em></div>
-      <p class="co-note"><span class="fa-solid fa-lock"></span> Framsteg syns, reflektioner aldrig.</p>
-    </div>
+<!-- Funktioner -->
+<section class="features" id="plattform">
+  <div class="wrap grid">
+    <p class="rail label">03 · Funktioner</p>
+    <h2 class="h1 headline">Det du behöver för att sälja och leverera en kurs</h2>
   </div>
-</section>
-
-<!-- MER -->
-<section class="more">
   <div class="wrap">
-    <h2 class="center reveal">Och allt det andra du behöver</h2>
-    <div class="grid4">
-      <div class="mcard reveal"><span class="fa-solid fa-credit-card"></span><h3>Stripe</h3><p>Pengarna går direkt till ditt eget konto. Kort, prenumeration eller faktura.</p></div>
-      <div class="mcard reveal"><span class="fa-solid fa-handshake"></span><h3>Affiliates</h3><p>Låt andra sälja din kurs mot provision. Plattformen räknar åt dig.</p></div>
-      <div class="mcard reveal"><span class="fa-solid fa-book"></span><h3>Fortnox</h3><p>Varje betald order blir en verifikation, med konton din redovisare väljer.</p></div>
-      <div class="mcard reveal"><span class="fa-solid fa-calendar-check"></span><h3>Bokning</h3><p>Bokningssidor som visar när du är ledig i din egen kalender.</p></div>
-      <div class="mcard reveal"><span class="fa-solid fa-ticket"></span><h3>Rabattkoder</h3><p>Kampanjer och lanseringspriser utan att ändra produkten.</p></div>
-      <div class="mcard reveal"><span class="fa-solid fa-mobile-screen"></span><h3>Mobil</h3><p>Allt fungerar i mobilen, både för dig och dina deltagare.</p></div>
-      <div class="mcard reveal"><span class="fa-solid fa-user-shield"></span><h3>GDPR</h3><p>Deltagare laddar ner eller raderar sina uppgifter själva. Data i EU.</p></div>
-      <div class="mcard reveal"><span class="fa-solid fa-robot"></span><h3>AI-handledare</h3><p>Tillval: svarar deltagarna dygnet runt, bara utifrån ditt kursmaterial.</p></div>
+    <div class="bento">
+      <figure class="cell c-inbox in">
+        <figcaption><h3>Inkorg</h3><p>Mejl från leads, medlemmar och företag samlas och sorteras åt dig.</p></figcaption>
+        <div class="crop"><img src="ui/ui-inkorg.webp" width="1920" height="1265" alt="Inkorgen med en företagsförfrågan"></div>
+      </figure>
+      <figure class="cell c-quiz in">
+        <figcaption><h3>Quiz och repetition</h3><p>Frågorna kommer tillbaka efter tre dagar och två veckor.</p></figcaption>
+        <div class="crop"><img src="ui/ui-quiz.webp" width="1730" height="530" alt="En quizfråga"></div>
+      </figure>
+      <figure class="cell c-comm in">
+        <figcaption><h3>Community</h3><p>Trådar och kommentarer, med anonymt läge för känsliga ämnen.</p></figcaption>
+        <div class="crop"><img src="ui/ui-community.webp" width="1840" height="520" alt="Ett inlägg i communityn"></div>
+      </figure>
+      <figure class="cell c-mobile in">
+        <figcaption><h3>Mobil</h3><p>Allt fungerar i telefonen, för dig och för deltagarna.</p></figcaption>
+        <div class="phone"><img src="ui/ui-mobil-start.webp" width="1170" height="2532" alt="Medlemssidan i mobilen"></div>
+      </figure>
     </div>
+
+    <table class="spec in">
+      <caption class="label">Ingår också</caption>
+      <tbody>
+        <tr><th scope="row">Egen adress</th><td>kurs.dittforetag.se, med guide för din domänleverantör och certifikat som ordnas automatiskt</td></tr>
+        <tr><th scope="row">Ditt varumärke</th><td>Logga, färger och typsnitt på medlemssidan, i kassan och i mejlen</td></tr>
+        <tr><th scope="row">Affiliates</th><td>Egna länkar per partner, provisionen räknas åt dig</td></tr>
+        <tr><th scope="row">Bokning</th><td>Bokningssidor som visar när du är ledig i din egen kalender</td></tr>
+        <tr><th scope="row">Sms</th><td>Påminnelser i samma flöden som mejlen</td></tr>
+        <tr><th scope="row">GDPR</th><td>Deltagarna laddar ner eller raderar sina uppgifter själva, data lagras i EU</td></tr>
+        <tr><th scope="row">AI-handledare</th><td>Tillval som svarar deltagarna utifrån ditt eget kursmaterial</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
-<!-- FLYTTA -->
-<section id="flytta" class="move">
-  <div class="wrap move-in">
-    <div class="reveal">
-      <p class="eyebrow">Flytta hit</p>
-      <h2>Lämna din gamla plattform utan att tappa någon</h2>
-      <p class="lead">Hämta kontakter och medlemmar direkt eller via en exportfil. Kolumnerna matchas automatiskt, du ser en provkörning innan något sparas, och allt kan ångras med en knapp.</p>
-      <ul class="checks"><li>Samtycke följer med, ingen kall lista blir utskickslista</li><li>Behåll ditt Stripe-konto så fortsätter prenumerationerna</li><li>Gamla länkar pekas om till de nya</li></ul>
-      <p class="small muted">Vill du hellre slippa? <strong>Vi flyttar åt dig</strong> mot en engångsavgift.</p>
+<!-- Företag -->
+<section class="b2b" id="foretag">
+  <div class="wrap grid">
+    <p class="rail label">04 · Företag</p>
+    <div class="b2b-copy">
+      <h2 class="h1">Sälj platser till företag, med faktura</h2>
+      <p>Ett företag som köper tjugofem platser fattar ett beslut i stället för tjugofem. Du skapar paket med volymrabatt, företaget betalar med faktura och kontaktpersonen bjuder in sina medarbetare själv. Hen ser hur långt de kommit, men aldrig vad de skrivit i sina reflektioner.</p>
     </div>
-    <div class="chips reveal">
-      <span>GoHighLevel</span><span>Systeme.io</span><span>ClickFunnels</span><span>Kajabi</span><span>Thinkific</span><span>Teachable</span><span>Coursio</span><span>Learnster</span><span>Mailchimp</span><span>Excel och CSV</span>
-    </div>
+    <figure class="co in" aria-label="Exempel på kontaktpersonens vy">
+      <div class="co-top"><span class="co-name">Exempelföretaget AB</span><span class="co-sub">Licens till 30 nov 2027</span></div>
+      <div class="co-kpi"><div><b>18 av 25</b><span>platser används</span></div><div><b>15</b><span>har börjat</span></div><div><b>6</b><span>är klara</span></div></div>
+      <ul class="co-rows">
+        <li><span>Deltagare 1</span><i><b style="--w:100%"></b></i><em>100 %</em></li>
+        <li><span>Deltagare 2</span><i><b style="--w:64%"></b></i><em>64 %</em></li>
+        <li><span>Deltagare 3</span><i><b style="--w:38%"></b></i><em>38 %</em></li>
+        <li><span>Deltagare 4</span><i><b style="--w:12%"></b></i><em>12 %</em></li>
+      </ul>
+      <figcaption>Kontaktpersonens vy. Framsteg syns, reflektioner aldrig.</figcaption>
+    </figure>
+    <dl class="b2b-facts">
+      <div><dt>Paket</dt><dd>5, 10, 25 och 50 platser</dd></div>
+      <div><dt>Betalning</dt><dd>Kort eller faktura med 30 dagar</dd></div>
+      <div><dt>Varumärke</dt><dd>Företagets logga visas för deras deltagare</dd></div>
+    </dl>
   </div>
 </section>
 
-<!-- JÄMFÖRELSE -->
-<section class="compare">
-  <div class="wrap">
-    <h2 class="center reveal">Varför inte bara en stor plattform?</h2>
-    <div class="table-wrap reveal">
-      <table>
-        <thead><tr><th></th><th class="us">Kursplattformen</th><th>Kursmarknadsplatser</th><th>Allt-i-ett-verktyg</th></tr></thead>
-        <tbody>
-          <tr><td>Du äger kontakterna och kan nå dem igen</td><td class="us"><span class="fa-solid fa-check"></span></td><td><span class="fa-solid fa-xmark"></span></td><td><span class="fa-solid fa-check"></span></td></tr>
-          <tr><td>Din egen adress och ditt varumärke</td><td class="us"><span class="fa-solid fa-check"></span></td><td><span class="fa-solid fa-xmark"></span></td><td><span class="fa-solid fa-check"></span></td></tr>
-          <tr><td>Du sätter ditt eget pris</td><td class="us"><span class="fa-solid fa-check"></span></td><td>Ofta inte</td><td><span class="fa-solid fa-check"></span></td></tr>
-          <tr><td>Företagspaket med faktura och chefsvy</td><td class="us"><span class="fa-solid fa-check"></span></td><td><span class="fa-solid fa-xmark"></span></td><td>Sällan</td></tr>
-          <tr><td>Byggt för förändring: reflektion, uppdrag, repetition</td><td class="us"><span class="fa-solid fa-check"></span></td><td>Delvis</td><td>Delvis</td></tr>
-          <tr><td>Enkelt nog att sköta själv</td><td class="us"><span class="fa-solid fa-check"></span></td><td><span class="fa-solid fa-check"></span></td><td>Sällan</td></tr>
-          <tr><td>Svenska, Fortnox och data i EU</td><td class="us"><span class="fa-solid fa-check"></span></td><td><span class="fa-solid fa-xmark"></span></td><td><span class="fa-solid fa-xmark"></span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="center muted small reveal">Det marknadsplatser ger dig är trafik. Därför hjälper Kursplattformen dig att bygga din egen, med gratisguider, utskick och affiliates.</p>
+<!-- Flytta -->
+<section class="move">
+  <div class="wrap grid">
+    <p class="rail label">05 · Flytta hit</p>
+    <h2 class="h2 headline">Ta med kontakter, medlemmar och kurser från din gamla plattform</h2>
+    <p class="move-from">GoHighLevel, Systeme, Kajabi, ClickFunnels, Thinkific, Teachable, Coursio, Learnster, Mailchimp eller en vanlig Excelfil.</p>
+    <ol class="move-steps">
+      <li><span class="n">1</span><p>Hämta direkt eller ladda upp en exportfil. Kolumnerna matchas automatiskt.</p></li>
+      <li><span class="n">2</span><p>Se en provkörning innan något sparas. Samtycke till utskick följer med, inget mer.</p></li>
+      <li><span class="n">3</span><p>Importera. Allt kan ångras med en knapp, och ditt Stripe-konto fortsätter som vanligt.</p></li>
+    </ol>
   </div>
 </section>
 
-<!-- PRIS -->
-<section id="pris" class="pricing">
-  <div class="wrap">
-    <p class="eyebrow center reveal">Pris</p>
-    <h2 class="center reveal">Ett pris. Allt ingår.</h2>
-    <div class="price-in">
-      <div class="price-card reveal">
-        <div class="tag-top">Allt du behöver</div>
-        <div class="amount"><span>680</span> kr/mån</div>
-        <p class="muted">exkl. moms · ingen bindningstid · 14 dagar gratis</p>
-        <ul class="checks">
-          <li>Obegränsat antal kurser</li><li>Medlemssida med din logga och adress</li><li>Inkorg, pipeline och community</li><li>Utskick och automationer</li><li>Företagspaket, affiliates och rabattkoder</li><li>Stripe, Fortnox och bokning</li><li>Flytthjälp och Kom igång-kursen</li><li>Support på svenska</li>
-        </ul>
-        <a class="btn big block" href="#ko">Ställ dig i kön</a>
-        <p class="small muted center">Pris vid lansering. Du får det bekräftat innan du betalar något.</p>
-      </div>
-      <div class="addons reveal">
-        <h3>Tillval</h3>
-        <div class="addon"><span class="fa-solid fa-robot"></span><div><strong>AI-handledare</strong><p>Svarar dina deltagare dygnet runt utifrån ditt kursmaterial.</p></div></div>
-        <div class="addon"><span class="fa-solid fa-truck-fast"></span><div><strong>Vi flyttar åt dig</strong><p>Vi flyttar kontakter, medlemmar, kurser och säljsidor från din gamla plattform. Fast pris efter en kort genomgång.</p></div></div>
-        <div class="addon"><span class="fa-solid fa-film"></span><div><strong>Video och sms</strong><p>Betalas direkt till leverantören efter användning, oftast några tior i månaden.</p></div></div>
-      </div>
+<!-- Pris -->
+<section class="pricing" id="pris">
+  <div class="wrap grid">
+    <p class="rail label">06 · Pris</p>
+    <div class="price">
+      <p class="price-num">680 <span>kr i månaden</span></p>
+      <p class="price-terms">Exklusive moms. Ingen bindningstid. Allt nedan ingår.</p>
+      <a class="btn btn-accent" href="#ko">Ställ dig på väntelistan <svg width="18" height="18"><use href="#i-arrow"/></svg></a>
+      <p class="fine">Planerat pris vid lansering. Du får det bekräftat innan du betalar något.</p>
     </div>
+    <ul class="price-list">
+      <li>Obegränsat antal kurser och medlemmar</li>
+      <li>Egen adress, logga och färger</li>
+      <li>Inkorg, pipeline och community</li>
+      <li>Utskick, automationer och gratisguider</li>
+      <li>Företagspaket, affiliates och rabattkoder</li>
+      <li>Stripe, Fortnox och bokning</li>
+      <li>Flytthjälp och support på svenska</li>
+    </ul>
+    <p class="price-extra">Tillval: AI-handledare, och flytt som vi gör åt dig. Video och sms betalas direkt till leverantören, oftast några tior i månaden.</p>
   </div>
 </section>
 
-<!-- GRUNDARE -->
+<!-- Grundaren -->
 <section class="founder">
-  <div class="wrap founder-in reveal">
-    <span class="fa-solid fa-quote-left q"></span>
-    <p class="quote">Jag byggde en onlinekurs tillsammans med en kund i ett av de stora allt-i-ett-verktygen. Det fungerade, men vi betalade för hundra funktioner vi aldrig använde och var rädda för att röra automationerna. Kursplattformen är det jag själv ville ha: allt som behövs för att sälja och leverera en kurs som förändrar, och inget mer.</p>
-    <p class="who"><strong>David Bergqvist</strong><span>Grundare, med bakgrund från varumärkesbyrå och projektledning</span></p>
+  <div class="wrap grid">
+    <p class="rail label">07 · Grundaren</p>
+    <blockquote class="founder-quote">
+      <p>Jag byggde en onlinekurs tillsammans med en kund i ett av de stora allt-i-ett-verktygen. Det fungerade, men vi betalade för hundra funktioner vi aldrig använde och vågade inte röra automationerna. Det här är plattformen jag själv ville ha.</p>
+      <footer><span class="sig">David</span><span>David Bergqvist, grundare. Bakgrund från varumärkesbyrå och projektledning.</span></footer>
+    </blockquote>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="fragor" class="faq">
-  <div class="wrap narrow">
-    <h2 class="center reveal">Vanliga frågor</h2>
-    <details class="reveal"><summary>Behöver jag kunna något tekniskt?</summary><p>Nej. Varje del har en förklaring och tips, och en bocklista tar dig steg för steg. Det enda tekniska är att koppla din adress, och där visar plattformen exakt vad du ska klistra in hos din domänleverantör.</p></details>
-    <details class="reveal"><summary>Vem får pengarna när någon köper?</summary><p>Du. Betalningarna går direkt till ditt eget Stripe-konto. Vi tar ingen provision på din försäljning.</p></details>
-    <details class="reveal"><summary>Kan deltagarna ladda ner mina videor?</summary><p>Videorna spelas upp via länkar som slutar gälla och bara fungerar på din adress. Ingen tjänst kan helt hindra skärminspelning, men det är svårt nog att nästan ingen försöker.</p></details>
-    <details class="reveal"><summary>Hur flyttar jag från GoHighLevel, Systeme eller Kajabi?</summary><p>Under Flytta hit väljer du din gamla plattform och hämtar kontakter och medlemmar direkt eller via en exportfil. Du ser en provkörning innan något sparas och kan ångra allt. Vill du slippa göra det själv flyttar vi åt dig.</p></details>
-    <details class="reveal"><summary>Hur fungerar försäljning till företag?</summary><p>Du skapar platspaket, till exempel 5, 10, 25 och 50 platser. Företaget betalar med kort eller faktura. Kontaktpersonen får en egen vy där hen bjuder in medarbetare och ser hur långt de kommit. Reflektioner är alltid privata.</p></details>
-    <details class="reveal"><summary>Vad händer med mina medlemmar om jag slutar?</summary><p>Du kan ladda ner alla kontakter och medlemmar när du vill. Dina deltagare påverkas aldrig av ditt abonnemang medan du är kund.</p></details>
-    <details class="reveal"><summary>Var lagras uppgifterna?</summary><p>Inom EU. Deltagarna kan själva ladda ner eller radera sina uppgifter, och det finns ett färdigt personuppgiftsbiträdesavtal.</p></details>
-    <details class="reveal"><summary>När öppnar ni?</summary><p>Vi öppnar för de första kursskaparna snart. De som står i kön får komma in först och hjälper till att forma plattformen.</p></details>
-  </div>
-</section>
-
-<!-- KÖ -->
-<section id="ko" class="signup">
-  <div class="wrap signup-in reveal">
-    <div>
-      <h2>Bli först in</h2>
-      <p class="lead">Ställ dig i kön så hör vi av oss när det är din tur. De första får hjälp att komma igång personligen.</p>
+<!-- Frågor -->
+<section class="faq">
+  <div class="wrap grid">
+    <p class="rail label">08 · Frågor</p>
+    <div class="faq-list">
+      <details><summary>Behöver jag kunna något tekniskt?<svg width="18" height="18"><use href="#i-plus"/></svg></summary><p>Nej. Varje del förklarar vad den är till för, och en bocklista tar dig steg för steg. Det enda tekniska är att koppla din adress, och där visar plattformen exakt vad du ska klistra in hos din domänleverantör.</p></details>
+      <details><summary>Vem får pengarna när någon köper?<svg width="18" height="18"><use href="#i-plus"/></svg></summary><p>Du. Betalningarna går direkt till ditt eget Stripe-konto, och vi tar ingen provision på din försäljning.</p></details>
+      <details><summary>Kan deltagarna ladda ner mina videor?<svg width="18" height="18"><use href="#i-plus"/></svg></summary><p>Videorna spelas upp via länkar som slutar gälla och bara fungerar på din adress. Ingen tjänst kan helt hindra skärminspelning, men det är svårt nog att nästan ingen försöker.</p></details>
+      <details><summary>Hur fungerar försäljning till företag?<svg width="18" height="18"><use href="#i-plus"/></svg></summary><p>Du skapar platspaket, till exempel 5, 10, 25 och 50 platser. Företaget betalar med kort eller faktura. Kontaktpersonen bjuder in medarbetare och ser framsteg. Reflektionerna är alltid privata.</p></details>
+      <details><summary>Vad händer med mina medlemmar om jag slutar?<svg width="18" height="18"><use href="#i-plus"/></svg></summary><p>Du kan ladda ner alla kontakter och medlemmar när du vill. Dina deltagare påverkas aldrig av ditt abonnemang medan du är kund.</p></details>
+      <details><summary>Var lagras uppgifterna?<svg width="18" height="18"><use href="#i-plus"/></svg></summary><p>Inom EU. Deltagarna kan själva ladda ner eller radera sina uppgifter, och det finns ett personuppgiftsbiträdesavtal.</p></details>
+      <details><summary>När öppnar ni?<svg width="18" height="18"><use href="#i-plus"/></svg></summary><p>Snart, för de första kursskaparna. De som står på väntelistan kommer in först och får hjälp att komma igång personligen.</p></details>
     </div>
-    <form id="anmalan" novalidate>
-      <label>Förnamn<input name="namn" autocomplete="given-name"></label>
-      <label>E-post<input type="email" name="email" required autocomplete="email"></label>
-      <label>Vad säljer du i dag? <span class="opt">(valfritt)</span><input name="saljer" placeholder="Till exempel: en ledarskapskurs i Kajabi"></label>
+  </div>
+</section>
+
+<!-- Väntelista -->
+<section class="signup" id="ko">
+  <div class="wrap grid">
+    <p class="rail label">09 · Väntelista</p>
+    <div class="signup-copy">
+      <h2 class="h1">Var bland de första</h2>
+      <p>Vi öppnar för några få kursskapare åt gången och hjälper var och en att komma igång. Skriv upp dig så hör vi av oss när det är din tur.</p>
+    </div>
+    <form id="anmalan" class="form" novalidate>
+      <div class="field"><label for="f-namn">Förnamn</label><input id="f-namn" name="namn" autocomplete="given-name"></div>
+      <div class="field"><label for="f-email">E-post</label><input id="f-email" type="email" name="email" required autocomplete="email"></div>
+      <div class="field wide"><label for="f-saljer">Vad säljer du i dag, och var? <span>Valfritt</span></label><input id="f-saljer" name="saljer" placeholder="En ledarskapskurs i Kajabi"></div>
       <div class="hp" aria-hidden="true"><input name="webbplats" tabindex="-1" autocomplete="off"></div>
-      <label class="check"><input type="checkbox" name="samtycke"> Ja, mejla mig när Kursplattformen öppnar och ibland om hur den byggs. Jag kan avregistrera mig när som helst.</label>
-      <button class="btn big block">Ställ mig i kön</button>
-      <p id="status" class="status" role="status"></p>
+      <label class="consent"><input type="checkbox" name="samtycke"><span>Mejla mig när Kursplattformen öppnar och ibland om hur den byggs. Jag kan avregistrera mig när som helst.</span></label>
+      <button class="btn btn-paper" type="submit"><span class="btn-label">Skriv upp mig</span><svg width="18" height="18"><use href="#i-arrow"/></svg></button>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>
@@ -326,8 +298,9 @@
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <a class="logo" href="#"><span class="mark"><span class="fa-solid fa-seedling"></span></span>Kursplattformen</a>
-    <p class="muted small">Skärmbilderna visar en demoakademi med påhittat innehåll.</p>
+    <span class="wordmark"><span class="mark"></span>Kursplattformen</span>
+    <p>Skärmbilderna visar en demoakademi med påhittat innehåll.</p>
+    <a href="#top" class="text-link">Till toppen</a>
   </div>
 </footer>
 
