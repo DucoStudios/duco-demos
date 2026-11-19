@@ -103,7 +103,7 @@ h1, h2, h3 { font-weight: 600; }
 .eyebrow span { color: var(--mint); padding-inline: 5px; }
 .hero h1 { max-width: 1080px; margin: 26px auto 30px; font-size: clamp(62px, 7.3vw, 112px); line-height: .94; letter-spacing: -.066em; }
 .hero h1 em { color: var(--mint); font-style: normal; font-weight: 600; position: relative; }
-.hero h1 em::after { content: ""; position: absolute; left: 3%; right: 0; bottom: -.02em; height: .055em; border-radius: 99px; background: var(--peach); transform: scaleX(.18); transform-origin: left; transition: transform 1.1s var(--ease) .45s; }
+.hero h1 em::after { content: ""; position: absolute; left: 3%; right: 0; bottom: -.02em; height: .055em; border-radius: 99px; background: var(--peach); transform: scaleX(1); transform-origin: left; transition: transform 1.1s var(--ease) .45s; }
 .js .hero h1:not(.visible) em::after { transform: scaleX(0); }
 .hero-lead { max-width: 690px; margin-inline: auto; color: rgba(255,255,255,.70); font-size: clamp(18px, 1.7vw, 22px); line-height: 1.55; letter-spacing: -.015em; }
 .hero-actions { display: flex; justify-content: center; align-items: center; gap: 25px; margin-top: 40px; }
