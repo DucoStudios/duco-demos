@@ -119,7 +119,7 @@
     });
   });
 
-  var fmt = function (n) { return Math.round(n).toLocaleString("sv-SE").replace(/\u00a0/g, " ") + " €"; };
+  var fmt = function (n) { return "€" + Math.round(n).toLocaleString("en-GB"); };
   var num = function (id) { var el = document.getElementById(id); var v = el ? parseFloat(el.value) : 0; return isFinite(v) && v > 0 ? v : 0; };
   function calc() {
     var tot = num("c-int") * Math.min(num("c-pct"), 100) / 100;
@@ -142,37 +142,37 @@
       status.className = "form-status " + (type || "");
     }
     function mailto(data) {
-      var body = ["Namn: " + (data.namn || ""), "E-post: " + data.email, "Ort: " + (data.ort || ""), "Antal boenden: " + (data.antal || ""), "Annons/sajt: " + (data.meddelande || "")].join("\n");
-      return "mailto:david@ducostudios.com?subject=" + encodeURIComponent("Demo av DucoBook") + "&body=" + encodeURIComponent(body);
+      var body = ["Name: " + (data.namn || ""), "Email: " + data.email, "Location: " + (data.ort || ""), "Properties: " + (data.antal || ""), "Listing/site: " + (data.meddelande || "")].join("\n");
+      return "mailto:david@ducostudios.com?subject=" + encodeURIComponent("DucoBook demo") + "&body=" + encodeURIComponent(body);
     }
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       var email = form.email.value.trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showStatus("Skriv en giltig e-postadress.", "error");
+        showStatus("Please enter a valid email address.", "error");
         form.email.focus();
         return;
       }
       submit.disabled = true;
-      submitLabel.textContent = "Skickar…";
+      submitLabel.textContent = "Sending…";
       showStatus("");
-      var payload = { konto: "webb", magnet: "ducobook-demo", email: email, kalla: "ducobook-sida" };
+      var payload = { konto: "webb", magnet: "ducobook-demo", email: email, kalla: "ducobook-sida-en" };
       ["namn", "ort", "antal", "meddelande", "webbplats"].forEach(function (k) { var v = form[k] && form[k].value.trim(); if (v) payload[k] = v; });
       fetch(API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
         .then(function (response) {
           if (response.status === 429) throw new Error("rate");
           if (!response.ok) throw new Error("fail");
           form.reset();
-          submitLabel.textContent = "Skickat";
-          showStatus("Tack. Vi hör av oss inom ett par dagar för att boka en tid.", "ok");
+          submitLabel.textContent = "Sent";
+          showStatus("Thank you. We’ll be in touch within a couple of days to book a time.", "ok");
         })
         .catch(function (error) {
-          submitLabel.textContent = "Skicka";
-          if (error.message === "rate") { showStatus("För många försök. Vänta en stund och försök igen.", "error"); return; }
+          submitLabel.textContent = "Send";
+          if (error.message === "rate") { showStatus("Too many attempts. Please wait a moment and try again.", "error"); return; }
           status.className = "form-status error";
           status.innerHTML = "";
-          status.appendChild(document.createTextNode("Det gick inte att skicka just nu. "));
-          var a = document.createElement("a"); a.href = mailto(payload); a.textContent = "Mejla oss i stället"; a.style.textDecoration = "underline";
+          status.appendChild(document.createTextNode("We couldn’t send that just now. "));
+          var a = document.createElement("a"); a.href = mailto(payload); a.textContent = "Email us instead"; a.style.textDecoration = "underline";
           status.appendChild(a);
         })
         .finally(function () { submit.disabled = false; });
