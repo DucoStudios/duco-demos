@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DucoBook · Egen bokningssajt för dig som hyr ut</title>
+  <meta name="description" content="DucoBook ger dig en egen bokningssajt, en kalender i synk med Airbnb och Booking.com och betalningar direkt till ditt konto. Fast månadsavgift, ingen provision på dina bokningar.">
+  <meta property="og:title" content="DucoBook · Låt gästerna boka direkt hos dig">
+  <meta property="og:description" content="Egen bokningssajt, kalender i synk med Airbnb och Booking.com, ingen provision.">
+  <meta property="og:image" content="ui/kalender-hel.jpg">
+  <meta name="theme-color" content="#11111a">
+  <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/manrope.css">
+  <link rel="stylesheet" href="style.css?v=1">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 20 20"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="play" viewBox="0 0 20 20"><path d="m8 6 6 4-6 4V6Z" fill="currentColor"/></symbol>
+    <symbol id="check" viewBox="0 0 20 20"><path d="m5 10 3.2 3.2L15.5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="plus" viewBox="0 0 20 20"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="menu" viewBox="0 0 20 20"><path d="M3 6.5h14M3 13.5h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="close" viewBox="0 0 20 20"><path d="m5 5 10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <div class="hero-shell" id="top">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="#top" aria-label="DucoBook, till toppen">
+          <span class="brand-mark" aria-hidden="true"><i></i></span>
+          <span>DucoBook</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Huvudmeny">
+          <a href="#varde">Värdet</a>
+          <a href="#plattform">Plattformen</a>
+          <a href="#fordelar">Alla fördelar</a>
+          <a href="#pris">Pris</a>
+          <a href="#fragor">Frågor</a>
+        </nav>
+        <a class="nav-cta" href="#demo">Boka en demo <svg width="18" height="18"><use href="#arrow"/></svg></a>
+        <button class="menu-button" type="button" aria-label="Öppna meny" aria-controls="mobile-menu"><svg width="20" height="20"><use href="#menu"/></svg></button>
+      </div>
+    </header>
+
+    <dialog class="mobile-menu" id="mobile-menu" aria-label="Meny">
+      <div class="mobile-menu-top">
+        <span class="brand"><span class="brand-mark"><i></i></span>DucoBook</span>
+        <button class="menu-close" type="button" aria-label="Stäng meny"><svg width="20" height="20"><use href="#close"/></svg></button>
+      </div>
+      <nav>
+        <a href="#varde">Värdet</a>
+        <a href="#plattform">Plattformen</a>
+        <a href="#fordelar">Alla fördelar</a>
+        <a href="#pris">Pris</a>
+        <a href="#fragor">Frågor</a>
+        <a href="#demo">Boka en demo</a>
+      </nav>
+    </dialog>
+
+    <main>
+      <section class="hero section-pad">
+        <div class="container hero-copy">
+          <p class="eyebrow reveal">Bokningsplattform för uthyrare <span>·</span> ducobook.com</p>
+          <h1 class="reveal">Låt gästerna boka <em>direkt</em> hos dig.</h1>
+          <p class="hero-lead reveal">DucoBook ger ditt hus, din gård eller dina lägenheter en egen bokningssajt. Kalendern stämmer med Airbnb och Booking.com, gästen betalar till ditt eget konto och du betalar en fast månadsavgift. Ingen procent på dina bokningar, någonsin.</p>
+          <div class="hero-actions reveal">
+            <a class="button button-light" href="#demo">Boka en demo <svg width="19" height="19"><use href="#arrow"/></svg></a>
+            <a class="quiet-link" href="#varde"><span class="play"><svg width="16" height="16"><use href="#play"/></svg></span>Räkna på vad du sparar</a>
+          </div>
+        </div>
+
+        <div class="container product-stage reveal" data-parallax-stage>
+          <div class="stage-glow"></div>
+          <div class="product-window" data-parallax="0.35">
+            <div class="window-bar">
+              <span class="window-brand"><b></b>Ditt gästhus</span>
+              <span class="window-address">portal.ducobook.com</span>
+              <span class="window-user">DG</span>
+            </div>
+            <img src="ui/kalender-hel.jpg" width="2880" height="1800" alt="Ägarportalens kalender där Airbnb-bokningar och direktbokningar syns i samma månad">
+          </div>
+          <div class="floating-card progress-card" data-parallax="0.72">
+            <span class="float-label">Ny förfrågan</span>
+            <strong>7 nätter i december</strong>
+            <div class="mini-progress"><i></i></div>
+            <span class="float-note"><b>665 €</b> reserverat, dras när du godkänner</span>
+          </div>
+          <div class="floating-card activity-card" data-parallax="0.9">
+            <span class="activity-icon"><svg width="18" height="18"><use href="#check"/></svg></span>
+            <span><strong>Kalendern synkad</strong><small>Airbnb och Booking.com</small></span>
+          </div>
+          <div class="mobile-device" data-parallax="0.58">
+            <span class="device-speaker"></span>
+            <img src="ui/mobil.jpg" width="1170" height="2532" alt="Förfrågningar som väntar på godkännande, i mobilen">
+          </div>
+        </div>
+
+        <div class="container hero-note reveal">
+          <span>Allt i en tjänst</span>
+          <ul><li>Bokningssajt</li><li>Kalendersynk</li><li>Betalningar</li><li>Gästmejl</li><li>Ekonomi</li></ul>
+        </div>
+      </section>
+  </div>
+
+      <section class="manifest section-pad">
+        <div class="container manifest-grid">
+          <p class="section-kicker reveal">Varför DucoBook</p>
+          <div class="manifest-copy">
+            <h2 class="display-small reveal">Plattformarna hittar gästerna. Du ska inte behöva betala för dem två gånger.</h2>
+            <p class="manifest-lead reveal">Airbnb och Booking.com är bra på att visa upp ditt boende. Men när samma familj kommer tillbaka år efter år, eller när någon hittar dig via Google eller en vän, betalar du fortfarande avgift på varje natt. Med en egen bokningssajt behåller du de bokningarna själv, och gästen slipper plattformens serviceavgift.</p>
+          </div>
+          <div class="principles">
+            <article class="principle reveal"><span>01</span><h3>Behåll mer av varje bokning</h3><p>En fast månadsavgift i stället för procent. Ju mer du hyr ut direkt, desto mer stannar hos dig.</p></article>
+            <article class="principle reveal"><span>02</span><h3>Sälj aldrig samma natt två gånger</h3><p>En gemensam kalender för alla kanaler, med extra kontroll i samma sekund som en gäst bokar.</p></article>
+            <article class="principle reveal"><span>03</span><h3>Gästerna blir dina</h3><p>Namn, e-post och telefon stannar hos dig. Du kan höra av dig inför nästa säsong, utan mellanhand.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="business-section section-pad" id="varde">
+        <div class="container business-grid">
+          <div class="business-copy reveal">
+            <p class="section-kicker">Värdet i siffror</p>
+            <h2 class="display-small">Räkna på provisionen.</h2>
+            <p>Fyll i dina egna siffror. Avgifterna skiljer sig mellan Airbnb, Booking.com och olika upplägg, så titta på din senaste utbetalning för att se vad du faktiskt betalar.</p>
+            <dl><div><dt>Din kostnad hos oss</dt><dd>Fast avgift per månad</dd></div><div><dt>Provision på bokningar</dt><dd>0 %</dd></div><div><dt>Kortavgift</dt><dd>Till Stripe, som vanligt</dd></div></dl>
+          </div>
+          <form class="calc-card reveal" id="calc" onsubmit="return false" aria-label="Räkna på provisionen">
+            <h3>Räkna själv</h3>
+            <p>Siffrorna nedan är bara ett exempel.</p>
+            <div class="calc-fields">
+              <label class="calc-field">Hyresintäkt via plattformar per år<span class="calc-input"><input type="number" id="c-int" value="30000" min="0" step="500" inputmode="numeric"><em>€</em></span></label>
+              <label class="calc-field">Avgift du betalar till plattformen<span class="calc-input"><input type="number" id="c-pct" value="15" min="0" max="40" step="0.5" inputmode="decimal"><em>%</em></span></label>
+              <label class="calc-field">Andel som kan bli direktbokningar<span class="calc-input"><input type="number" id="c-dir" value="30" min="0" max="100" step="5" inputmode="numeric"><em>%</em></span></label>
+            </div>
+            <div class="calc-result" aria-live="polite">
+              <div><small>Provision i dag</small><b id="c-tot">4 500 €</b></div>
+              <div class="gain"><small>Du behåller själv</small><b id="c-save">1 350 €</b></div>
+            </div>
+            <p class="calc-note">Från det dras DucoBooks månadsavgift och Stripes kortavgift. En uppskattning, inget löfte.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="platform-section section-pad" id="plattform">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-kicker">Plattformen</p>
+            <h2 class="display-small">Hela uthyrningen i en portal.</h2>
+            <p>Kalender, förfrågningar, gäster, pengar och din sajt. Du loggar in med en länk i mejlen, inget lösenord att komma ihåg.</p>
+          </div>
+
+          <div class="showcase reveal">
+            <div class="showcase-tabs five" role="tablist" aria-label="Plattformens delar">
+              <button class="showcase-tab active" type="button" role="tab" aria-selected="true" aria-controls="panel-cal" id="tab-cal" data-panel="cal"><span>01</span>Kalender</button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-req" id="tab-req" data-panel="req"><span>02</span>Förfrågningar</button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-msg" id="tab-msg" data-panel="msg"><span>03</span>Gäster</button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-fin" id="tab-fin" data-panel="fin"><span>04</span>Ekonomi</button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-site" id="tab-site" data-panel="site"><span>05</span>Din sajt</button>
+            </div>
+            <div class="showcase-panels">
+              <article class="showcase-panel active" id="panel-cal" role="tabpanel" aria-labelledby="tab-cal" data-panel="cal">
+                <div class="panel-copy"><span class="panel-tag">Kalender</span><h3>Alla kanaler i samma kalender.</h3><p>DucoBook läser av Airbnb och Booking.com var femtonde minut och skickar tillbaka en samlad kalender. Blockera dagar för städning, renovering eller egen semester med två klick.</p><ul><li>Airbnb, Booking.com och din sajt i samma vy</li><li>Extra kontroll precis innan en gäst bokar</li><li>Larm om en kalenderlänk slutar fungera</li></ul></div>
+                <figure class="panel-media wide"><img src="ui/kalender-hel.jpg" width="2880" height="1800" alt="Kalendervyn med bokningar från flera kanaler"></figure>
+              </article>
+              <article class="showcase-panel" id="panel-req" role="tabpanel" aria-labelledby="tab-req" data-panel="req" hidden>
+                <div class="panel-copy"><span class="panel-tag">Förfrågningar</span><h3>Du bestämmer vem som bor hos dig.</h3><p>Med förfrågningsläget reserveras gästens kort men dras inte förrän du tryckt på Godkänn. Säger du nej släpps reservationen direkt. Vill du hellre ha helt automatiska bokningar slår du på direktbokning.</p><ul><li>Förfrågan eller direktbokning, per boende</li><li>Inga pengar dras innan du godkänt</li><li>Obesvarade förfrågningar släpps efter 24 timmar</li></ul></div>
+                <figure class="panel-media wide"><img src="ui/forfragningar-hel.jpg" width="2880" height="1800" alt="Två förfrågningar som väntar på godkännande"></figure>
+              </article>
+              <article class="showcase-panel" id="panel-msg" role="tabpanel" aria-labelledby="tab-msg" data-panel="msg" hidden>
+                <div class="panel-copy"><span class="panel-tag">Gäster</span><h3>Svara snabbt, utan att sitta vid datorn.</h3><p>Varje bokning får en egen meddelandetråd. Har en gäst väntat två timmar på svar får du en påminnelse. Bekräftelse, ankomstinformation och tack skickas automatiskt på gästens språk.</p><ul><li>En tråd per bokning</li><li>Påminnelse när en gäst väntar</li><li>Gästmejl på franska, engelska och svenska</li></ul></div>
+                <figure class="panel-media wide"><img src="ui/meddelanden-hel.jpg" width="2880" height="1800" alt="En gästs fråga om tidig incheckning i meddelandevyn"></figure>
+              </article>
+              <article class="showcase-panel" id="panel-fin" role="tabpanel" aria-labelledby="tab-fin" data-panel="fin" hidden>
+                <div class="panel-copy"><span class="panel-tag">Ekonomi</span><h3>Se vad uthyrningen faktiskt ger.</h3><p>Intäkt och beläggning vecka för vecka, uppdelat på kanal. Lägg in utbetalningar från Airbnb och Booking.com så ser du hela året på ett ställe, och skicka en fil till din redovisningskonsult.</p><ul><li>Intäkt och beläggning per vecka</li><li>Nätter per kanal</li><li>CSV-export för bokföringen</li></ul></div>
+                <figure class="panel-media wide"><img src="ui/ekonomi-hel.jpg" width="2880" height="1800" alt="Ekonomivyn med intäkt per vecka"></figure>
+              </article>
+              <article class="showcase-panel" id="panel-site" role="tabpanel" aria-labelledby="tab-site" data-panel="site" hidden>
+                <div class="panel-copy"><span class="panel-tag">Din sajt</span><h3>Ändra texter och bilder själv.</h3><p>Klicka på en rubrik eller en bild, ändra och se resultatet innan du sparar. Bildredigerare med beskärning och filter ingår. Ändringen syns på sajten inom någon minut.</p><ul><li>Texter per språk</li><li>Byt och beskär bilder</li><li>Skriv om gästmejlen med förhandsvisning</li></ul></div>
+                <figure class="panel-media wide"><img src="ui/redigera-hel.jpg" width="2880" height="1800" alt="Sajtredigeraren med texter på franska"></figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="journey section-pad">
+        <div class="container">
+          <div class="journey-heading reveal">
+            <p class="section-kicker">Så går en bokning till</p>
+            <h2 class="display-small">Från första klick till återkommande gäst.</h2>
+          </div>
+          <div class="journey-track reveal">
+            <div class="journey-line"><i></i></div>
+            <article><span>01</span><h3>Gästen hittar dig</h3><p>På Airbnb, via Google, ditt Instagram eller en vän som bott hos dig.</p></article>
+            <article><span>02</span><h3>Bokar på din sajt</h3><p>Väljer datum, ser bara lediga nätter och betalar med kort.</p></article>
+            <article><span>03</span><h3>Du godkänner</h3><p>Ett tryck i mobilen. Pengarna går till ditt konto, kalendern uppdateras överallt.</p></article>
+            <article><span>04</span><h3>Gästen kommer tillbaka</h3><p>Mejl före och efter vistelsen, och nästa år bokar de direkt hos dig.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="more-section section-pad" id="fordelar">
+        <div class="container">
+          <div class="more-heading reveal"><p class="section-kicker">Alla fördelar</p><h2 class="display-small">Det här får du med DucoBook.</h2></div>
+          <div class="benefits reveal">
+            <p class="benefit-group">Mer pengar kvar</p>
+            <div class="benefit"><span>01</span><h3>Ingen provision på dina bokningar</h3><p>Du betalar en fast avgift i månaden. <strong>En bokning på 1&nbsp;000&nbsp;€ ger dig 1&nbsp;000&nbsp;€</strong>, minus Stripes vanliga kortavgift.</p></div>
+            <div class="benefit"><span>02</span><h3>Pengarna går direkt till dig</h3><p>Du kopplar ditt eget Stripe-konto med ett klick. Gästens betalning landar hos dig, inte hos oss först, och utbetalningen styr du själv.</p></div>
+            <div class="benefit"><span>03</span><h3>Billigare för gästen, bättre för dig</h3><p>Gästen slipper plattformens serviceavgift när den bokar direkt. Du kan erbjuda ett bättre pris och ändå tjäna mer per natt.</p></div>
+            <div class="benefit"><span>04</span><h3>Återkommande gäster bokar utan mellanhand</h3><p>Familjen som kommer varje sommar behöver inte gå via en plattform igen. Du skickar länken, de bokar.</p></div>
+
+            <p class="benefit-group">Mindre oro</p>
+            <div class="benefit"><span>05</span><h3>Inga dubbelbokningar</h3><p>Kalendern läser av Airbnb och Booking.com var femtonde minut och en gång till precis innan en gäst bokar hos dig. Krockar det ändå vinner Airbnb, gästen på din sajt får pengarna tillbaka automatiskt och ditt betyg på Airbnb påverkas inte.</p></div>
+            <div class="benefit"><span>06</span><h3>Inga pengar dras innan du sagt ja</h3><p>I förfrågningsläget reserveras kortet men dras först när du godkänner. Säger du nej, eller svarar inte inom 24 timmar, släpps reservationen.</p></div>
+            <div class="benefit"><span>07</span><h3>Larm när något slutar fungera</h3><p>Slutar en kalenderlänk från Airbnb eller Booking.com att svara får du ett mejl, innan det hinner bli ett problem.</p></div>
+            <div class="benefit"><span>08</span><h3>Dina regler gäller</h3><p>Max antal gäster, husdjur, barn, minsta antal nätter och pris per natt bestämmer du för varje boende. Sajten följer reglerna automatiskt.</p></div>
+
+            <p class="benefit-group">Mindre jobb</p>
+            <div class="benefit"><span>09</span><h3>Gästmejl som går av sig själva</h3><p>Bokningsbekräftelse, ankomstinformation dagen före och ett tack dagen efter. På gästens språk, med texter du skriver om själv.</p></div>
+            <div class="benefit"><span>10</span><h3>Påminnelse när en gäst väntar på svar</h3><p>Har en fråga legat obesvarad i två timmar hör vi av oss. Snabba svar ger nöjdare gäster, och på Airbnb även bättre placering.</p></div>
+            <div class="benefit"><span>11</span><h3>Städare och förvaltare i samma system</h3><p>Bjud in den som städar eller sköter ett boende. De ser bara sina boenden och får uppgifter av dig, utan tillgång till resten.</p></div>
+            <div class="benefit"><span>12</span><h3>Underlag till bokföringen</h3><p>Intäkt per vecka och kanal, och en CSV-fil till din redovisningskonsult när året är slut. Inga kalkylark att pussla ihop.</p></div>
+
+            <p class="benefit-group">Ditt eget varumärke</p>
+            <div class="benefit"><span>13</span><h3>En sajt med ditt namn</h3><p>På din egen domän, med dina bilder och dina texter. Har du redan en sajt kopplar vi in bokningen där i stället.</p></div>
+            <div class="benefit"><span>14</span><h3>Ändra allt själv</h3><p>Klicka på en text eller bild, ändra och se resultatet innan du sparar. Du behöver aldrig vänta på någon för att byta en bild.</p></div>
+            <div class="benefit"><span>15</span><h3>Flera språk</h3><p>Sajten och gästmejlen kan vara på franska, engelska och svenska, så att gäster från hela Europa förstår vad de bokar.</p></div>
+            <div class="benefit"><span>16</span><h3>Du äger gästerna och innehållet</h3><p>Kontaktuppgifter, texter och bilder är dina. Slutar du använda DucoBook får du med dig alltihop.</p></div>
+          </div>
+
+          <div class="compare reveal">
+            <table>
+              <thead><tr><th scope="col"></th><th scope="col">Bara Airbnb och Booking.com</th><th scope="col" class="us">Med DucoBook</th></tr></thead>
+              <tbody>
+                <tr><td>Avgift på bokningen</td><td>En procent på varje bokning</td><td class="us">Fast månadsavgift, 0 % på direktbokningar</td></tr>
+                <tr><td>Gästens kontaktuppgifter</td><td>Stannar hos plattformen</td><td class="us">Dina, i din portal</td></tr>
+                <tr><td>Återkommande gäster</td><td>Bokar via plattformen igen</td><td class="us">Bokar direkt hos dig</td></tr>
+                <tr><td>Kalender</td><td>En per plattform</td><td class="us">En för alla kanaler</td></tr>
+                <tr><td>Utbetalning</td><td>När plattformen betalar ut</td><td class="us">Till ditt Stripe-konto</td></tr>
+                <tr><td>Ditt namn på nätet</td><td>En annons bland tusentals</td><td class="us">Egen sajt och egen domän</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="brand-section section-pad">
+        <div class="brand-orb"></div>
+        <div class="container brand-grid">
+          <div class="brand-copy reveal">
+            <p class="section-kicker">I fickan</p>
+            <h2 class="display-small">Godkänn en bokning medan du handlar.</h2>
+            <p>Portalen fungerar lika bra i mobilen som på datorn. Du får ett mejl när en förfrågan kommer, öppnar länken och trycker på Godkänn. Klart.</p>
+            <div class="domain-chip"><span class="domain-dot"></span>boka.dittgasthus.se <b>ansluten</b></div>
+          </div>
+          <div class="brand-visual reveal">
+            <div class="palette-card"><span style="--swatch:#5a4de4"></span><span style="--swatch:#a8edcf"></span><span style="--swatch:#f2b27a"></span><small>Dina färger på sajten</small></div>
+            <div class="member-screen"><img src="ui/mobil.jpg" width="1170" height="2532" alt="Förfrågningar i mobilen"></div>
+            <div class="brand-badge"><span>Ny förfrågan</span><strong>665 €</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing-section section-pad" id="pris">
+        <div class="container">
+          <div class="pricing-heading reveal">
+            <div class="pricing-copy"><p class="section-kicker">Pris</p><h2 class="display-small">En fast avgift.<br>Noll procent.</h2></div>
+          </div>
+          <div class="price-two">
+            <article class="price-card price-featured reveal">
+              <div class="price-top"><span>DucoBook</span><span class="price-status">0 % provision</span></div>
+              <p class="price-big">Fast pris i månaden<small>Sätts efter en kort genomgång av ditt boende. Skriftligt pris inom en vecka.</small></p>
+              <ul>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Bokningssajt eller bokningsruta på din befintliga sajt</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Kalendersynk med Airbnb och Booking.com</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Förfrågan eller direktbokning, betalning till ditt konto</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Meddelanden, gästmejl och påminnelser</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Ekonomi, team och redigering av sajten</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Drift, uppdateringar och support</li>
+              </ul>
+              <a class="button" href="#demo">Få ett pris <svg width="19" height="19"><use href="#arrow"/></svg></a>
+            </article>
+            <article class="price-card price-side reveal">
+              <div class="price-top"><span>Det betalar du till andra</span></div>
+              <h3>Inga dolda avgifter.</h3>
+              <p>Det enda som tillkommer går direkt till andra, aldrig via oss.</p>
+              <ul>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Stripes kortavgift på varje betalning</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Din domän, ungefär 10 € om året</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Airbnb och Booking.com som vanligt, för bokningar som kommer därifrån</li>
+              </ul>
+              <a class="button button-outline" href="#demo">Boka en demo <svg width="19" height="19"><use href="#arrow"/></svg></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section section-pad" id="fragor">
+        <div class="container faq-grid">
+          <div class="faq-heading reveal"><p class="section-kicker">Vanliga frågor</p><h2 class="display-small">Innan du börjar.</h2></div>
+          <div class="faq-list reveal">
+            <details><summary>Måste jag lämna Airbnb eller Booking.com?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Nej. Ligg kvar där för att synas. DucoBook tar hand om gästerna som redan vet vem du är, och kalendern gör att du kan ha alla kanaler samtidigt.</p></details>
+            <details><summary>Vad händer om samma datum bokas på två ställen?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>DucoBook kontrollerar dina kanaler i samma ögonblick som en gäst bokar hos dig. Skulle en krock ändå uppstå vinner Airbnb och gästen på din sajt får pengarna tillbaka automatiskt. En krock mellan Airbnb och Booking.com löses aldrig automatiskt, där får du ett mejl så att du kan välja själv.</p></details>
+            <details><summary>Varför tar det tid innan Airbnb ser mina direktbokningar?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Airbnb och Booking.com hämtar externa kalendrar med några timmars mellanrum, det styr inte vi. Därför rekommenderar vi förfrågningsläget: du hinner se att datumen är fria innan något dras från gästens kort.</p></details>
+            <details><summary>Behöver jag en ny hemsida?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Nej. Har du redan en sajt lägger vi in bokningsrutan där. Har du ingen bygger vi en åt dig, på din egen domän.</p></details>
+            <details><summary>Vem äger gästernas uppgifter?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Du. Bokningar och kontaktuppgifter ligger i din portal, och slutar du lämnar vi ut alltihop.</p></details>
+            <details><summary>Vilket språk är portalen på?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Ägarportalen finns i dag på engelska, svenska och franska är på väg. Sajten och gästmejlen kan vara på franska, engelska och svenska.</p></details>
+            <details><summary>Hjälper ni med skatt och moms på uthyrningen?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Ekonomivyn ger dig underlaget och en fil till din redovisningskonsult. Rådgivning om skatt och moms ger vi inte, det ska en revisor i ditt land göra.</p></details>
+            <details><summary>Passar DucoBook för alla?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Den passar dig som hyr ut ett till ett tiotal boenden. Har du redan en kanalhanterare kopplad till Booking.com, eller fler än tjugo rumstyper, tillåter Booking.com inte kalendersynk via länk. Då säger vi det direkt på första samtalet.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="signup-section section-pad" id="demo">
+        <div class="signup-orb"></div>
+        <div class="container signup-grid">
+          <div class="signup-copy reveal"><p class="section-kicker">Boka en demo</p><h2>Se DucoBook med ditt eget boende.</h2><p>Berätta lite om var och vad du hyr ut, så visar vi plattformen med dina datum och ger dig ett fast pris. Trettio minuter, gratis och utan förpliktelser.</p></div>
+          <form class="signup-form reveal" id="anmalan">
+            <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" placeholder="Ditt namn" required></div>
+            <div class="field"><label for="email">E-post</label><input id="email" name="email" type="email" autocomplete="email" placeholder="du@exempel.se" required></div>
+            <div class="field"><label for="ort">Var ligger boendet? <span>frivilligt</span></label><input id="ort" name="ort" type="text" placeholder="Till exempel Languedoc"></div>
+            <div class="field"><label for="antal">Antal boenden</label><select id="antal" name="antal"><option>1</option><option>2 till 3</option><option>4 till 10</option><option>Fler än 10</option></select></div>
+            <div class="field full"><label for="meddelande">Länk till din annons eller sajt <span>frivilligt</span></label><input id="meddelande" name="meddelande" type="text" placeholder="airbnb.se/rooms/..."></div>
+            <div class="trap" aria-hidden="true"><label for="webbplats">Webbplats</label><input id="webbplats" name="webbplats" type="text" tabindex="-1" autocomplete="off"></div>
+            <button class="button button-mint" type="submit"><span class="btn-label">Skicka</span><svg width="19" height="19"><use href="#arrow"/></svg></button>
+            <p class="form-status" id="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <a class="brand" href="#top"><span class="brand-mark"><i></i></span><span>DucoBook</span></a>
+        <p>En produkt från Duco Studios, för dig som hyr ut.</p>
+        <a href="#top">Till toppen ↑</a>
+      </div>
+    </footer>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
