@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DucoBook · Votre propre site de réservation pour locations de vacances</title>
+  <meta name="description" content="DucoBook vous donne votre propre site de réservation, un calendrier synchronisé avec Airbnb et Booking.com, et des paiements versés directement sur votre compte. Un forfait mensuel fixe, aucune commission sur vos réservations.">
+  <meta property="og:title" content="DucoBook · Laissez vos voyageurs réserver directement chez vous">
+  <meta property="og:description" content="Votre propre site de réservation, un calendrier synchronisé avec Airbnb et Booking.com, zéro commission.">
+  <meta property="og:image" content="../ui/kalender-hel.jpg">
+  <meta name="theme-color" content="#11111a">
+  <link rel="alternate" hreflang="en" href="https://ducobook.com/">
+  <link rel="alternate" hreflang="fr" href="https://ducobook.com/fr/">
+  <link rel="preload" href="../fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../fonts/manrope.css">
+  <link rel="stylesheet" href="../style.css?v=3">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 20 20"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="play" viewBox="0 0 20 20"><path d="m8 6 6 4-6 4V6Z" fill="currentColor"/></symbol>
+    <symbol id="check" viewBox="0 0 20 20"><path d="m5 10 3.2 3.2L15.5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="plus" viewBox="0 0 20 20"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="menu" viewBox="0 0 20 20"><path d="M3 6.5h14M3 13.5h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="close" viewBox="0 0 20 20"><path d="m5 5 10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <div class="hero-shell" id="top">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="#top" aria-label="DucoBook, retour en haut">
+          <span class="brand-mark" aria-hidden="true"><i></i></span>
+          <span>DucoBook</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Menu principal">
+          <a href="#varde">Gains</a>
+          <a href="#plattform">Plateforme</a>
+          <a href="#fordelar">Avantages</a>
+          <a href="#pris">Tarifs</a>
+          <a href="#fragor">FAQ</a>
+        </nav>
+        <div class="lang-switch" aria-label="Langue"><a href="../" hreflang="en" lang="en">EN</a><a href="./" aria-current="page" lang="fr">FR</a></div>
+        <a class="nav-cta" href="#demo">Demander une démo <svg width="18" height="18"><use href="#arrow"/></svg></a>
+        <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-controls="mobile-menu"><svg width="20" height="20"><use href="#menu"/></svg></button>
+      </div>
+    </header>
+
+    <dialog class="mobile-menu" id="mobile-menu" aria-label="Menu">
+      <div class="mobile-menu-top">
+        <span class="brand"><span class="brand-mark"><i></i></span>DucoBook</span>
+        <button class="menu-close" type="button" aria-label="Fermer le menu"><svg width="20" height="20"><use href="#close"/></svg></button>
+      </div>
+      <nav>
+        <a href="#varde">Gains</a>
+        <a href="#plattform">Plateforme</a>
+        <a href="#fordelar">Avantages</a>
+        <a href="#pris">Tarifs</a>
+        <a href="#fragor">FAQ</a>
+        <a href="#demo">Demander une démo</a>
+        <a href="../" hreflang="en" lang="en">English version</a>
+      </nav>
+    </dialog>
+
+    <main>
+      <section class="hero section-pad">
+        <div class="container hero-copy">
+          <p class="eyebrow reveal">Plateforme de réservation pour locations de vacances <span>·</span> ducobook.com</p>
+          <h1 class="reveal">Vos voyageurs réservent <em>directement</em> chez vous.</h1>
+          <p class="hero-lead reveal">DucoBook donne à votre maison, votre mas ou vos appartements leur propre site de réservation. Le calendrier reste synchronisé avec Airbnb et Booking.com, les voyageurs paient sur votre propre compte, et vous payez un forfait mensuel fixe. Jamais de pourcentage sur vos réservations.</p>
+          <div class="hero-actions reveal">
+            <a class="button button-light" href="#demo">Demander une démo <svg width="19" height="19"><use href="#arrow"/></svg></a>
+            <a class="quiet-link" href="#varde"><span class="play"><svg width="16" height="16"><use href="#play"/></svg></span>Voir ce que vous pourriez économiser</a>
+          </div>
+        </div>
+
+        <div class="container product-stage reveal" data-parallax-stage>
+          <div class="stage-glow"></div>
+          <div class="product-window" data-parallax="0.35">
+            <div class="window-bar">
+              <span class="window-brand"><b></b>Votre maison d’hôtes</span>
+              <span class="window-address">portal.ducobook.com</span>
+              <span class="window-user">MH</span>
+            </div>
+            <img src="../ui/kalender-hel.jpg" width="2880" height="1800" alt="Le calendrier du portail propriétaire avec des réservations Airbnb et directes dans le même mois">
+          </div>
+          <div class="floating-card progress-card" data-parallax="0.72">
+            <span class="float-label">Nouvelle demande</span>
+            <strong>7 nuits en décembre</strong>
+            <div class="mini-progress"><i></i></div>
+            <span class="float-note"><b>665 €</b> bloqués, débités quand vous acceptez</span>
+          </div>
+          <div class="floating-card activity-card" data-parallax="0.9">
+            <span class="activity-icon"><svg width="18" height="18"><use href="#check"/></svg></span>
+            <span><strong>Calendrier synchronisé</strong><small>Airbnb et Booking.com</small></span>
+          </div>
+          <div class="mobile-device" data-parallax="0.58">
+            <span class="device-speaker"></span>
+            <img src="../ui/mobil.jpg" width="1170" height="2532" alt="Des demandes de réservation en attente d’acceptation, sur un téléphone">
+          </div>
+        </div>
+
+        <div class="container hero-note reveal">
+          <span>Tout en un seul service</span>
+          <ul><li>Site de réservation</li><li>Synchronisation du calendrier</li><li>Paiements</li><li>E-mails aux voyageurs</li><li>Finances</li></ul>
+        </div>
+      </section>
+  </div>
+
+      <section class="manifest section-pad">
+        <div class="container manifest-grid">
+          <p class="section-kicker reveal">Pourquoi DucoBook</p>
+          <div class="manifest-copy">
+            <h2 class="display-small reveal">Les plateformes vous trouvent des voyageurs. Vous ne devriez pas les payer deux fois.</h2>
+            <p class="manifest-lead reveal">Airbnb et Booking.com mettent très bien votre logement en valeur. Mais quand la même famille revient chaque année, ou que quelqu’un vous trouve par Google ou par un ami, vous payez toujours des frais sur chaque nuit. Avec votre propre site de réservation, ces réservations restent chez vous, et le voyageur évite les frais de service de la plateforme.</p>
+          </div>
+          <div class="principles">
+            <article class="principle reveal"><span>01</span><h3>Gardez davantage sur chaque réservation</h3><p>Un forfait mensuel fixe au lieu d’un pourcentage. Plus vous louez en direct, plus vous gardez.</p></article>
+            <article class="principle reveal"><span>02</span><h3>Ne vendez jamais deux fois la même nuit</h3><p>Un calendrier commun pour tous les canaux, avec une vérification supplémentaire au moment où le voyageur réserve.</p></article>
+            <article class="principle reveal"><span>03</span><h3>Vos voyageurs restent les vôtres</h3><p>Noms, e-mails et numéros de téléphone restent chez vous. Recontactez-les avant la saison prochaine, sans intermédiaire.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="business-section section-pad" id="varde">
+        <div class="container business-grid">
+          <div class="business-copy reveal">
+            <p class="section-kicker">Les gains en chiffres</p>
+            <h2 class="display-small">Faites le calcul des commissions.</h2>
+            <p>Saisissez vos propres chiffres. Les frais varient entre Airbnb, Booking.com et les formules de frais : regardez votre dernier versement pour voir ce que vous payez vraiment.</p>
+            <dl><div><dt>Ce que vous nous payez</dt><dd>Un forfait mensuel fixe</dd></div><div><dt>Commission sur les réservations</dt><dd>0 %</dd></div><div><dt>Frais de carte</dt><dd>À Stripe, comme d’habitude</dd></div></dl>
+          </div>
+          <form class="calc-card reveal" id="calc" onsubmit="return false" aria-label="Calculateur de commission">
+            <h3>Essayez vous-même</h3>
+            <p>Les chiffres ci-dessous ne sont qu’un exemple.</p>
+            <div class="calc-fields">
+              <label class="calc-field">Revenus locatifs annuels via les plateformes<span class="calc-input"><input type="number" id="c-int" value="30000" min="0" step="500" inputmode="numeric"><em>€</em></span></label>
+              <label class="calc-field">Frais que vous payez à la plateforme<span class="calc-input"><input type="number" id="c-pct" value="15" min="0" max="40" step="0.5" inputmode="decimal"><em>%</em></span></label>
+              <label class="calc-field">Part qui pourrait devenir des réservations directes<span class="calc-input"><input type="number" id="c-dir" value="30" min="0" max="100" step="5" inputmode="numeric"><em>%</em></span></label>
+            </div>
+            <div class="calc-result" aria-live="polite">
+              <div><small>Commission aujourd’hui</small><b id="c-tot">4 500 €</b></div>
+              <div class="gain"><small>Ce que vous gardez à la place</small><b id="c-save">1 350 €</b></div>
+            </div>
+            <p class="calc-note">Déduisez le forfait mensuel de DucoBook et les frais de carte de Stripe. Une estimation, pas une promesse.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="platform-section section-pad" id="plattform">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-kicker">La plateforme</p>
+            <h2 class="display-small">Toute votre activité de location dans un seul portail.</h2>
+            <p>Calendrier, demandes, voyageurs, argent et votre site. Vous vous connectez avec un lien envoyé par e-mail, aucun mot de passe à retenir.</p>
+          </div>
+
+          <div class="showcase reveal">
+            <div class="showcase-tabs five" role="tablist" aria-label="Les parties de la plateforme">
+              <button class="showcase-tab active" type="button" role="tab" aria-selected="true" aria-controls="panel-cal" id="tab-cal" data-panel="cal"><span>01</span>Calendrier</button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-req" id="tab-req" data-panel="req"><span>02</span>Demandes</button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-msg" id="tab-msg" data-panel="msg"><span>03</span>Voyageurs</button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-fin" id="tab-fin" data-panel="fin"><span>04</span>Finances</button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-site" id="tab-site" data-panel="site"><span>05</span>Votre site</button>
+            </div>
+            <div class="showcase-panels">
+              <article class="showcase-panel active" id="panel-cal" role="tabpanel" aria-labelledby="tab-cal" data-panel="cal">
+                <div class="panel-copy"><span class="panel-tag">Calendrier</span><h3>Tous les canaux dans un seul calendrier.</h3><p>DucoBook lit Airbnb et Booking.com toutes les quinze minutes et leur renvoie un calendrier commun. Bloquez des jours pour le ménage, des travaux ou vos propres vacances en deux clics.</p><ul><li>Airbnb, Booking.com et votre site dans une seule vue</li><li>Une vérification supplémentaire juste avant qu’un voyageur réserve</li><li>Une alerte si un lien de calendrier cesse de fonctionner</li></ul></div>
+                <figure class="panel-media wide"><img src="../ui/kalender-hel.jpg" width="2880" height="1800" alt="La vue calendrier avec des réservations de plusieurs canaux"></figure>
+              </article>
+              <article class="showcase-panel" id="panel-req" role="tabpanel" aria-labelledby="tab-req" data-panel="req" hidden>
+                <div class="panel-copy"><span class="panel-tag">Demandes</span><h3>C’est vous qui choisissez qui séjourne chez vous.</h3><p>Avec la réservation sur demande, la carte du voyageur est bloquée mais pas débitée tant que vous n’avez pas appuyé sur Accepter. Si vous refusez, le blocage est levé immédiatement. Vous préférez des réservations entièrement automatiques ? Activez la réservation instantanée.</p><ul><li>Sur demande ou instantanée, par logement</li><li>Aucun argent n’est prélevé avant votre accord</li><li>Les demandes sans réponse sont libérées après 24 heures</li></ul></div>
+                <figure class="panel-media wide"><img src="../ui/forfragningar-hel.jpg" width="2880" height="1800" alt="Deux demandes de réservation en attente d’acceptation"></figure>
+              </article>
+              <article class="showcase-panel" id="panel-msg" role="tabpanel" aria-labelledby="tab-msg" data-panel="msg" hidden>
+                <div class="panel-copy"><span class="panel-tag">Voyageurs</span><h3>Répondez vite, sans rester devant l’ordinateur.</h3><p>Chaque réservation a son propre fil de messages. Si un voyageur attend une réponse depuis deux heures, vous recevez un rappel. Confirmations, informations d’arrivée et remerciements partent automatiquement dans la langue du voyageur.</p><ul><li>Un fil par réservation</li><li>Un rappel quand un voyageur attend</li><li>E-mails aux voyageurs en français, anglais et suédois</li></ul></div>
+                <figure class="panel-media wide"><img src="../ui/meddelanden-hel.jpg" width="2880" height="1800" alt="Un voyageur qui demande une arrivée anticipée dans la vue messages"></figure>
+              </article>
+              <article class="showcase-panel" id="panel-fin" role="tabpanel" aria-labelledby="tab-fin" data-panel="fin" hidden>
+                <div class="panel-copy"><span class="panel-tag">Finances</span><h3>Voyez ce que votre location rapporte vraiment.</h3><p>Revenus et taux d’occupation semaine par semaine, répartis par canal. Ajoutez vos versements Airbnb et Booking.com pour voir toute l’année au même endroit, et envoyez un fichier à votre comptable.</p><ul><li>Revenus et occupation par semaine</li><li>Nuits par canal</li><li>Export CSV pour votre comptabilité</li></ul></div>
+                <figure class="panel-media wide"><img src="../ui/ekonomi-hel.jpg" width="2880" height="1800" alt="La vue finances avec les revenus par semaine"></figure>
+              </article>
+              <article class="showcase-panel" id="panel-site" role="tabpanel" aria-labelledby="tab-site" data-panel="site" hidden>
+                <div class="panel-copy"><span class="panel-tag">Votre site</span><h3>Modifiez vous-même vos textes et vos photos.</h3><p>Cliquez sur un titre ou une photo, modifiez-le et prévisualisez le résultat avant d’enregistrer. Un éditeur photo avec recadrage et filtres est inclus. Les changements sont en ligne en une minute environ.</p><ul><li>Textes par langue</li><li>Remplacez et recadrez les photos</li><li>Réécrivez les e-mails aux voyageurs avec un aperçu en direct</li></ul></div>
+                <figure class="panel-media wide"><img src="../ui/redigera-hel.jpg" width="2880" height="1800" alt="L’éditeur du site avec des textes en français"></figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="journey section-pad">
+        <div class="container">
+          <div class="journey-heading reveal">
+            <p class="section-kicker">Comment se passe une réservation</p>
+            <h2 class="display-small">Du premier clic au voyageur qui revient.</h2>
+          </div>
+          <div class="journey-track reveal">
+            <div class="journey-line"><i></i></div>
+            <article><span>01</span><h3>Un voyageur vous trouve</h3><p>Sur Airbnb, par Google, votre Instagram ou un ami qui a séjourné chez vous.</p></article>
+            <article><span>02</span><h3>Il réserve sur votre site</h3><p>Il choisit ses dates, ne voit que les nuits libres et paie par carte.</p></article>
+            <article><span>03</span><h3>Vous acceptez</h3><p>Un geste sur votre téléphone. L’argent arrive sur votre compte et le calendrier se met à jour partout.</p></article>
+            <article><span>04</span><h3>Le voyageur revient</h3><p>Des e-mails avant et après le séjour, et l’année suivante il réserve directement chez vous.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="more-section section-pad" id="fordelar">
+        <div class="container">
+          <div class="more-heading reveal"><p class="section-kicker">Tous les avantages</p><h2 class="display-small">Ce que DucoBook vous apporte.</h2></div>
+          <div class="benefits reveal">
+            <p class="benefit-group">Plus d’argent dans votre poche</p>
+            <div class="benefit"><span>01</span><h3>Aucune commission sur vos réservations</h3><p>Vous payez un forfait mensuel fixe. <strong>Une réservation de 1 000 € vous rapporte 1 000 €</strong>, moins les frais de carte habituels de Stripe.</p></div>
+            <div class="benefit"><span>02</span><h3>L’argent arrive directement chez vous</h3><p>Connectez votre propre compte Stripe en un clic. Le paiement du voyageur arrive chez vous, pas d’abord chez nous, et vous gérez vos versements.</p></div>
+            <div class="benefit"><span>03</span><h3>Moins cher pour le voyageur, mieux pour vous</h3><p>Le voyageur évite les frais de service de la plateforme en réservant en direct. Vous pouvez proposer un meilleur prix et gagner quand même plus par nuit.</p></div>
+            <div class="benefit"><span>04</span><h3>Les habitués réservent sans intermédiaire</h3><p>La famille qui vient chaque été n’a plus besoin de passer par une plateforme. Vous envoyez le lien, elle réserve.</p></div>
+
+            <p class="benefit-group">L’esprit tranquille</p>
+            <div class="benefit"><span>05</span><h3>Pas de double réservation</h3><p>Le calendrier lit Airbnb et Booking.com toutes les quinze minutes, et une fois de plus juste avant qu’un voyageur réserve chez vous. Si un conflit survient malgré tout, Airbnb a la priorité, le voyageur de votre site est remboursé automatiquement, et votre note Airbnb reste intacte.</p></div>
+            <div class="benefit"><span>06</span><h3>Aucun débit avant votre accord</h3><p>Avec la réservation sur demande, la carte est bloquée et débitée seulement quand vous acceptez. Si vous refusez, ou ne répondez pas dans les 24 heures, le blocage est levé.</p></div>
+            <div class="benefit"><span>07</span><h3>Des alertes quand quelque chose ne va pas</h3><p>Si un lien de calendrier Airbnb ou Booking.com ne répond plus, vous recevez un e-mail avant que cela devienne un problème.</p></div>
+            <div class="benefit"><span>08</span><h3>Vos règles s’appliquent</h3><p>Nombre maximum de voyageurs, animaux, enfants, nombre minimum de nuits et prix par nuit se règlent par logement. Le site suit vos règles automatiquement.</p></div>
+
+            <p class="benefit-group">Moins de travail</p>
+            <div class="benefit"><span>09</span><h3>Des e-mails aux voyageurs qui partent tout seuls</h3><p>Confirmation de réservation, informations d’arrivée la veille et remerciement le lendemain. Dans la langue du voyageur, avec des textes que vous pouvez réécrire.</p></div>
+            <div class="benefit"><span>10</span><h3>Un rappel quand un voyageur attend</h3><p>Si une question reste sans réponse depuis deux heures, nous vous prévenons. Des réponses rapides, ce sont des voyageurs plus contents, et sur Airbnb un meilleur classement.</p></div>
+            <div class="benefit"><span>11</span><h3>Ménage et gestion dans le même système</h3><p>Invitez la personne qui fait le ménage ou s’occupe d’un logement. Elle ne voit que ses propres logements et reçoit ses tâches de vous, sans accès au reste.</p></div>
+            <div class="benefit"><span>12</span><h3>Prêt pour votre comptable</h3><p>Revenus par semaine et par canal, et un fichier CSV pour votre comptable en fin d’année. Plus de tableurs à reconstituer.</p></div>
+
+            <p class="benefit-group">Votre propre marque</p>
+            <div class="benefit"><span>13</span><h3>Un site à votre nom</h3><p>Sur votre propre nom de domaine, avec vos photos et vos mots. Vous avez déjà un site ? Nous y ajoutons la réservation.</p></div>
+            <div class="benefit"><span>14</span><h3>Modifiez tout vous-même</h3><p>Cliquez sur un texte ou une photo, modifiez-le et prévisualisez avant d’enregistrer. Vous n’attendez jamais personne pour changer une image.</p></div>
+            <div class="benefit"><span>15</span><h3>Plusieurs langues</h3><p>Votre site et vos e-mails aux voyageurs peuvent être en français, en anglais et en suédois, pour que les voyageurs de toute l’Europe comprennent ce qu’ils réservent.</p></div>
+            <div class="benefit"><span>16</span><h3>Vos voyageurs et vos contenus vous appartiennent</h3><p>Coordonnées, textes et photos sont à vous. Si un jour vous quittez DucoBook, vous emportez tout.</p></div>
+          </div>
+
+          <div class="compare reveal">
+            <table>
+              <thead><tr><th scope="col"></th><th scope="col">Uniquement Airbnb et Booking.com</th><th scope="col" class="us">Avec DucoBook</th></tr></thead>
+              <tbody>
+                <tr><td>Frais par réservation</td><td>Un pourcentage de chaque réservation</td><td class="us">Forfait mensuel fixe, 0 % sur les réservations directes</td></tr>
+                <tr><td>Coordonnées des voyageurs</td><td>Restent chez la plateforme</td><td class="us">Les vôtres, dans votre portail</td></tr>
+                <tr><td>Voyageurs fidèles</td><td>Repassent par la plateforme</td><td class="us">Réservent directement chez vous</td></tr>
+                <tr><td>Calendrier</td><td>Un par plateforme</td><td class="us">Un seul pour tous les canaux</td></tr>
+                <tr><td>Versements</td><td>Quand la plateforme paie</td><td class="us">Sur votre compte Stripe</td></tr>
+                <tr><td>Votre présence en ligne</td><td>Une annonce parmi des milliers</td><td class="us">Votre propre site et nom de domaine</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="brand-section section-pad">
+        <div class="brand-orb"></div>
+        <div class="container brand-grid">
+          <div class="brand-copy reveal">
+            <p class="section-kicker">Dans votre poche</p>
+            <h2 class="display-small">Acceptez une réservation depuis la file du supermarché.</h2>
+            <p>Le portail fonctionne aussi bien sur votre téléphone que sur un ordinateur. Vous recevez un e-mail quand une demande arrive, vous ouvrez le lien et vous appuyez sur Accepter. C’est fait.</p>
+            <div class="domain-chip"><span class="domain-dot"></span>reserver.votremaison.fr <b>connecté</b></div>
+          </div>
+          <div class="brand-visual reveal">
+            <div class="palette-card"><span style="--swatch:#5a4de4"></span><span style="--swatch:#a8edcf"></span><span style="--swatch:#f2b27a"></span><small>Vos couleurs sur votre site</small></div>
+            <div class="member-screen"><img src="../ui/mobil.jpg" width="1170" height="2532" alt="Des demandes de réservation sur un téléphone"></div>
+            <div class="brand-badge"><span>Nouvelle demande</span><strong>665 €</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing-section section-pad" id="pris">
+        <div class="container">
+          <div class="pricing-heading reveal">
+            <div class="pricing-copy"><p class="section-kicker">Tarifs</p><h2 class="display-small">Un forfait fixe.<br>Zéro pour cent.</h2></div>
+          </div>
+          <div class="price-two">
+            <article class="price-card price-featured reveal">
+              <div class="price-top"><span>DucoBook</span><span class="price-status">0 % de commission</span></div>
+              <p class="price-big">Prix mensuel fixe<small>Établi après une courte présentation de votre logement. Devis écrit sous une semaine.</small></p>
+              <ul>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Un site de réservation, ou un module de réservation sur votre site existant</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Synchronisation du calendrier avec Airbnb et Booking.com</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Réservation sur demande ou instantanée, paiements sur votre compte</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Messages, e-mails aux voyageurs et rappels</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Finances, équipe et modification du site</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Hébergement, mises à jour et assistance</li>
+              </ul>
+              <a class="button" href="#demo">Obtenir un devis <svg width="19" height="19"><use href="#arrow"/></svg></a>
+            </article>
+            <article class="price-card price-side reveal">
+              <div class="price-top"><span>Ce que vous payez à d’autres</span></div>
+              <h3>Aucun frais caché.</h3>
+              <p>Les seuls frais en plus vont directement à d’autres, jamais par nous.</p>
+              <ul>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Les frais de carte de Stripe sur chaque paiement</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Votre nom de domaine, environ 10 € par an</li>
+                <li><svg width="19" height="19"><use href="#check"/></svg>Airbnb et Booking.com comme d’habitude, pour les réservations qui viennent de chez eux</li>
+              </ul>
+              <a class="button button-outline" href="#demo">Demander une démo <svg width="19" height="19"><use href="#arrow"/></svg></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section section-pad" id="fragor">
+        <div class="container faq-grid">
+          <div class="faq-heading reveal"><p class="section-kicker">FAQ</p><h2 class="display-small">Avant de commencer.</h2></div>
+          <div class="faq-list reveal">
+            <details><summary>Dois-je quitter Airbnb ou Booking.com ?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Non. Restez-y pour être visible. DucoBook s’occupe des voyageurs qui vous connaissent déjà, et le calendrier vous permet de gérer tous les canaux en même temps.</p></details>
+            <details><summary>Que se passe-t-il si les mêmes dates sont réservées à deux endroits ?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>DucoBook vérifie vos canaux au moment où un voyageur réserve chez vous. Si un conflit survient malgré tout, Airbnb a la priorité et le voyageur de votre site est remboursé automatiquement. Un conflit entre Airbnb et Booking.com n’est jamais réglé automatiquement : vous recevez un e-mail pour décider vous-même.</p></details>
+            <details><summary>Pourquoi Airbnb met-il du temps à voir mes réservations directes ?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Airbnb et Booking.com récupèrent les calendriers externes toutes les quelques heures, ce que nous ne maîtrisons pas. C’est pourquoi nous recommandons la réservation sur demande : vous pouvez vérifier que les dates sont libres avant que la carte du voyageur soit débitée.</p></details>
+            <details><summary>Ai-je besoin d’un nouveau site ?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Non. Si vous en avez déjà un, nous y ajoutons le module de réservation. Sinon, nous vous en créons un sur votre propre nom de domaine.</p></details>
+            <details><summary>À qui appartiennent les coordonnées de mes voyageurs ?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>À vous. Les réservations et les coordonnées sont dans votre portail, et si vous partez, nous vous remettons tout.</p></details>
+            <details><summary>Dans quelle langue est le portail ?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Le portail propriétaire est en anglais aujourd’hui, le suédois et le français arrivent. Votre site et vos e-mails aux voyageurs peuvent être en français, en anglais et en suédois.</p></details>
+            <details><summary>Aidez-vous pour les impôts et la TVA sur les locations ?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>La vue finances vous donne les chiffres et un fichier pour votre comptable. Nous ne donnons pas de conseils fiscaux ni de conseils sur la TVA : c’est le travail d’un comptable dans votre pays.</p></details>
+            <details><summary>DucoBook convient-il à tout le monde ?<svg width="20" height="20"><use href="#plus"/></svg></summary><p>Il convient aux hôtes qui ont d’un à une dizaine de logements. Si vous avez déjà un channel manager connecté à Booking.com, ou plus de vingt types de chambres, Booking.com n’autorise pas la synchronisation du calendrier par lien. Dans ce cas, nous vous le dirons dès le premier appel.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="signup-section section-pad" id="demo">
+        <div class="signup-orb"></div>
+        <div class="container signup-grid">
+          <div class="signup-copy reveal"><p class="section-kicker">Demander une démo</p><h2>Découvrez DucoBook avec votre propre logement.</h2><p>Dites-nous en quelques mots où vous louez et quoi, et nous vous montrons la plateforme avec vos dates et vous donnons un prix fixe. Trente minutes, gratuit, sans engagement.</p></div>
+          <form class="signup-form reveal" id="anmalan">
+            <div class="field"><label for="namn">Nom</label><input id="namn" name="namn" type="text" autocomplete="name" placeholder="Votre nom" required></div>
+            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.fr" required></div>
+            <div class="field"><label for="ort">Où se trouve votre logement ? <span>facultatif</span></label><input id="ort" name="ort" type="text" placeholder="Par exemple Languedoc"></div>
+            <div class="field"><label for="antal">Nombre de logements</label><select id="antal" name="antal"><option>1</option><option>2 à 3</option><option>4 à 10</option><option>Plus de 10</option></select></div>
+            <div class="field full"><label for="meddelande">Lien vers votre annonce ou votre site <span>facultatif</span></label><input id="meddelande" name="meddelande" type="text" placeholder="airbnb.fr/rooms/..."></div>
+            <div class="trap" aria-hidden="true"><label for="webbplats">Site web</label><input id="webbplats" name="webbplats" type="text" tabindex="-1" autocomplete="off"></div>
+            <button class="button button-mint" type="submit"><span class="btn-label">Envoyer</span><svg width="19" height="19"><use href="#arrow"/></svg></button>
+            <p class="form-status" id="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <a class="brand" href="#top"><span class="brand-mark"><i></i></span><span>DucoBook</span></a>
+        <p>Un produit Duco Studios, conçu pour les hôtes.</p>
+        <a href="#top">Retour en haut ↑</a>
+      </div>
+    </footer>
+
+  <script src="../app.js?v=3"></script>
+</body>
+</html>

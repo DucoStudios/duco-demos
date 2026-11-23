@@ -9,9 +9,11 @@
   <meta property="og:description" content="Your own booking site, a calendar in sync with Airbnb and Booking.com, zero commission.">
   <meta property="og:image" content="ui/kalender-hel.jpg">
   <meta name="theme-color" content="#11111a">
+  <link rel="alternate" hreflang="en" href="https://ducobook.com/">
+  <link rel="alternate" hreflang="fr" href="https://ducobook.com/fr/">
   <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts/manrope.css">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -41,6 +43,7 @@
           <a href="#pris">Pricing</a>
           <a href="#fragor">FAQ</a>
         </nav>
+        <div class="lang-switch" aria-label="Language"><a href="./" aria-current="page" lang="en">EN</a><a href="fr/" hreflang="fr" lang="fr">FR</a></div>
         <a class="nav-cta" href="#demo">Book a demo <svg width="18" height="18"><use href="#arrow"/></svg></a>
         <button class="menu-button" type="button" aria-label="Open menu" aria-controls="mobile-menu"><svg width="20" height="20"><use href="#menu"/></svg></button>
       </div>
@@ -58,6 +61,7 @@
         <a href="#pris">Pricing</a>
         <a href="#fragor">FAQ</a>
         <a href="#demo">Book a demo</a>
+        <a href="fr/" hreflang="fr" lang="fr">Version française</a>
       </nav>
     </dialog>
 
@@ -342,6 +346,6 @@
       </div>
     </footer>
 
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

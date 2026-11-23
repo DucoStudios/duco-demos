@@ -119,7 +119,23 @@
     });
   });
 
-  var fmt = function (n) { return "€" + Math.round(n).toLocaleString("en-GB"); };
+  var isFr = document.documentElement.lang === "fr";
+  var T = isFr ? {
+    invalid: "Veuillez saisir une adresse e-mail valide.", sending: "Envoi…", sent: "Envoyé", send: "Envoyer",
+    ok: "Merci. Nous vous recontactons d’ici quelques jours pour fixer un rendez-vous.",
+    rate: "Trop de tentatives. Patientez un instant et réessayez.",
+    fail: "L’envoi n’a pas fonctionné. ", mail: "Écrivez-nous plutôt par e-mail",
+    lines: ["Nom: ", "E-mail: ", "Lieu: ", "Logements: ", "Annonce/site: "], source: "ducobook-sida-fr"
+  } : {
+    invalid: "Please enter a valid email address.", sending: "Sending…", sent: "Sent", send: "Send",
+    ok: "Thank you. We’ll be in touch within a couple of days to book a time.",
+    rate: "Too many attempts. Please wait a moment and try again.",
+    fail: "We couldn’t send that just now. ", mail: "Email us instead",
+    lines: ["Name: ", "Email: ", "Location: ", "Properties: ", "Listing/site: "], source: "ducobook-sida-en"
+  };
+  var fmt = isFr
+    ? function (n) { return Math.round(n).toLocaleString("fr-FR") + " €"; }
+    : function (n) { return "€" + Math.round(n).toLocaleString("en-GB"); };
   var num = function (id) { var el = document.getElementById(id); var v = el ? parseFloat(el.value) : 0; return isFinite(v) && v > 0 ? v : 0; };
   function calc() {
     var tot = num("c-int") * Math.min(num("c-pct"), 100) / 100;
@@ -142,37 +158,37 @@
       status.className = "form-status " + (type || "");
     }
     function mailto(data) {
-      var body = ["Name: " + (data.namn || ""), "Email: " + data.email, "Location: " + (data.ort || ""), "Properties: " + (data.antal || ""), "Listing/site: " + (data.meddelande || "")].join("\n");
+      var body = [T.lines[0] + (data.namn || ""), T.lines[1] + data.email, T.lines[2] + (data.ort || ""), T.lines[3] + (data.antal || ""), T.lines[4] + (data.meddelande || "")].join("\n");
       return "mailto:david@ducostudios.com?subject=" + encodeURIComponent("DucoBook demo") + "&body=" + encodeURIComponent(body);
     }
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       var email = form.email.value.trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showStatus("Please enter a valid email address.", "error");
+        showStatus(T.invalid, "error");
         form.email.focus();
         return;
       }
       submit.disabled = true;
-      submitLabel.textContent = "Sending…";
+      submitLabel.textContent = T.sending;
       showStatus("");
-      var payload = { konto: "webb", magnet: "ducobook-demo", email: email, kalla: "ducobook-sida-en" };
+      var payload = { konto: "webb", magnet: "ducobook-demo", email: email, kalla: T.source };
       ["namn", "ort", "antal", "meddelande", "webbplats"].forEach(function (k) { var v = form[k] && form[k].value.trim(); if (v) payload[k] = v; });
       fetch(API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
         .then(function (response) {
           if (response.status === 429) throw new Error("rate");
           if (!response.ok) throw new Error("fail");
           form.reset();
-          submitLabel.textContent = "Sent";
-          showStatus("Thank you. We’ll be in touch within a couple of days to book a time.", "ok");
+          submitLabel.textContent = T.sent;
+          showStatus(T.ok, "ok");
         })
         .catch(function (error) {
-          submitLabel.textContent = "Send";
-          if (error.message === "rate") { showStatus("Too many attempts. Please wait a moment and try again.", "error"); return; }
+          submitLabel.textContent = T.send;
+          if (error.message === "rate") { showStatus(T.rate, "error"); return; }
           status.className = "form-status error";
           status.innerHTML = "";
-          status.appendChild(document.createTextNode("We couldn’t send that just now. "));
-          var a = document.createElement("a"); a.href = mailto(payload); a.textContent = "Email us instead"; a.style.textDecoration = "underline";
+          status.appendChild(document.createTextNode(T.fail));
+          var a = document.createElement("a"); a.href = mailto(payload); a.textContent = T.mail; a.style.textDecoration = "underline";
           status.appendChild(a);
         })
         .finally(function () { submit.disabled = false; });
