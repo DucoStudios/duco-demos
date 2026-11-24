@@ -5,7 +5,7 @@ body{font-family:'Schibsted Grotesk',system-ui,sans-serif;color:var(--ink);backg
 a{color:inherit}
 .grid{max-width:var(--max);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
 .pop{font-family:'Poppins','Schibsted Grotesk',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
-.serif{font-family:'Kaushan Script','Brush Script MT',cursive;font-style:normal;font-weight:400;text-transform:none;letter-spacing:0}
+.serif{font-family:'Yellowtail','Brush Script MT',cursive;font-style:normal;font-weight:400;text-transform:none;letter-spacing:0}
 
 /* topp + logga */
 .topp{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:1px solid var(--line)}
@@ -29,7 +29,7 @@ a{color:inherit}
 .stor-ord .lager.a{color:var(--bur)}
 .stor-ord .lager.b{position:absolute;inset:0;color:#fff;clip-path:inset(0 0 0 34vw)}
 @media(min-width:1240px){.stor-ord .lager.b{clip-path:inset(0 0 0 calc(34vw - (100vw - 1240px)/2 - 28px))}}
-.stor-ord .lager.a em,.stor-ord .lager.b em{display:block;font-size:.78em;letter-spacing:0;margin-top:.02em;margin-left:.12em;transform:rotate(-4deg);transform-origin:left;color:var(--gold)}
+.stor-ord .lager.a em,.stor-ord .lager.b em{display:block;font-size:.95em;letter-spacing:0;margin-top:-.02em;margin-left:.1em;transform:rotate(-4deg);transform-origin:left;color:var(--gold)}
 .stor-ord .lager.a em{color:var(--bur)}
 .hero-under{grid-column:1/13;display:grid;grid-template-columns:subgrid;padding:40px 0 70px}
 .hero-under p{grid-column:5/11;font-size:26px;line-height:1.3;font-weight:600;color:#fff;max-width:32ch}
@@ -50,16 +50,16 @@ a{color:inherit}
 section{padding:110px 0;border-bottom:1px solid var(--line);position:relative}
 .num{grid-column:1/3;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding-top:12px;color:var(--bur)}
 h2{grid-column:3/13;font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(32px,4.6vw,62px);line-height:1.02;letter-spacing:-.025em;max-width:19ch}
-h2 em{font-family:'Kaushan Script','Brush Script MT',cursive;font-style:normal;font-weight:400;text-transform:none;color:var(--bur);letter-spacing:0}
+h2 em{font-size:1.15em;font-family:'Yellowtail','Brush Script MT',cursive;font-style:normal;font-weight:400;text-transform:none;color:var(--bur);letter-spacing:0}
 .lede{grid-column:3/10;margin-top:34px;font-size:21px;color:#2b2224}
 .lede+.lede{margin-top:16px}
 
 .manifest{background:var(--wine);color:var(--cream)}
-.manifest .num{color:var(--gold)}.manifest h2 em{color:var(--gold)}
+.manifest .num{color:var(--gold)}.manifest h2 em{font-size:1.15em;color:var(--gold)}
 .manifest .lede{color:#fff8f3e0}
 .tre{grid-column:3/13;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
 .tre div{background:#ffffff12;border-radius:24px;padding:26px 24px}
-.tre b{display:block;font-family:'Kaushan Script','Brush Script MT',cursive;font-weight:400;font-style:normal;font-size:50px;line-height:1.1;color:var(--gold);margin-bottom:10px}
+.tre b{display:block;font-family:'Yellowtail','Brush Script MT',cursive;font-weight:400;font-style:normal;font-size:58px;line-height:1.1;color:var(--gold);margin-bottom:10px}
 .tre p{font-size:17px;color:#fff8f3d0}
 
 .lista{grid-column:3/13;margin-top:52px;display:grid;gap:14px}
@@ -84,7 +84,7 @@ h2 em{font-family:'Kaushan Script','Brush Script MT',cursive;font-style:normal;f
 .faktaruta hr{border:0;border-top:1px solid #ffffff44;margin:22px 0}
 
 .bord{background:var(--bur);color:#fff}
-.bord .num{color:var(--gold)}.bord h2 em{color:var(--gold)}
+.bord .num{color:var(--gold)}.bord h2 em{font-size:1.15em;color:var(--gold)}
 .bord .lede{color:#ffffffe6}
 .bord .rutor{grid-column:3/13;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
 .bord .rutor div{border:1.5px solid #ffffff66;border-radius:24px;padding:24px}
@@ -97,7 +97,7 @@ h2 em{font-family:'Kaushan Script','Brush Script MT',cursive;font-style:normal;f
 .vard ul{list-style:none}.vard li{padding:9px 0;border-bottom:1px solid var(--line)}
 
 .ko{background:var(--wine);color:#fff}
-.ko .num{color:var(--gold)}.ko h2 em{color:var(--gold)}
+.ko .num{color:var(--gold)}.ko h2 em{font-size:1.15em;color:var(--gold)}
 .ko .lede{color:#ffffffdd}
 .form{grid-column:3/10;margin-top:42px;display:grid;gap:14px}
 .form label{font-size:14px;font-weight:700}
