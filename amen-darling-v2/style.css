@@ -1,0 +1,133 @@
+:root{--wine:#5b1f2e;--bur:#864853;--blush:#f4d8d1;--rose:#e9a9b0;--gold:#e0b46b;--cream:#fff8f3;--ink:#1a1214;--line:#1a121422;--max:1240px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Schibsted Grotesk',system-ui,sans-serif;color:var(--ink);background:var(--cream);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.grid{max-width:var(--max);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
+.pop{font-family:'Poppins','Schibsted Grotesk',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;text-transform:none}
+
+/* topp + logga */
+.topp{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:1px solid var(--line)}
+.topp .grid{align-items:center;height:72px}
+.logo{grid-column:1/5;display:inline-block;background:var(--bur);color:#fff;text-decoration:none;padding:7px 14px 6px;line-height:1;justify-self:start;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;letter-spacing:.02em;text-transform:uppercase;text-align:center}
+.logo span{display:block}
+.nav{grid-column:5/13;display:flex;justify-content:flex-end;align-items:center;gap:26px;font-size:15px;font-weight:600}
+.nav a{text-decoration:none}.nav a:hover{color:var(--bur)}
+.knapp{display:inline-block;background:var(--bur);color:#fff;padding:16px 30px;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;border:0;border-radius:999px;cursor:pointer;transition:transform .2s,background .2s}
+.knapp:hover{background:var(--wine);transform:translateY(-2px) rotate(-1deg)}
+.knapp.ljus{background:var(--cream);color:var(--wine)}.knapp.ljus:hover{background:var(--gold);color:var(--wine)}
+.knapp.liten{padding:10px 20px;font-size:13px}
+
+/* hero med delad yta */
+.hero{position:relative;overflow:hidden;background:linear-gradient(90deg,var(--cream) 0 34%,var(--bur) 34% 100%);border-bottom:1px solid var(--ink)}
+.hero .grid{padding-top:56px;padding-bottom:0}
+.rad1{grid-column:1/13;display:flex;justify-content:space-between;gap:20px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding-bottom:6px}
+.rad1 span:first-child{color:var(--bur)}.rad1 span:last-child{color:#fff}
+.stor-ord{grid-column:1/13;position:relative;margin-top:10px}
+.stor-ord .lager{display:block;font-size:clamp(72px,19vw,270px);line-height:.84;letter-spacing:-.05em}
+.stor-ord .lager.a{color:var(--bur)}
+.stor-ord .lager.b{position:absolute;inset:0;color:#fff;clip-path:inset(0 0 0 34vw)}
+@media(min-width:1240px){.stor-ord .lager.b{clip-path:inset(0 0 0 calc(34vw - (100vw - 1240px)/2 - 28px))}}
+.stor-ord .lager.a em,.stor-ord .lager.b em{display:block;font-size:.62em;letter-spacing:-.03em;margin-top:.06em;color:var(--gold)}
+.stor-ord .lager.a em{color:var(--bur)}
+.hero-under{grid-column:1/13;display:grid;grid-template-columns:subgrid;padding:40px 0 70px}
+.hero-under p{grid-column:5/11;font-size:26px;line-height:1.3;font-weight:600;color:#fff;max-width:32ch}
+.hero-under .cta{grid-column:5/13;margin-top:28px;display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.hero-under .cta small{color:#ffffffd0;font-size:15px;max-width:34ch}
+.sticker{position:absolute;right:4%;top:22%;width:150px;height:150px;border-radius:50%;background:var(--gold);color:var(--wine);display:grid;place-items:center;text-align:center;font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;font-size:16px;line-height:1.05;transform:rotate(12deg);box-shadow:0 10px 0 #0002;animation:gunga 5s ease-in-out infinite;z-index:3}
+@keyframes gunga{50%{transform:rotate(-4deg) scale(1.05)}}
+
+.glitter{position:absolute;pointer-events:none;color:var(--gold);animation:blink 3s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25;transform:scale(.7) rotate(20deg)}}
+
+/* band */
+.band{background:var(--gold);color:var(--wine);overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--ink)}
+.band div{display:inline-block;padding:15px 0;font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.04em;animation:gli 34s linear infinite}
+.band span{padding:0 20px}
+@keyframes gli{to{transform:translateX(-50%)}}
+
+section{padding:110px 0;border-bottom:1px solid var(--line);position:relative}
+.num{grid-column:1/3;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding-top:12px;color:var(--bur)}
+h2{grid-column:3/13;font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(32px,4.6vw,62px);line-height:1.02;letter-spacing:-.025em;max-width:19ch}
+h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;color:var(--bur);letter-spacing:-.01em}
+.lede{grid-column:3/10;margin-top:34px;font-size:21px;color:#2b2224}
+.lede+.lede{margin-top:16px}
+
+.manifest{background:var(--wine);color:var(--cream)}
+.manifest .num{color:var(--gold)}.manifest h2 em{color:var(--gold)}
+.manifest .lede{color:#fff8f3e0}
+.tre{grid-column:3/13;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+.tre div{background:#ffffff12;border-radius:24px;padding:26px 24px}
+.tre b{display:block;font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;font-size:54px;line-height:1;color:var(--gold);margin-bottom:10px}
+.tre p{font-size:17px;color:#fff8f3d0}
+
+.lista{grid-column:3/13;margin-top:52px;display:grid;gap:14px}
+.kort{display:grid;grid-template-columns:56px 1.1fr 2fr 150px;gap:24px;padding:28px 30px;background:#fff;border:1.5px solid var(--ink);border-radius:26px;align-items:baseline;transition:transform .2s,box-shadow .2s}
+.kort:hover{transform:translate(-3px,-3px) rotate(-.3deg);box-shadow:6px 6px 0 var(--bur)}
+.kort .n{font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:var(--bur)}
+.kort h3{font-family:'Poppins',sans-serif;text-transform:uppercase;font-size:21px;line-height:1.1;letter-spacing:-.01em;font-weight:800}
+.kort p{font-size:17px;color:#3a2f31}
+.kort .pris{text-align:right;font-family:'Poppins',sans-serif;font-weight:800;font-size:19px;white-space:nowrap;color:var(--bur)}
+.kort .pris small{display:block;font-family:'Schibsted Grotesk',sans-serif;font-size:13px;font-weight:500;color:#6b5a5d}
+.kort.ny{background:var(--blush)}
+.kort.ny h3::after{content:"Nytt";margin-left:10px;font-size:11px;background:var(--wine);color:#fff;border-radius:999px;padding:3px 9px;vertical-align:middle;letter-spacing:.06em}
+
+.circle{background:var(--blush)}
+.circle .stor{grid-column:3/13;margin-top:46px;display:grid;grid-template-columns:1.1fr 1fr;gap:52px}
+.circle ul{list-style:none;border-top:1.5px solid var(--ink)}
+.circle li{padding:16px 0;border-bottom:1px solid #1a121433;display:flex;gap:18px;font-weight:500}
+.circle li i{font-style:normal;font-family:'Poppins',sans-serif;font-weight:800;text-transform:uppercase;color:var(--bur);min-width:104px;font-size:13px;padding-top:4px}
+.faktaruta{background:var(--bur);color:#fff;padding:36px;border-radius:30px;align-self:start;position:relative}
+.faktaruta .stortal{font-family:'Poppins',sans-serif;font-weight:800;font-size:84px;line-height:.9;letter-spacing:-.05em;color:var(--gold)}
+.faktaruta p{margin:10px 0 24px;color:#fff;opacity:.92}
+.faktaruta hr{border:0;border-top:1px solid #ffffff44;margin:22px 0}
+
+.bord{background:var(--bur);color:#fff}
+.bord .num{color:var(--gold)}.bord h2 em{color:var(--gold)}
+.bord .lede{color:#ffffffe6}
+.bord .rutor{grid-column:3/13;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+.bord .rutor div{border:1.5px solid #ffffff66;border-radius:24px;padding:24px}
+.bord .rutor h3{font-family:'Poppins',sans-serif;text-transform:uppercase;font-size:18px;margin-bottom:8px;color:var(--gold)}
+.bord .rutor p{font-size:16px;color:#ffffffdd}
+
+.varde,.vard{display:grid;grid-column:3/13;grid-template-columns:1fr 1fr;gap:48px;margin-top:52px}
+.varde h3,.vard h3{font-family:'Poppins',sans-serif;text-transform:uppercase;border-top:2px solid var(--ink);padding-top:16px;font-size:24px;letter-spacing:-.01em;margin-bottom:8px}
+.vard .roll{font-weight:700;color:var(--bur);margin-bottom:12px}
+.vard ul{list-style:none}.vard li{padding:9px 0;border-bottom:1px solid var(--line)}
+
+.ko{background:var(--wine);color:#fff}
+.ko .num{color:var(--gold)}.ko h2 em{color:var(--gold)}
+.ko .lede{color:#ffffffdd}
+.form{grid-column:3/10;margin-top:42px;display:grid;gap:14px}
+.form label{font-size:14px;font-weight:700}
+.form input{width:100%;padding:16px 20px;font:inherit;border:0;background:#fff;color:var(--ink);border-radius:999px}
+.form fieldset{border:0;display:grid;gap:8px}
+.form .val{display:flex;gap:10px;align-items:center;font-weight:500;font-size:16px}
+.form .val input{width:auto}
+.tack{display:none;grid-column:3/10;margin-top:42px;font-family:'Poppins',sans-serif;font-weight:800;font-size:28px;text-transform:uppercase}
+.litet{grid-column:3/10;margin-top:18px;font-size:14px;color:#ffffffb3}
+
+footer{padding:48px 0 64px;font-size:14px;color:#6b5a5d}
+footer .grid>*{grid-column:1/13}
+footer b{color:var(--ink)}
+
+@media(max-width:860px){
+ body{font-size:17px}
+ .grid{padding:0 20px;column-gap:0}
+ .nav a:not(.knapp){display:none}
+ .logo{grid-column:1/7}.nav{grid-column:7/13}
+ .hero{background:var(--bur)}
+ .stor-ord .lager.a{visibility:hidden}.stor-ord .lager.b{clip-path:none}
+ .rad1{flex-direction:column;gap:2px;font-size:11px}.rad1 span:first-child{color:var(--gold)}
+ .hero-under{display:block;padding:30px 0 56px}.hero-under p{font-size:22px}
+ .sticker{width:104px;height:104px;font-size:11px;top:auto;bottom:6%;right:5%}
+ .num,h2,.lede,.tre,.lista,.circle .stor,.varde,.vard,.form,.tack,.litet,.bord .rutor{grid-column:1/13}
+ section{padding:70px 0}
+ .num{margin-bottom:16px}
+ .tre,.circle .stor,.varde,.vard,.bord .rutor{grid-template-columns:1fr}
+ .tre,.vard,.varde{gap:30px}.circle .stor{gap:34px}
+ .kort{grid-template-columns:34px 1fr;gap:6px 12px;padding:22px}
+ .kort h3,.kort p,.kort .pris{grid-column:2}.kort .pris{text-align:left;margin-top:6px}
+}
+@media(prefers-reduced-motion:reduce){.band div,.sticker,.glitter{animation:none}}
