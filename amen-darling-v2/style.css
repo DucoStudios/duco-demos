@@ -3,7 +3,8 @@
 html{scroll-behavior:smooth}
 body{font-family:'Schibsted Grotesk',system-ui,sans-serif;color:var(--ink);background:var(--cream);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
-.grid{max-width:var(--max);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
+.grid{max-width:var(--max);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.grid>*{min-width:0}
 .pop{font-family:'Poppins','Schibsted Grotesk',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
 .serif{font-family:'Kaushan Script','Brush Script MT',cursive;font-style:normal;font-weight:400;text-transform:none;letter-spacing:0}
 
